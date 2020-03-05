@@ -1,0 +1,7 @@
+*
+!.gitignore
+
+# Config folder
+!.config/
+!.config/urxvt/
+!.config/urxvt/*
