@@ -5,3 +5,12 @@
 !.config/
 !.config/urxvt/
 !.config/urxvt/*
+
+!.config/i3/
+!.config/i3/*
+
+!.config/polybar/
+!.config/polybar/*
+
+!.config/sxhkd/
+!.config/sxhkd/*
