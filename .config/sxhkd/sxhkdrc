@@ -80,15 +80,15 @@ mod4 + @BackSpace
 	xdotool key --clearmodifiers Delete
 
 # Sleep
-mod4 + Escape
+mod4 + y
 	systemctl suspend
 
 # Urxvt
-mod4 + Return
+mod4 + s
 	urxvt
 
 # Dmenu
-mod4 + space
+mod4 + d
 	dmenu_run
 
 # Chrome
