@@ -1,0 +1,16 @@
+#!/bin/sh
+sleep 1
+# DISPLAY=":0.0"
+setxkbmap -layout it
+/usr/bin/xmodmap /home/marco/.config/xmodmaprc/change_super_key
+# /bin/bash -c "/usr/bin/xmodmap /home/marco/.config/xmodmaprc/change_super_key"
+# now=$(date)
+# echo "$now" >> /tmp/log-keyboard-in.txt
+setxkbmap -layout colemak
+/usr/bin/xmodmap -e "remove Lock = Caps_Lock"
+/usr/bin/xmodmap -e "keycode 66 = Hyper_L"
+/usr/bin/xmodmap -e "keycode 135 = Hyper_R"
+
+# USRMODMAP="$HOME/.config/xmodmaprc/change_super_key"
+
+# /usr/bin/xmodmap "$USRMODMAP"
