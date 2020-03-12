@@ -1,0 +1,5 @@
+# Used by desktop manager 
+
+[Desktop]
+Session=bspwm
+Language=en_US.utf8

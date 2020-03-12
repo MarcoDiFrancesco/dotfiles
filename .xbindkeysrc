@@ -1,0 +1,68 @@
+# "xdotool key --clearmodifiers Left"
+#  Mod3 + h
+
+# "xdotool key --clearmodifiers Down"
+#  Mod3 + j
+
+# "xdotool key --clearmodifiers Up"
+#  Mod3 + k
+
+# "xdotool key --clearmodifiers Left"
+#  Mod3 + l
+
+# "xdotool key --clearmodifiers Delete"
+#  Shift + BackSpace
+
+# # Adjust volume
+# "volume-set -i"
+#   XF86AudioRaiseVolume
+# "volume-set -i"
+#   Mod3 + n
+
+# "volume-set -d"
+#   XF86AudioRaiseVolume
+# "volume-set -d"
+#   Mod3 + b
+
+# "volume-set -m"
+#   XF86AudioMute
+# "volume-set -m"d
+#   Mod3 + m
+
+# # Brightness
+# "brightness-set -i"
+#   XF86MonBrightnessUp
+# "brightness-set -d"
+#   XF86MonBrightnessDown
+
+# Print
+# "screenshot -l"
+#   Print
+# "screenshot -l"
+#   Mod3 + p
+
+# "screenshot -c"
+#   Shift + Print
+# "screenshot -c"
+#   Mod3 + Shift + p
+
+# "screenshot -i"
+#   Control + Print
+# "screenshot -i"
+#   Mod3 + Control + Print
+
+# Open programs
+# "dmenu_run"
+#   Mod3 + d
+
+# "urxvt"
+#   Mod3 + Return
+
+# "google-chrome-stable --profile-directory='Profile 2'"
+#   Mod3 + c
+
+# "code"
+#   Mod3 + x
+
+# "urxvt -e ranger"
+#   Mod3 + z
