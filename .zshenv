@@ -13,3 +13,6 @@ else
 fi
 
 export MOUNT_DIR=$HOME/.local/mnt
+
+# Add scripts folder to path
+export PATH=/home/marco/scripts:$PATH

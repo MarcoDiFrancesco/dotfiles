@@ -1,12 +1,8 @@
 #!/bin/sh
-
 killall -q polybar
 killall -q sxhkd
 killall -q picom
 killall -q udiskie
-
-# Need testing
-# xrdb -merge $HOME/.Xresources
 
 get_external_monitor=$(xrandr --query | grep -w 'DP-1')
 if [[ $get_external_monitor = *disconnected* ]]; then
@@ -29,10 +25,11 @@ bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+# TODO: test it
 # exec urxvr &
 
 # Set wallpaper
-exec feh --no-fehbg --bg-scale '$HOME/Documents/wallpaper.jpeg' &
+exec feh --no-fehbg --bg-scale '/home/marco/Documents/wallpaper.jpeg' &
 # Keybinds
 sxhkd &
 # Compositor
