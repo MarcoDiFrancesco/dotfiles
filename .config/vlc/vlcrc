@@ -4125,31 +4125,31 @@ metadata-network-access=1
 #global-key-faster=
 
 # Faster (string)
-#key-faster=+
+key-faster=
 
 # Slower (string)
 #global-key-slower=
 
 # Slower (string)
-#key-slower=-
+key-slower=
 
 # Normal rate (string)
 #global-key-rate-normal=
 
 # Normal rate (string)
-#key-rate-normal==
+key-rate-normal=
 
 # Faster (fine) (string)
 #global-key-rate-faster-fine=
 
 # Faster (fine) (string)
-#key-rate-faster-fine=]
+key-rate-faster-fine==
 
 # Slower (fine) (string)
 #global-key-rate-slower-fine=
 
 # Slower (fine) (string)
-#key-rate-slower-fine=[
+key-rate-slower-fine=-
 
 # Next (string)
 #global-key-next=
@@ -4191,13 +4191,13 @@ metadata-network-access=1
 #global-key-jump-short=
 
 # Short backwards jump (string)
-#key-jump-short=Alt+Left
+key-jump-short=l
 
 # Short forward jump (string)
 #global-key-jump+short=
 
 # Short forward jump (string)
-#key-jump+short=Alt+Right
+key-jump+short=j
 
 # Medium backwards jump (string)
 #global-key-jump-medium=
@@ -4365,13 +4365,13 @@ metadata-network-access=1
 #global-key-audiodelay-up=
 
 # Audio delay up (string)
-#key-audiodelay-up=k
+key-audiodelay-up=y
 
 # Audio delay down (string)
 #global-key-audiodelay-down=
 
 # Audio delay down (string)
-#key-audiodelay-down=j
+key-audiodelay-down=u
 
 # Cycle audio track (string)
 #global-key-audio-track=
@@ -4563,7 +4563,7 @@ metadata-network-access=1
 #global-key-loop=
 
 # Normal/Loop/Repeat (string)
-#key-loop=l
+key-loop=
 
 # Shrink the viewpoint field of view (360°) (string)
 #global-key-viewpoint-fov-in=

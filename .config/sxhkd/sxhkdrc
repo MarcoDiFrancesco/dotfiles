@@ -51,8 +51,14 @@ mod4 + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '{1-9,10}'
 
 # Arrows
-mod4 + {_,shift+}{_,ctrl+}@{h,j,k,l}
-	xdotool key --clearmodifiers {_,Shift+}{_,Ctrl+}{Left,Down,Up,Right}
+mod4 + @{h,j,k,l}
+	xdotool key --clearmodifiers {Left,Down,Up,Right}
+mod4 + shift + @{h,j,k,l}
+	xdotool key --clearmodifiers Shift+{Left,Down,Up,Right}
+mod4 + ctrl + @{h,j,k,l}
+	xdotool key --clearmodifiers Ctrl+{Left,Down,Up,Right}
+mod4 + ctrl + shift + @{h,j,k,l}
+	xdotool key --clearmodifiers Shift+Ctrl+{Left,Down,Up,Right}
 
 # F keys
 mod4 + alt + @{1-9,0,minus,equal}
