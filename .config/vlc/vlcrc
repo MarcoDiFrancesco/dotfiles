@@ -4107,7 +4107,7 @@ metadata-network-access=1
 #global-key-play-pause=
 
 # Play/Pause (string)
-#key-play-pause=Space	Media Play Pause
+key-play-pause=Space	Media Play Pause	k
 
 # Pause only (string)
 #global-key-pause=
@@ -4191,13 +4191,13 @@ key-rate-slower-fine=-
 #global-key-jump-short=
 
 # Short backwards jump (string)
-key-jump-short=l
+key-jump-short=j	Alt+Left
 
 # Short forward jump (string)
 #global-key-jump+short=
 
 # Short forward jump (string)
-key-jump+short=j
+key-jump+short=l	Alt+Right
 
 # Medium backwards jump (string)
 #global-key-jump-medium=
