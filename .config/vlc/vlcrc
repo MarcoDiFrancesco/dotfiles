@@ -4191,13 +4191,13 @@ key-rate-slower-fine=-
 #global-key-jump-short=
 
 # Short backwards jump (string)
-key-jump-short=j	Alt+Left
+key-jump-short=j
 
 # Short forward jump (string)
 #global-key-jump+short=
 
 # Short forward jump (string)
-key-jump+short=l	Alt+Right
+key-jump+short=l
 
 # Medium backwards jump (string)
 #global-key-jump-medium=
