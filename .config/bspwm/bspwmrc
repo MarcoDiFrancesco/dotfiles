@@ -3,6 +3,7 @@ killall -q polybar
 killall -q sxhkd
 killall -q picom
 killall -q udiskie
+killall -q nm-applet
 
 get_external_monitor=$(xrandr --query | grep -w 'DP-1')
 if [[ $get_external_monitor = *disconnected* ]]; then
@@ -36,3 +37,5 @@ sxhkd &
 picom -b &
 # USB mounter
 udiskie &
+# Network manager
+nm-applet &

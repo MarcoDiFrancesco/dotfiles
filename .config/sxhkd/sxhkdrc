@@ -109,3 +109,7 @@ mod4 + x
 # Ranger
 mod4 + z
 	urxvt -e ranger
+
+# Delete
+mod4 + @Escape
+	xdotool key --clearmodifiers `

@@ -2124,7 +2124,7 @@ qt-privacy-ask=0
 [freetype] # Freetype2 font renderer
 
 # Font (string)
-#freetype-font=Serif Bold
+freetype-font=Bitstream Vera Sans
 
 # Monospace Font (string)
 #freetype-monofont=Monospace
@@ -3564,7 +3564,7 @@ logfile=/var/log/vlc/vlc.log
 #audio-time-stretch=1
 
 # Audio output module (string)
-aout=any
+aout=pulse
 
 # Media role (string)
 #role=video
@@ -4179,25 +4179,25 @@ key-rate-slower-fine=-
 #global-key-jump-extrashort=
 
 # Very short backwards jump (string)
-#key-jump-extrashort=Shift+Left
+key-jump-extrashort=Shift+Left	j
 
 # Very short forward jump (string)
 #global-key-jump+extrashort=
 
 # Very short forward jump (string)
-#key-jump+extrashort=Shift+Right
+key-jump+extrashort=Shift+Right	l
 
 # Short backwards jump (string)
 #global-key-jump-short=
 
 # Short backwards jump (string)
-key-jump-short=j
+key-jump-short=
 
 # Short forward jump (string)
 #global-key-jump+short=
 
 # Short forward jump (string)
-key-jump+short=l
+key-jump+short=
 
 # Medium backwards jump (string)
 #global-key-jump-medium=
