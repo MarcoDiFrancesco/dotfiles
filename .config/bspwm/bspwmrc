@@ -1,9 +1,9 @@
 #!/bin/sh
-killall -q polybar
-killall -q sxhkd
-killall -q picom
-killall -q udiskie
-killall -q nm-applet
+killall --quiet polybar
+killall --quiet sxhkd
+killall --quiet picom
+killall --quiet udiskie
+killall --quiet nm-applet
 
 get_external_monitor=$(xrandr --query | grep -w 'DP-1')
 if [[ $get_external_monitor = *disconnected* ]]; then
@@ -34,7 +34,7 @@ exec feh --no-fehbg --bg-scale '/home/marco/Documents/wallpaper.jpeg' &
 # Keybinds
 sxhkd &
 # Compositor
-picom -b &
+picom &
 # USB mounter
 udiskie &
 # Network manager
