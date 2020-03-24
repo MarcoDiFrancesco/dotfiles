@@ -3,14 +3,13 @@
 # Unlock if bluetooth card is locked (password requested)
 if [[ $(rfkill -r | grep 'bluetooth hci0 blocked') = *bluetooth\ hci0\ blocked* ]]; then
   sudo rfkill unblock bluetooth
-  echo "Bluetooth unlocked"
+  echo "sudo rfkill unblock bluetooth"
 fi
 
-# Turn on bluetooth if powerd on
+# Enable bluetooth card if powerd off
 if [[ $(bluetoothctl show | grep 'Powered: no') = *Powered:\ no* ]]; then
-  # Enable bluetooth card
   bluetoothctl power on
-  echo bluetoothctl power on
+  echo "bluetoothctl power on"
 else
   echo "Already on"
 fi

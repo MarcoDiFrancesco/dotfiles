@@ -4,6 +4,7 @@ killall --quiet sxhkd
 killall --quiet picom
 killall --quiet udiskie
 killall --quiet nm-applet
+killall --quiet blueberry-tray
 
 get_external_monitor=$(xrandr --query | grep -w 'DP-1')
 if [[ $get_external_monitor = *disconnected* ]]; then
@@ -37,5 +38,7 @@ sxhkd &
 picom &
 # USB mounter
 udiskie &
-# Network manager
+# Network manager polybar applet
 nm-applet &
+# Bluetooth polybar applet
+blueberry-tray &
