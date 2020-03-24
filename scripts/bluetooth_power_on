@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# Service now is enabled
-# sudo systemctl start bluetooth.service
-
-# Unlock id bluetooth card is locked (password requested)
+# Unlock if bluetooth card is locked (password requested)
 if [[ $(rfkill -r | grep 'bluetooth hci0 blocked') = *bluetooth\ hci0\ blocked* ]]; then
   sudo rfkill unblock bluetooth
   echo "Bluetooth unlocked"
@@ -13,6 +10,7 @@ fi
 if [[ $(bluetoothctl show | grep 'Powered: no') = *Powered:\ no* ]]; then
   # Enable bluetooth card
   bluetoothctl power on
+  echo bluetoothctl power on
 else
   echo "Already on"
 fi
