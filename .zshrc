@@ -59,8 +59,10 @@ SAVEHIST=10000 # Number of commands saved into $HISTFILE
 # Stamp and alias found in:
 # https://github.com/ohmyzsh/ohmyzsh/issues/3466#issuecomment-104896730
 HIST_STAMPS="yyyy-mm-dd"
-alias history='fc -il 1'
 
+# History command is overritten somewhere
+# alias history='fc -il 1 | less +G
+alias hist='fc -il 1 | less +G'
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -87,7 +89,7 @@ source $ZSH/custom/plugins/code-stats-zsh/codestats.plugin.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls='exa'
-alias ll='echo "Use l command instead"'
+alias ll='l'
 alias lll='exa -l | less'
 alias lt='exa -T'
 alias open='open_command'

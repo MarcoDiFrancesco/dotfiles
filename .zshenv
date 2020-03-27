@@ -12,7 +12,7 @@ else
   export EDITOR='code'
 fi
 
-export MOUNT_DIR=$HOME/.local/mnt
+export MOUNT_DIR=/run/media/marco
 
 # Add scripts folder to path
 export PATH=/home/marco/scripts:$PATH
