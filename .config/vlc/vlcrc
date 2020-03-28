@@ -1194,7 +1194,7 @@
 #alsa-audio-channels=6
 
 # Software gain (float)
-#alsa-gain=1.000000
+alsa-gain=1.157625
 
 [jack] # JACK audio output
 
@@ -2191,17 +2191,6 @@ freetype-font=Bitstream Vera Sans
 # Frame buffer height (integer)
 #shm-height=480
 
-[cdda] # Audio CD input
-
-# Audio CD device (string)
-#cd-audio=/dev/sr0
-
-# CDDB Server (string)
-#cddb-server=freedb.videolan.org
-
-# CDDB port (integer)
-#cddb-port=80
-
 [ftp] # FTP input
 
 # Username (string)
@@ -2475,17 +2464,6 @@ freetype-font=Bitstream Vera Sans
 # Sample rate (integer)
 #alsa-samplerate=48000
 
-[smb] # SMB input
-
-# Username (string)
-#smb-user=
-
-# Password (string)
-#smb-pwd=
-
-# SMB domain (string)
-#smb-domain=
-
 [linsys_hdsdi] # HD-SDI Input
 
 # Link # (integer)
@@ -2507,11 +2485,6 @@ freetype-font=Bitstream Vera Sans
 
 # Advanced options (string)
 #sout-avio-options=
-
-[nfs] # NFS input
-
-# Set NFS uid/guid automatically (boolean)
-#nfs-auto-guid=1
 
 [satip] # SAT>IP Receiver Plugin
 
@@ -2630,32 +2603,10 @@ freetype-font=Bitstream Vera Sans
 # Save raw codec data (boolean)
 #dummy-save-es=0
 
-[dav1d] # Dav1d video decoder
-
-# Frames Threads (integer)
-#dav1d-thread-frames=0
-
-# Tiles Threads (integer)
-#dav1d-thread-tiles=0
-
 [a52] # ATSC A/52 (AC-3) audio decoder
 
 # A/52 dynamic range compression (boolean)
 #a52-dynrng=1
-
-[twolame] # Libtwolame audio encoder
-
-# Encoding quality (float)
-#sout-twolame-quality=0.000000
-
-# Stereo mode (integer)
-#sout-twolame-mode=0
-
-# VBR mode (boolean)
-#sout-twolame-vbr=0
-
-# Psycho-acoustic model (integer)
-#sout-twolame-psy=3
 
 [aribsub] # ARIB subtitles decoder
 
@@ -3418,38 +3369,6 @@ avcodec-hw=vaapi
 
 # Advanced options (string)
 #sout-avcodec-options=
-
-[access_output_shout] # IceCAST output
-
-# Stream name (string)
-#sout-shout-name=VLC media player - Live stream
-
-# Stream description (string)
-#sout-shout-description=Live stream from VLC media player
-
-# Stream MP3 (boolean)
-#sout-shout-mp3=0
-
-# Genre description (string)
-#sout-shout-genre=Alternative
-
-# URL description (string)
-#sout-shout-url=http://www.videolan.org/vlc
-
-# Bitrate (string)
-#sout-shout-bitrate=
-
-# Samplerate (string)
-#sout-shout-samplerate=
-
-# Number of channels (string)
-#sout-shout-channels=
-
-# Ogg Vorbis Quality (string)
-#sout-shout-quality=
-
-# Stream public (boolean)
-#sout-shout-public=0
 
 [file] # File stream output
 

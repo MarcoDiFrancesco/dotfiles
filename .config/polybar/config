@@ -31,7 +31,7 @@ inherit = bar/master
 
 modules-left = bspwm
 modules-center = date
-modules-right = pulseaudio backlight-acpi ram cpu wlan battery temperature powermenu
+modules-right = alsa backlight-acpi ram cpu wlan battery temperature powermenu
 
 
 [bar/bar2]
@@ -40,4 +40,4 @@ inherit = bar/master
 
 modules-left = bspwm
 modules-center = date
-modules-right = pulseaudio backlight-acpi ram cpu wlan battery temperature powermenu
+modules-right = alsa backlight-acpi ram cpu wlan battery temperature powermenu
