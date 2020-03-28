@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Mount GoPro with simple-mtpfs checking if it's already mounted
+# MOUNT_DIR set in ~/.zshenv
+
+DEV_MOUNT_DIR="$MOUNT_DIR/GoProHERO4"
+
+if [[ $(simple-mtpfs -l) = *1:\ GoProHERO4* ]]
+then
+  if [[ ! -d "${DEV_MOUNT_DIR}" ]]
+  then
+    sudo mkdir -p $DEV_MOUNT_DIR
+    sudo chmod 777 $DEV_MOUNT_DIR
+    simple-mtpfs --device 1 $DEV_MOUNT_DIR
+  else
+    sudo umount $DEV_MOUNT_DIR
+    simple-mtpfs --device 1 $DEV_MOUNT_DIR
+  fi
+  cd $DEV_MOUNT_DIR
+  exec zsh -c ranger
+else
+  echo "GoPro device not detected in port 1"
+fi

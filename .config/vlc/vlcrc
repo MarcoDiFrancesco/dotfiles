@@ -4203,25 +4203,25 @@ key-jump+short=
 #global-key-jump-medium=
 
 # Medium backwards jump (string)
-#key-jump-medium=Ctrl+Left
+key-jump-medium=Ctrl+Left	Shift+j
 
 # Medium forward jump (string)
 #global-key-jump+medium=
 
 # Medium forward jump (string)
-#key-jump+medium=Ctrl+Right
+key-jump+medium=Ctrl+Right	Shift+l
 
 # Long backwards jump (string)
 #global-key-jump-long=
 
 # Long backwards jump (string)
-#key-jump-long=Ctrl+Alt+Left
+key-jump-long=Ctrl+Shift+Left	Shift+Alt+j
 
 # Long forward jump (string)
 #global-key-jump+long=
 
 # Long forward jump (string)
-#key-jump+long=Ctrl+Alt+Right
+key-jump+long=Ctrl+Shift+Right	Shift+Alt+l
 
 # Next frame (string)
 #global-key-frame-next=
@@ -4335,13 +4335,13 @@ key-jump+short=
 #global-key-subsync-marksub=
 
 # Subtitle sync / bookmark subtitle timestamp (string)
-#key-subsync-marksub=Shift+j
+key-subsync-marksub=
 
 # Subtitle sync / synchronize audio & subtitle timestamps (string)
 #global-key-subsync-apply=
 
 # Subtitle sync / synchronize audio & subtitle timestamps (string)
-#key-subsync-apply=Shift+k
+key-subsync-apply=
 
 # Subtitle sync / reset audio & subtitle synchronization (string)
 #global-key-subsync-reset=
@@ -4617,13 +4617,13 @@ key-loop=
 #extrashort-jump-size=3
 
 # Short jump length (integer)
-#short-jump-size=10
+short-jump-size=5
 
 # Medium jump length (integer)
-#medium-jump-size=60
+medium-jump-size=10
 
 # Long jump length (integer)
-#long-jump-size=300
+long-jump-size=60
 
 # Set playlist bookmark 1 (string)
 #global-key-set-bookmark1=

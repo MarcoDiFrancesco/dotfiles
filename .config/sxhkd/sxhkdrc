@@ -100,7 +100,7 @@ mod4 + d
 
 # Chrome
 mod4 + c
-	google-chrome-stable --profile-directory='Profile 2'
+	chromium --profile-directory=Default
 
 #VScode
 mod4 + x

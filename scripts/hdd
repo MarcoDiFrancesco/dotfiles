@@ -3,15 +3,15 @@
 # Mount HDD in one command checking if it's already mounted
 # MOUNT_DIR set in ~/.zshenv
 
-HDD_MOUNT_DIR="$MOUNT_DIR/TOSHIBA_MQ04ABF100"
+DEV_MOUNT_DIR="$MOUNT_DIR/TOSHIBA_MQ04ABF100"
 GET_DEV=$(lsblk -io NAME,MODEL | grep TOSHIBA_MQ04ABF100 | awk '{print $1;}')
 DEV_DIR="/dev/${GET_DEV}1"
 
 # If folder does not exist
-if [[ ! -d "${HDD_MOUNT_DIR}" ]]
+if [[ ! -d "${DEV_MOUNT_DIR}" ]]
 then
-  sudo mkdir -p $HDD_MOUNT_DIR
-  sudo mount $DEV_DIR $HDD_MOUNT_DIR
+  sudo mkdir -p $DEV_MOUNT_DIR
+  sudo mount $DEV_DIR $DEV_MOUNT_DIR
 fi
-cd $HDD_MOUNT_DIR
+cd $DEV_MOUNT_DIR
 exec zsh -c ranger

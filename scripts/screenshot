@@ -7,7 +7,7 @@ while getopts 'ilc' flag
 do
   case "${flag}" in
     i)
-        /home/marco/Documents/imgur-screenshot/imgur-screenshot
+        imgur-screenshot
     ;;
     l)
         scrot $pic_name
