@@ -96,7 +96,7 @@ mod4 + s
 
 # Dmenu
 mod4 + d
-	dmenu_run
+	rofi -show combi
 
 # Chrome
 mod4 + c

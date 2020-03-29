@@ -15,11 +15,6 @@ alert = #bd2c40
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = false
 
 [global/wm]
 margin-top = 5
@@ -31,8 +26,7 @@ inherit = bar/master
 
 modules-left = bspwm
 modules-center = date
-modules-right = alsa backlight-acpi ram cpu wlan battery temperature powermenu
-
+modules-right = pulseaudio backlight-acpi ram cpu wlan battery temperature powermenu bluetooth
 
 [bar/bar2]
 monitor = ${env:MONITOR:DP-1}
@@ -40,4 +34,4 @@ inherit = bar/master
 
 modules-left = bspwm
 modules-center = date
-modules-right = alsa backlight-acpi ram cpu wlan battery temperature powermenu
+modules-right = pulseaudio backlight-acpi ram cpu wlan battery temperature powermenu bluetooth
