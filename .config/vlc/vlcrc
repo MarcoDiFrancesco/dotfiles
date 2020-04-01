@@ -4098,7 +4098,7 @@ key-rate-slower-fine=-
 #global-key-jump-extrashort=
 
 # Very short backwards jump (string)
-key-jump-extrashort=Shift+Left	j
+key-jump-extrashort=Shift+Left	j	h
 
 # Very short forward jump (string)
 #global-key-jump+extrashort=
@@ -4236,7 +4236,7 @@ key-jump+long=Ctrl+Shift+Right	Shift+Alt+l
 #global-key-subdelay-up=
 
 # Subtitle delay up (string)
-#key-subdelay-up=h
+key-subdelay-up=r
 
 # Subtitle delay down (string)
 #global-key-subdelay-down=
@@ -4476,7 +4476,7 @@ key-audiodelay-down=u
 #global-key-random=
 
 # Random (string)
-#key-random=r
+key-random=
 
 # Normal/Loop/Repeat (string)
 #global-key-loop=
