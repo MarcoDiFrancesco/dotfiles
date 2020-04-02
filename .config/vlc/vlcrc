@@ -2042,7 +2042,7 @@ alsa-gain=1.157625
 #qt-minimal-view=0
 
 # Systray icon (boolean)
-#qt-system-tray=1
+qt-system-tray=0
 
 # Show notification popup on track change (integer)
 #qt-notification=1
@@ -2593,7 +2593,7 @@ freetype-font=Bitstream Vera Sans
 #subsdec-align=-1
 
 # Subtitle text encoding (string)
-#subsdec-encoding=
+subsdec-encoding=UTF-8
 
 # UTF-8 subtitle autodetection (boolean)
 #subsdec-autodetect-utf8=1
@@ -3675,7 +3675,7 @@ vout=any
 #audio-language=
 
 # Subtitle language (string)
-#sub-language=
+sub-language=English
 
 # Menu language (string)
 #menu-language=
@@ -3939,7 +3939,7 @@ vod-server=any
 #playlist-cork=1
 
 # Allow only one running instance (boolean)
-#one-instance=0
+one-instance=1
 
 # Use only one instance when started from file manager (boolean)
 #one-instance-when-started-from-file=1
@@ -4368,13 +4368,13 @@ key-audiodelay-down=u
 #global-key-deinterlace=
 
 # Toggle deinterlacing (string)
-#key-deinterlace=d
+key-deinterlace=
 
 # Cycle deinterlace modes (string)
 #global-key-deinterlace-mode=
 
 # Cycle deinterlace modes (string)
-#key-deinterlace-mode=Shift+d
+key-deinterlace-mode=
 
 # Show controller in fullscreen (string)
 #global-key-intf-show=
