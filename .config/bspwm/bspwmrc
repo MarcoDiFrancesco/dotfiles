@@ -1,4 +1,5 @@
 #!/bin/sh
+
 killall --quiet polybar
 killall --quiet sxhkd
 killall --quiet picom

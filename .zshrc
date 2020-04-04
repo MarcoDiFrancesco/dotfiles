@@ -100,5 +100,3 @@ source /usr/share/fzf/completion.zsh
 
 #eval "`pip completion --zsh`"
 #eval "`pipenv --completion`"
-
-alias td="todoist add -N '💻 Arch'"
