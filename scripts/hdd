@@ -13,5 +13,6 @@ then
   sudo mkdir -p $DEV_MOUNT_DIR
   sudo mount $DEV_DIR $DEV_MOUNT_DIR
 fi
-cd $DEV_MOUNT_DIR
-exec zsh -c ranger
+# Used in ranger and making cd from ranger
+#cd $DEV_MOUNT_DIR
+#exec zsh -c ranger

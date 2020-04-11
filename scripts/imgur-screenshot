@@ -67,7 +67,6 @@ ${CONFIG_DIR}
   declare -g COPY_URL="true"
   declare -g CHECK_UPDATE="false"
 
-
   # options, can be changed via flags
   declare -g LOGIN="true"
   declare -g ALBUM_TITLE
@@ -81,7 +80,7 @@ ${CONFIG_DIR}
   declare -g EDIT_COMMAND="gimp %img"
   declare -g EDIT="false"
   declare -g AUTO_DELETE
-  declare -g KEEP_FILE="true"
+  declare -g KEEP_FILE="false"
 
   # NOTICE: if you make changes here, also edit the docs at
   # https://github.com/jomo/imgur-screenshot/wiki/Config

@@ -3939,7 +3939,7 @@ vod-server=any
 #playlist-cork=1
 
 # Allow only one running instance (boolean)
-one-instance=1
+#one-instance=0
 
 # Use only one instance when started from file manager (boolean)
 #one-instance-when-started-from-file=1

@@ -5,7 +5,6 @@ killall --quiet sxhkd
 killall --quiet picom
 killall --quiet udiskie
 killall --quiet nm-applet
-killall --quiet blueberry-tray
 
 get_external_monitor=$(xrandr --query | grep -w 'DP-1')
 if [[ $get_external_monitor = *disconnected* ]]; then
@@ -15,11 +14,11 @@ else
     bspc monitor eDP-1 -d 1 2 3 4 5
     bspc monitor DP-1 -d 6 7 8 9 10
     # Polybar external desktop
-    polybar bar2 >> /tmp/polybar2.log 2>&1 &
+    polybar bar2 >> /var/log/polybar/polybar2.log 2>&1 &
 fi
 
 # Polybar main desktop
-polybar bar1 >> /tmp/polybar1.log 2>&1 &
+polybar bar1 >> /var/log/polybar/polybar1.log 2>&1 &
 
 bspc config border_width         2
 bspc config window_gap          12
