@@ -90,9 +90,13 @@ mod4 + @BackSpace
 mod4 + y
 	systemctl suspend
 
-# Urxvt
+# Clipboard 
+mod4 + v
+	clipster -s -c
+
+# Urxvt client session
 mod4 + s
-	urxvt
+	urxvtc
 
 # Dmenu
 mod4 + d
@@ -106,9 +110,9 @@ mod4 + c
 mod4 + x
 	code
 
-# Ranger
+# Ranger in urxvt client session
 mod4 + z
-	urxvt -e ranger
+	urxvtc -e ranger
 
 # Delete
 mod4 + @Escape

@@ -40,5 +40,3 @@ picom &
 udiskie &
 # Network manager polybar applet
 nm-applet &
-# Bluetooth polybar applet
-# blueberry-tray &
