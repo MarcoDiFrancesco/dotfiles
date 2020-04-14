@@ -111,10 +111,11 @@ class fzf_select(Command):
                 self.fm.select_file(fzf_file)
 
 
-class extracthere(Command):
+class extract(Command):
     def execute(self):
         """ Extract copied files to current directory """
-        copied_files = tuple(self.fm.copy_buffer)
+        cwd = self.fm.thisdir
+        copied_files = cwd.get_selection()
 
         if not copied_files:
             return
@@ -122,6 +123,9 @@ class extracthere(Command):
         def refresh(_):
             cwd = self.fm.get_directory(original_path)
             cwd.load_content()
+
+        print("copied_files", copied_files)
+        print("one_file", one_file)
 
         one_file = copied_files[0]
         cwd = self.fm.thisdir
@@ -148,9 +152,16 @@ class extracthere(Command):
 
 class compress(Command):
     def execute(self):
-        """ Compress marked files to current directory """
+        """:execute [<export_file>]
+        
+        Compress marked files to current directory
+        """
         cwd = self.fm.thisdir
         marked_files = cwd.get_selection()
+        if self.arg(1):
+            target_filename = self.rest(1)
+        else:
+            target_filename = "self.zip"
 
         if not marked_files:
             return
@@ -163,10 +174,12 @@ class compress(Command):
         parts = self.line.split()
         au_flags = parts[1:]
 
-        descr = "compressing files in: " + os.path.basename(parts[1])
+        descr = "Compressing files in: " + os.path.basename(parts[1])
+        descr = marked_files
+
         obj = CommandLoader(
-            args=["apack"]
-            + au_flags
+            args=["apack"] + au_flags
+            # + [os.path.relpath(f.path, cwd.path) for f in marked_files],
             + [os.path.relpath(f.path, cwd.path) for f in marked_files],
             descr=descr,
             read=True,
@@ -174,6 +187,7 @@ class compress(Command):
 
         obj.signal_bind("after", refresh)
         self.fm.loader.add(obj)
+        self.fm.notify(descr)
 
     def tab(self, tabnum):
         """ Complete with current folder name """

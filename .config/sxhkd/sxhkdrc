@@ -78,9 +78,9 @@ mod4 + {i,o}
 
 # Screenshot
 {_,shift,ctrl} + @Print
-	screenshot -{l,c,i}
+	screenshot -{c,l,i}
 mod4 + {_,shift+,ctrl+}@p
-	screenshot -{l,c,i}
+	screenshot -{c,l,i}
 
 # Delete
 mod4 + @BackSpace

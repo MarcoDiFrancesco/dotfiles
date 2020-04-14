@@ -80,7 +80,7 @@ ${CONFIG_DIR}
   declare -g EDIT_COMMAND="gimp %img"
   declare -g EDIT="false"
   declare -g AUTO_DELETE
-  declare -g KEEP_FILE="false"
+  declare -g KEEP_FILE="true"
 
   # NOTICE: if you make changes here, also edit the docs at
   # https://github.com/jomo/imgur-screenshot/wiki/Config
