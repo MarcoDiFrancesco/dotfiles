@@ -86,14 +86,13 @@ source $ZSH_BASE/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 export CODESTATS_API_KEY="SFMyNTY.VFdGeVkyOUVhVVp5WVc1alpYTmpidz09IyNOamczTXc9PQ.Q5knPIVxz568Al7Tev_xqahXr4_J7xcihLB7uyWbaBQ" 
 source $ZSH/custom/plugins/code-stats-zsh/codestats.plugin.zsh
 
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls='exa'
 alias ll='l'
 alias lll='exa -l | less'
 alias lt='exa -T'
 alias open='open_command'
 alias config='/usr/bin/git --git-dir=$HOME/projects/linux-config --work-tree=$HOME'
+alias r='ranger'
 # compinit is set on oh-my-zsh.sh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh

@@ -112,8 +112,12 @@ class fzf_select(Command):
 
 
 class extract(Command):
+    """:extract [<exported_file>]
+    
+    Extract marked files to current directory
+    """
+
     def execute(self):
-        """ Extract copied files to current directory """
         cwd = self.fm.thisdir
         copied_files = cwd.get_selection()
 
@@ -124,12 +128,9 @@ class extract(Command):
             cwd = self.fm.get_directory(original_path)
             cwd.load_content()
 
-        print("copied_files", copied_files)
-        print("one_file", one_file)
-
         one_file = copied_files[0]
         cwd = self.fm.thisdir
-        original_path = cwd.path
+        extrat_to = cwd.path
         au_flags = ["-X", cwd.path]
         au_flags += self.line.split()[1:]
         au_flags += ["-e"]
@@ -151,17 +152,14 @@ class extract(Command):
 
 
 class compress(Command):
+    """:compress
+
+    Compress selected files to current directory
+    """
+
     def execute(self):
-        """:execute [<export_file>]
-        
-        Compress marked files to current directory
-        """
         cwd = self.fm.thisdir
         marked_files = cwd.get_selection()
-        if self.arg(1):
-            target_filename = self.rest(1)
-        else:
-            target_filename = "self.zip"
 
         if not marked_files:
             return
@@ -172,10 +170,13 @@ class compress(Command):
 
         original_path = cwd.path
         parts = self.line.split()
-        au_flags = parts[1:]
+        # au_flags = parts[1:]
+        if self.arg(1):
+            au_flags = parts[1:]
+        else:
+            au_flags = "gigi.zip"
 
         descr = "Compressing files in: " + os.path.basename(parts[1])
-        descr = marked_files
 
         obj = CommandLoader(
             args=["apack"] + au_flags
@@ -187,7 +188,6 @@ class compress(Command):
 
         obj.signal_bind("after", refresh)
         self.fm.loader.add(obj)
-        self.fm.notify(descr)
 
     def tab(self, tabnum):
         """ Complete with current folder name """
