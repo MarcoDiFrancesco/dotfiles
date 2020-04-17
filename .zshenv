@@ -19,3 +19,10 @@ export PATH=/home/marco/scripts:$PATH
 
 # Golang path
 export GOPATH=$HOME/.cache/go
+
+# Start gnome keyring
+# https://wiki.archlinux.org/index.php/GNOME/Keyring#With_a_display_manager
+#if [ -n "$DESKTOP_SESSION" ];then
+#    eval $(gnome-keyring-daemon --start)
+#    export SSH_AUTH_SOCK
+#fi

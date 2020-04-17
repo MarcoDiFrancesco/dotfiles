@@ -104,7 +104,7 @@ mod4 + d
 
 # Chrome
 mod4 + c
-	chromium --profile-directory=Default
+	chromium
 
 #VScode
 mod4 + x
