@@ -1,0 +1,18 @@
+[Default Applications]
+application/pdf=firefox.desktop
+application/py=code.desktop
+text/html=chromium.desktop
+x-scheme-handler/about=chromium.desktop
+x-scheme-handler/http=chromium.desktop
+x-scheme-handler/https=chromium.desktop
+x-scheme-handler/unknown=chromium.desktop
+x-scheme-handler/mailto=chromium.desktop
+x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/webcal=chromium.desktop
+
+[Added Associations]
+inode/directory=code-oss.desktop;
+application/pdf=firefox.desktop;
+video/x-msvideo=mplayer.desktop;vlc.desktop;
+application/zip=urxvt.desktop;
+application/pgp-signature=code-oss.desktop;
