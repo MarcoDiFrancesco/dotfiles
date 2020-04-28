@@ -16,6 +16,8 @@ export MOUNT_DIR=/run/media/marco
 
 # Add scripts folder to path
 export PATH=/home/marco/scripts:$PATH
+# Add python folder to path
+export PATH=/home/marco/.local/bin:$PATH
 
 # Golang path
 export GOPATH=$HOME/.cache/go
