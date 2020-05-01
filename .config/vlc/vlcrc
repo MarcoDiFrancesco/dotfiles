@@ -1,5 +1,5 @@
 ﻿###
-###  vlc 3.0.8
+###  vlc 3.0.9.2
 ###
 
 ###
@@ -424,6 +424,15 @@
 
 # Use regular HTTP modules (boolean)
 #adaptive-use-access=0
+
+# Live Playback delay (ms) (integer)
+#adaptive-livedelay=15000
+
+# Max buffering (ms) (integer)
+#adaptive-maxbuffer=30000
+
+# Low latency (integer)
+#adaptive-lowlatency=-1
 
 [mkv] # Matroska stream demuxer
 
@@ -989,7 +998,7 @@
 #sout-avi-subject=
 
 # Encoder (string)
-#sout-avi-encoder=VLC Media Player - 3.0.8 Vetinari
+#sout-avi-encoder=VLC Media Player - 3.0.9.2 Vetinari
 
 # Keywords (string)
 #sout-avi-keywords=
@@ -1194,7 +1203,7 @@
 #alsa-audio-channels=6
 
 # Software gain (float)
-alsa-gain=1.157625
+#alsa-gain=1.000000
 
 [jack] # JACK audio output
 
@@ -1600,6 +1609,42 @@ alsa-gain=1.157625
 
 # Open GL/GLES hardware converter (string)
 #glconv=
+
+# Rendering intent for color conversion (integer)
+#rendering-intent=1
+
+# Display primaries (integer)
+#target-prim=0
+
+# Display gamma / transfer function (integer)
+#target-trc=0
+
+# Tone-mapping algorithm (integer)
+#tone-mapping=3
+
+# Tone-mapping parameter (float)
+#tone-mapping-param=0.000000
+
+# Highlight clipped pixels (boolean)
+#tone-mapping-warn=0
+
+# Dithering algorithm (integer)
+#dither-algo=-1
+
+# Dither depth override (0 = framebuffer depth) (integer)
+#dither-depth=0
+
+# Desaturation strength (float)
+#desat-strength=0.750000
+
+# Desaturation exponent (float)
+#desat-exponent=1.500000
+
+# Desaturation base (float)
+#desat-base=0.180000
+
+# Maximum brightness boost (float)
+#max-boost=0.000000
 
 [yuv] # YUV video output
 
@@ -2497,6 +2542,23 @@ freetype-font=Bitstream Vera Sans
 # Host (string)
 #satip-host=
 
+[access_srt] # SRT input
+
+# SRT chunk size (bytes) (integer)
+#chunk-size=1316
+
+# Return poll wait after timeout milliseconds (-1 = infinite) (integer)
+#poll-timeout=-1
+
+# SRT latency (ms) (integer)
+#latency=125
+
+# Password for stream encryption (string)
+#passphrase=
+
+# Crypto key length in bytes (integer)
+#key-length=16
+
 [filesystem] # File input
 
 # List special files (boolean)
@@ -2602,6 +2664,14 @@ subsdec-encoding=UTF-8
 
 # Save raw codec data (boolean)
 #dummy-save-es=0
+
+[dav1d] # Dav1d video decoder
+
+# Frames Threads (integer)
+#dav1d-thread-frames=0
+
+# Tiles Threads (integer)
+#dav1d-thread-tiles=0
 
 [a52] # ATSC A/52 (AC-3) audio decoder
 
@@ -3370,6 +3440,23 @@ avcodec-hw=vaapi
 # Advanced options (string)
 #sout-avcodec-options=
 
+[access_output_srt] # SRT stream output
+
+# SRT chunk size (bytes) (integer)
+#chunk-size=1316
+
+# Return poll wait after timeout milliseconds (-1 = infinite) (integer)
+#poll-timeout=100
+
+# SRT latency (ms) (integer)
+#latency=125
+
+# Password for stream encryption (string)
+#passphrase=
+
+# Crypto key length in bytes (integer)
+#key-length=16
+
 [file] # File stream output
 
 # Overwrite existing file (boolean)
@@ -3483,7 +3570,7 @@ logfile=/var/log/vlc/vlc.log
 #audio-time-stretch=1
 
 # Audio output module (string)
-aout=pulse
+aout=any
 
 # Media role (string)
 #role=video
@@ -3786,7 +3873,7 @@ sub-language=English
 #meta-url=
 
 # File caching (ms) (integer)
-#file-caching=300
+#file-caching=1000
 
 # Live capture caching (ms) (integer)
 #live-caching=300
