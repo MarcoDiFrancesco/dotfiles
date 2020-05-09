@@ -6,14 +6,7 @@ export ZSH=/usr/share/oh-my-zsh
 export ZSH_BASE=/usr/share/zsh
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='nano'
-# else
-#   export EDITOR='code'
-# fi
-
-export EDITOR='vim'
-#export PAGER='less -r'
+export EDITOR='nvim'
 export MOUNT_DIR=/run/media/marco
 
 # Add scripts folder to path
@@ -30,3 +23,9 @@ export GOPATH=$HOME/.cache/go
 #    eval $(gnome-keyring-daemon --start)
 #    export SSH_AUTH_SOCK
 #fi
+
+# Save the location of the current completion dump file.
+if [ -z "$ZSH_COMPDUMP" ]; then
+  ZSH_COMPDUMP="${ZDOTDIR:-${ZSH}}/cache/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+fi
+
