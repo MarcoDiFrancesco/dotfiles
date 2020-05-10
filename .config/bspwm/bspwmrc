@@ -8,12 +8,14 @@ killall --quiet nm-applet
 
 get_external_monitor=$(xrandr --query | grep -w 'DP-1')
 if [[ $get_external_monitor = *disconnected* ]]; then
-    xrandr --output eDP-1 --auto
-    bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+    xrandr --auto
+    if [[ ! $(bspc query --desktops | wc -l) == 10 ]]; then
+	bspc monitor -d I II III IV V VI VII VIII IX X
+    fi
 else
     xrandr --output DP-1 --auto --right-of eDP-1
-    bspc monitor eDP-1 -d 1 2 3 4 5
-    bspc monitor DP-1 -d 6 7 8 9 10
+    bspc monitor eDP-1 -d I II III IV V
+    bspc monitor DP-1 -d VI VII VIII IX X
     # Polybar external desktop
     polybar bar2 >> /var/log/polybar/polybar2.log 2>&1 &
 fi
@@ -23,6 +25,10 @@ polybar bar1 >> /var/log/polybar/polybar1.log 2>&1 &
 
 bspc config border_width         2
 bspc config window_gap          12
+bspc config remove_disabled_monitors true
+
+bspc config remove_unplugged_monitors true
+
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
