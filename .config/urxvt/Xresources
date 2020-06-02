@@ -56,7 +56,6 @@ URxvt.saveline: 2048
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
-URxvt.depth: 24
 
 !! Keybinds
 URxvt.keysym.Shift-Up: command:\033]720;1\007
@@ -67,5 +66,12 @@ URxvt.keysym.Control-Right: \033[1;5C
 URxvt.keysym.Control-Left: \033[1;5D
 
 !! Set transparency
-!URxvt.depth: 32
-!URxvt.background: rgba:1111/1111/1111/dddd
+URxvt.depth: 32
+URxvt.background: rgba:1111/1111/1111/dddd
+
+!! Extensions
+!! matcher detects links
+!! resize-font used to resize font on the fly
+URxvt.perl-ext-common: default,matcher,resize-font
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
