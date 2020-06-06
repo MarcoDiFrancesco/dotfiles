@@ -93,6 +93,7 @@ alias lt='exa -T'
 alias open='open_command'
 alias config='/usr/bin/git --git-dir=$HOME/projects/linux-config --work-tree=$HOME'
 alias r='ranger'
+
 # compinit is set on oh-my-zsh.sh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
