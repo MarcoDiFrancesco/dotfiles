@@ -13,7 +13,7 @@ if [[ $get_external_monitor = *disconnected* ]]; then
 	bspc monitor -d 1 2 3 4 5 6 7 8 9 10
     fi
 else
-    xrandr --output DP-1 --auto --right-of eDP-1
+    xrandr --output DP-1 --auto --left-of eDP-1
     bspc monitor eDP-1 -d 1 2 3 4 5
     bspc monitor DP-1 -d 6 7 8 9 10
     # Polybar external desktop
@@ -29,11 +29,12 @@ bspc config remove_disabled_monitors true
 
 bspc config remove_unplugged_monitors true
 
-
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+# Autolock screen
+xautolock -time 15 -locker '/home/marco/scripts/lock' -detectsleep &
 # Set wallpaper
 exec feh --no-fehbg --bg-scale '/home/marco/Documents/wallpaper.jpeg' &
 # Keybinds
@@ -44,3 +45,4 @@ picom &
 udiskie &
 # Network manager polybar applet
 nm-applet &
+

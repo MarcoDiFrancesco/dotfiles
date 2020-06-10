@@ -93,6 +93,7 @@ alias lt='exa -T'
 alias open='open_command'
 alias config='/usr/bin/git --git-dir=$HOME/projects/linux-config --work-tree=$HOME'
 alias r='ranger'
+alias generatePassword='pwgen -s --numerals -1 16 | tr -d '\n' | xclip -selection clipboard'
 
 # compinit is set on oh-my-zsh.sh
 source /usr/share/fzf/key-bindings.zsh
