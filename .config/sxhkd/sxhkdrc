@@ -1,19 +1,5 @@
-# bspwm hotkeys
-
-# Windows management
-# hidden - Is hidden and doesn’t occupy any tiling space.
-# sticky - Stays in the focused desktop of its monitor.
-# private - Tries to keep the same tiling position/size.
-# locked - Ignores the node --close message.
-# marked - Is marked (useful for deferred actions). A marked node becomes unmarked after being sent on a preselected node.
-# center - Center window if state=floating.
-# follow - Change to monitor/desktop of window.
-# manage - Window is managed. An unmanaged window is not part of the tree.
-# focus - Focus the window.
-# border - Visibility of the window border.
-
 # Reload bspwm
-mod4 + r
+mod4 + alt + r
 	bspc wm -r
 
 # Close
@@ -28,15 +14,15 @@ mod4 + shift + w
 mod4 + m
 	bspc desktop -l next
 
-# set the window state
-lock + {t,g,f}
+# Set the window state
+mod4 + {t,g,f}
 	bspc node -t {tiled,floating,fullscreen}
 
-# focus the node in the given direction
-lock + alt + {h,j,k,l}
+# Focus the node in the given direction
+alt + {Left,Down,Up,Right}
 	bspc node -f {west,south,north,east}
 
-# focus the last node/desktop
+# Focus the last node/desktop
 mod4 + Tab
 	bspc node -f last
 
@@ -65,8 +51,6 @@ mod4 + alt + @{1-9,0,minus,equal}
 # Audio
 {XF86AudioRaiseVolume,XF86AudioLowerVolume,XF86AudioMute}
 	volume-set -{i,d,m}
-mod4 + {n,m}
-	volume-set -{d,i}
 
 # Brightness
 {XF86MonBrightnessDown,XF86MonBrightnessUp}
@@ -75,17 +59,11 @@ mod4 + {i,o}
 	brightness-set -{d,i}
 
 # Screenshot
-{_,shift,ctrl} + @Print
+{_,shift + ,ctrl + }@Print
 	screenshot -{c,l,i}
-mod4 + {_,shift+,ctrl+}@p
-	screenshot -{c,l,i}
-
-# Delete
-mod4 + @BackSpace
-	xdotool key --clearmodifiers Delete
 
 # Sleep
-mod4 + y
+mod4 + alt + y
 	systemctl suspend
 
 # Clipboard 
@@ -105,13 +83,9 @@ mod4 + c
 	chromium
 
 # Code
-mode4 + x
+mod4 + x
 	code
 
 # Ranger in urxvt client session
 mod4 + z
 	urxvtc -e ranger
-
-# Delete # ` does not work
-# mod4 + @Escape
-# 	xdotool key --clearmodifiers '`'
