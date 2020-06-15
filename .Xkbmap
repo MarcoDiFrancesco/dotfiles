@@ -1197,8 +1197,8 @@ xkb_symbols "pc+us(altgr-intl)+inet(evdev)" {
 
     key <ESC> {
         type= "CUST_MOD",
-        symbols[Group1]= [               Escape,              Escape,               grave ],
-        actions[Group1]= [      NoAction(),      NoAction(),   RedirectKey(keycode=<TLDE>, clearmods=Mod4) ]
+        symbols[Group1]= [          Escape,          Escape,                                       grave ],
+        actions[Group1]= [      NoAction(),      NoAction(), RedirectKey(keycode=<TLDE>, clearmods=Mod4) ]
     };
     key <AE01> {
         type= "FOUR_LEVEL",
@@ -1242,15 +1242,16 @@ xkb_symbols "pc+us(altgr-intl)+inet(evdev)" {
     };
     key <AE11> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [           minus,      underscore,           minus,      underscore ]
+        symbols[Group1]= [           minus,      underscore,                minus,       underscore ]
     };
     key <AE12> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [           equal,            plus,        equal,        plus ]
+        symbols[Group1]= [           equal,            plus,                equal,             plus ]
     };
     key <BKSP> {
         type= "CUST_MOD",
-        symbols[Group1]= [               BackSpace,               BackSpace,               Delete]
+        symbols[Group1]= [       BackSpace,       BackSpace,                                      Delete ],
+        actions[Group1]= [      NoAction(),      NoAction(), RedirectKey(keycode=<DELE>, clearmods=Mod4) ]
     };
     key  <TAB> {         [             Tab,    ISO_Left_Tab ] };
     key <AD01> {
@@ -1291,8 +1292,8 @@ xkb_symbols "pc+us(altgr-intl)+inet(evdev)" {
     };
     key <AD10> {
         type= "CUST_MOD",
-        symbols[Group1]= [               p,               P,               Print],
-        actions[Group1]= [      NoAction(),      NoAction(),   RedirectKey(keycode=<I218>, clearmods=Mod4) ]
+        symbols[Group1]= [               p,               P,                                       Print ],
+        actions[Group1]= [      NoAction(),      NoAction(), RedirectKey(keycode=<I218>, clearmods=Mod4) ]
     };
     key <AD11> {
         type= "FOUR_LEVEL",
@@ -1326,23 +1327,23 @@ xkb_symbols "pc+us(altgr-intl)+inet(evdev)" {
     };
     key <AC06> {
         type= "CUST_MOD",
-        symbols[Group1]= [               h,               H,               Left],
-        actions[Group1]= [      NoAction(),      NoAction(),   RedirectKey(keycode=<LEFT>, clearmods=Mod4) ]
+        symbols[Group1]= [               h,               H,                                        Left ],
+        actions[Group1]= [      NoAction(),      NoAction(), RedirectKey(keycode=<LEFT>, clearmods=Mod4) ]
     };
     key <AC07> {
         type= "CUST_MOD",
-        symbols[Group1]= [               j,               J,               Down],
-        actions[Group1]= [      NoAction(),      NoAction(),   RedirectKey(keycode=<DOWN>, clearmods=Mod4) ]
+        symbols[Group1]= [               j,               J,                                        Down ],
+        actions[Group1]= [      NoAction(),      NoAction(), RedirectKey(keycode=<DOWN>, clearmods=Mod4) ]
     };
     key <AC08> {
         type= "CUST_MOD",
-        symbols[Group1]= [               k,               K,               Up],
+        symbols[Group1]= [               k,               K,                                        Up   ],
         actions[Group1]= [      NoAction(),      NoAction(),   RedirectKey(keycode=<UP>, clearmods=Mod4) ]
     };
     key <AC09> {
         type= "CUST_MOD",
-        symbols[Group1]= [               l,               L,               Right],
-        actions[Group1]= [      NoAction(),      NoAction(),   RedirectKey(keycode=<RGHT>, clearmods=Mod4) ]
+        symbols[Group1]= [               l,               L,                                       Right ],
+        actions[Group1]= [      NoAction(),      NoAction(), RedirectKey(keycode=<RGHT>, clearmods=Mod4) ]
     };
     key <AC10> {
         type= "FOUR_LEVEL",
@@ -1383,13 +1384,13 @@ xkb_symbols "pc+us(altgr-intl)+inet(evdev)" {
     };
     key <AB06> {
         type= "CUST_MOD",
-        symbols[Group1]= [               n,               N,               XF86AudioLowerVolume ],
-        actions[Group1]= [      NoAction(),      NoAction(),   RedirectKey(keycode=<VOL->, clearmods=Mod4) ]
+        symbols[Group1]= [               n,               N,                        XF86AudioLowerVolume ],
+        actions[Group1]= [      NoAction(),      NoAction(), RedirectKey(keycode=<VOL->, clearmods=Mod4) ]
     };
     key <AB07> {
         type= "CUST_MOD",
-        symbols[Group1]= [               m,               M,               XF86AudioRaiseVolume ],
-        actions[Group1]= [      NoAction(),      NoAction(),   RedirectKey(keycode=<VOL+>, clearmods=Mod4) ]
+        symbols[Group1]= [               m,               M,                        XF86AudioRaiseVolume ],
+        actions[Group1]= [      NoAction(),      NoAction(), RedirectKey(keycode=<VOL+>, clearmods=Mod4) ]
     };
     key <AB08> {
         type= "FOUR_LEVEL",
