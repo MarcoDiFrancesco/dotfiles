@@ -1,1 +1,0 @@
-[[ -f ~/.zprofile ]] && source ~/.zprofile

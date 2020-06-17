@@ -46,10 +46,6 @@ export UPDATE_ZSH_DAYS=14
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-HISTFILE=$HOME/.history
-HISTSIZE=10000 # Number of commands loaded into memory
-SAVEHIST=10000 # Number of commands saved into $HISTFILE
-
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
@@ -92,7 +88,7 @@ alias lll='exa -l | less'
 alias lt='exa -T'
 alias open='open_command'
 alias config='/usr/bin/git --git-dir=$HOME/projects/linux-config --work-tree=$HOME'
-alias r='ranger'
+alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias generatePassword='pwgen -s --numerals -1 16 | tr -d '\n' | xclip -selection clipboard'
 
 # compinit is set on oh-my-zsh.sh
@@ -104,4 +100,7 @@ source /usr/share/fzf/completion.zsh
 
 # https://www.topbug.net/blog/2016/09/27/make-gnu-less-more-powerful/
 #export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
+
+# Change cursor shape
+printf '\033[5 q\r'
 

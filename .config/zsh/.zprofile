@@ -1,9 +1,16 @@
-# URXVT config file
-exec /usr/bin/xrdb /home/marco/.config/urxvt/Xresources &
+# Script sourced by LightDM
+
 # Map super keys
-exec /usr/bin/xmodmap /home/marco/.config/xmodmaprc/change_super_key &
-# Urxvt daemon
+exec /usr/bin/xmodmap $HOME/.config/xmodmaprc/change_super_key &
+
+# URXVT config file
+exec /usr/bin/xrdb $HOME/.config/urxvt/Xresources &
+
+# Urxvt daemon condif and execution
+# Not placed in zshenv because doesn't get sourced before this file
+export RXVT_SOCKET="$HOME/.cache/urxvt/urxvtd-socket"
 urxvtd -q &
+
 # Clipboard daemon
 clipster -d &
 
