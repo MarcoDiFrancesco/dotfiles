@@ -64,7 +64,7 @@ mod4 + {i,o}
 
 # Sleep
 mod4 + alt + y
-	systemctl suspend
+	/home/marco/scripts/lock
 
 # Clipboard 
 mod4 + v

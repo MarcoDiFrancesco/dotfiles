@@ -88,7 +88,7 @@ alias lll='exa -l | less'
 alias lt='exa -T'
 alias open='open_command'
 alias config='/usr/bin/git --git-dir=$HOME/projects/linux-config --work-tree=$HOME'
-alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias r='ranger --choosedir=$HOME/.cache/ranger/dir; LASTDIR=`cat $HOME/.cache/ranger/dir`; cd "$LASTDIR"; rm $HOME/.cache/ranger/dir;'
 alias generatePassword='pwgen -s --numerals -1 16 | tr -d '\n' | xclip -selection clipboard'
 
 # compinit is set on oh-my-zsh.sh
