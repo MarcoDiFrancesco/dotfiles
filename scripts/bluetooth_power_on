@@ -11,5 +11,9 @@ if [[ $(bluetoothctl show | grep 'Powered: no') = *Powered:\ no* ]]; then
   bluetoothctl power on
   echo "bluetoothctl power on"
 else
-  echo "Already on"
+  if [[ "$(bluetoothctl show | grep 'Powered: yes')" = *Powered:\ yes ]]; then
+    echo "Already on"
+    # Connect to mouse
+    bluetoothctl connect CD:9F:B9:BD:FA:F4
+  fi
 fi
