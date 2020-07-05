@@ -11,4 +11,3 @@ x-scheme-handler/http=chromium.desktop
 x-scheme-handler/https=chromium.desktop
 x-scheme-handler/mailto=chromium.desktop
 x-scheme-handler/webcal=chromium.desktop
-x-scheme-handler/discord-478576776990425110=discord-478576776990425110.desktop
