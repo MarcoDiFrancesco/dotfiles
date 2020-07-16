@@ -11,6 +11,8 @@ font pango:Noto Mono Regular 10
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# I'm not understanding the above config, another way to lock screen
+bindsym $mod4+$mod1+y exec --no-startup-id lock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -29,47 +31,37 @@ bindsym $mod4+s exec urxvtc >> /tmp/ranger.log 2>&1 &
 bindsym $mod4+w kill
 
 # Change focus
-#bindsym $mod4+Left focus left
-#bindsym $mod4+Down focus down
-#bindsym $mod4+Up focus up
-#bindsym $mod4+Right focus right
+bindsym $mod1+Left focus left
+bindsym $mod1+Down focus down
+bindsym $mod1+Up focus up
+bindsym $mod1+Right focus right
 
-## move focused window
-#bindsym $mod4+Shift+j move left
-#bindsym $mod4+Shift+k move down
-#bindsym $mod4+Shift+l move up
-#bindsym $mod4+Shift+semicolon move right
+# Move focused window
+bindsym $mod1+Shift+Left move left
+bindsym $mod1+Shift+Down move down
+bindsym $mod1+Shift+Up move up
+bindsym $mod1+Shift+Right move right
 
-## alternatively, you can use the cursor keys
-#bindsym $mod4+Shift+Left move left
-#bindsym $mod4+Shift+Down move down
-#bindsym $mod4+Shift+Up move up
-#bindsym $mod4+Shift+Right move right
-
-# split in horizontal orientation
-bindsym $mod4+g split h
-
-# split in vertical orientation
-bindsym $mod4+v split v
-
-# enter fullscreen mode for the focused container
+# Fullscreen mode for the focused container
 bindsym $mod4+f fullscreen toggle
 
+# Split in horizontal and vertical orientation (use toggle split to change orientation)
+bindsym $mod4+g split h
+bindsym $mod4+v split v
+
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod4+y layout stacking
-bindsym $mod4+t layout tabbed
+#bindsym $mod4+y layout stacking
+#bindsym $mod4+t layout tabbed
 bindsym $mod4+e layout toggle split
 
-# toggle tiling / floating
-bindsym $mod4+Shift+space floating toggle
+# Toggle floating / tiling
+bindsym $mod4+t floating toggle
 
-# change focus between tiling / floating windows
-bindsym $mod4+space focus mode_toggle
+# Change focus between tiling / floating windows
+#bindsym $mod4+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod4+a focus parent
-
-# focus the child container
+# focus the parent / child container
+#bindsym $mod4+a focus parent
 #bindsym $mod4+d focus child
 
 # Define names for default workspaces.
@@ -110,42 +102,39 @@ bindsym $mod4+Shift+9 move container to workspace number $ws9
 bindsym $mod4+Shift+0 move container to workspace number $ws10
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod4+Shift+r restart
+bindsym $mod4+$mod1+r restart
 # exit i3 (logs you out of your X session)
-#bindsym $mod4+Shift+e exec "i3 exit"
-bindsym $mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-	# These bindings trigger as soon as you enter the resize mode
-	bindsym j resize shrink width 10 px or 10 ppt
-	bindsym k resize grow height 10 px or 10 ppt
-	bindsym l resize shrink height 10 px or 10 ppt
-	bindsym semicolon resize grow width 10 px or 10 ppt
+# Resize window (you can also use the mouse for that)
+# bindsym $mod4+r mode "resize"
+# mode "resize" {
+# 	# These bindings trigger as soon as you enter the resize mode
+# 	bindsym j resize shrink width 10 px or 10 ppt
+# 	bindsym k resize grow height 10 px or 10 ppt
+# 	bindsym l resize shrink height 10 px or 10 ppt
+# 	bindsym semicolon resize grow width 10 px or 10 ppt
 
-	# same bindings, but for the arrow keys
-	bindsym Left resize shrink width 10 px or 10 ppt
-	bindsym Down resize grow height 10 px or 10 ppt
-	bindsym Up resize shrink height 10 px or 10 ppt
-	bindsym Right resize grow width 10 px or 10 ppt
+# 	# same bindings, but for the arrow keys
+# 	bindsym Left resize shrink width 10 px or 10 ppt
+# 	bindsym Down resize grow height 10 px or 10 ppt
+# 	bindsym Up resize shrink height 10 px or 10 ppt
+# 	bindsym Right resize grow width 10 px or 10 ppt
 
-	# back to normal: Enter or Escape or $mod4+r
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod4+r mode "default"
-}
-
-bindsym $mod4+r mode "resize"
+# 	# back to normal: Enter or Escape or $mod4+r
+# 	bindsym Return mode "default"
+# 	bindsym Escape mode "default"
+# 	bindsym $mod4+r mode "default"
+# }
 
 # Start polybar on startup
 exec_always --no-startup-id polybar bar1
 exec_always --no-startup-id polybar bar2
+# Set dual monitor/screen
+exec_always --no-startup-id xrandr --output DP-1 --auto --right-of eDP-1
 
 # Set wallpaper
 exec_always --no-startup-id feh --no-fehbg --bg-scale '/home/marco/Documents/wallpaper.jpeg'
-
-# Set dual monitor/screen
-exec_always --no-startup-id xrandr --output DP-1 --auto --right-1 eDP-1
 
 # Set workspaces to specific monitor
 workspace 1 output eDP-1
@@ -162,10 +151,10 @@ workspace 10 output DP-1
 # Remove borders
 for_window [class="^.*"] border pixel 3
 
-# Screenshot
-bindsym --release $mod4+p exec --no-startup-id "screenshot -l"
-bindsym --release $mod4+Ctrl+p exec --no-startup-id "screenshot -i"
-bindsym --release $mod4+Shift+p exec --no-startup-id "screenshot -c"
+# Screenshot (Cropped, Imgurm, All screen)
+bindsym --release Print exec --no-startup-id "screenshot -c"
+bindsym --release Ctrl+Print exec --no-startup-id "screenshot -i"
+bindsym --release Shift+Print exec --no-startup-id "screenshot -l"
 
 # Chromium
 bindsym $mod4+c exec chromium
