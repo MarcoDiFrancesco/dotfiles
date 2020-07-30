@@ -1,0 +1,2 @@
+#!/bin/bash
+chromium "--profile-directory=Profile 5" --app-id=ncmjhecbjeaamljdfahankockkkdmedg
