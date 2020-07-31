@@ -103,35 +103,11 @@ bindsym $mod4+Shift+0 move container to workspace number $ws10
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod4+$mod1+r restart
-# exit i3 (logs you out of your X session)
-#bindsym $mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# Resize window (you can also use the mouse for that)
-# bindsym $mod4+r mode "resize"
-# mode "resize" {
-# 	# These bindings trigger as soon as you enter the resize mode
-# 	bindsym j resize shrink width 10 px or 10 ppt
-# 	bindsym k resize grow height 10 px or 10 ppt
-# 	bindsym l resize shrink height 10 px or 10 ppt
-# 	bindsym semicolon resize grow width 10 px or 10 ppt
-
-# 	# same bindings, but for the arrow keys
-# 	bindsym Left resize shrink width 10 px or 10 ppt
-# 	bindsym Down resize grow height 10 px or 10 ppt
-# 	bindsym Up resize shrink height 10 px or 10 ppt
-# 	bindsym Right resize grow width 10 px or 10 ppt
-
-# 	# back to normal: Enter or Escape or $mod4+r
-# 	bindsym Return mode "default"
-# 	bindsym Escape mode "default"
-# 	bindsym $mod4+r mode "default"
-# }
-
-# Start polybar on startup
-exec_always --no-startup-id polybar bar1
-exec_always --no-startup-id polybar bar2
+# Start polybar top bars
+exec_always --no-startup-id polybar_start
 # Set dual monitor/screen
-exec_always --no-startup-id xrandr --output DP-1 --auto --right-of eDP-1
+#exec_always --no-startup-id xrandr --output DP-1 --auto --right-of eDP-1
 
 # Set wallpaper
 exec_always --no-startup-id feh --no-fehbg --bg-scale '/home/marco/Documents/wallpaper.jpeg'
