@@ -10,7 +10,6 @@
 	"pacmanconf": "/etc/pacman.conf",
 	"redownload": "no",
 	"rebuild": "no",
-	"batchinstall": false,
 	"answerclean": "None",
 	"answerdiff": "None",
 	"answeredit": "",
@@ -38,6 +37,7 @@
 	"cleanmenu": true,
 	"diffmenu": true,
 	"editmenu": false,
-	"combinedupgrade": false,
-	"useask": false
+	"combinedupgrade": true,
+	"useask": false,
+	"batchinstall": false
 }
