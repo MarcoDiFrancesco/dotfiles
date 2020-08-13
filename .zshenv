@@ -15,7 +15,7 @@ export SAVEHIST=10000 # Number of commands saved into $HISTFILE
 export ZDOTDIR="$HOME/.config/zsh"
 
 # Preferred editor for local and remote sessions
-export EDITOR="nvim"
+export EDITOR="vim"
 export MOUNT_DIR="/run/media/marco"
 
 # Nvidia config location
