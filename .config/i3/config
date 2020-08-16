@@ -47,7 +47,7 @@ bindsym $mod4+f fullscreen toggle
 
 # Split in horizontal and vertical orientation (use toggle split to change orientation)
 bindsym $mod4+g split h
-bindsym $mod4+v split v
+bindsym $mod4+h split v
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod4+y layout stacking
@@ -137,3 +137,7 @@ bindsym $mod4+c exec chromium
 
 # Chromium
 bindsym $mod4+d exec rofi -show combi
+
+# Clipboard
+bindsym $mod4+v exec gpaste-client ui
+exec_always --no-startup-id gpaste-client start
