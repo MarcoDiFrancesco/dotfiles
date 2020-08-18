@@ -86,10 +86,18 @@ alias ls='exa'
 alias ll='l'
 alias lll='exa -l | less'
 alias lt='exa -T'
-alias open='open_command'
+# Config repostory
 alias config='/usr/bin/git --git-dir=$HOME/projects/linux-config --work-tree=$HOME'
+# Ranger get directory on exit and cd into it
 alias r='ranger --choosedir=$HOME/.cache/ranger/dir; LASTDIR=`cat $HOME/.cache/ranger/dir`; cd "$LASTDIR"; rm $HOME/.cache/ranger/dir;'
+# Generate random password
 alias generatePassword='pwgen -s --numerals -1 16 | tr -d '\n' | xclip -selection clipboard'
+# Trash list order by date
+alias trash-ls='trash-list | sort -r | grep `pwd`'
+# Calendar alias
+alias calendar='xdg-open https://calendar.google.com'
+# Get folder size as output sort by name
+alias dir_size='du --max-depth=1 --human-readable | sort --key=2'
 
 # compinit is set on oh-my-zsh.sh
 source /usr/share/fzf/key-bindings.zsh
