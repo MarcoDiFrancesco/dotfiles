@@ -1,0 +1,3 @@
+#!/bin/bash
+# Open notes in code
+code /home/marco/projects/LittleProjects/Notes/
