@@ -1,6 +1,8 @@
 #!/bin/bash
 # Source: https://unix.stackexchange.com/a/190155/337926
 
+export DISPLAY=:0 # If not placed crontab will not show the notification TODO test it
+
 ICON="/home/marco/Documents/low-battery.svg" # eye candy
 
 BATTERY_LEVEL=$(cat /sys/class/power_supply/BAT0/capacity)
