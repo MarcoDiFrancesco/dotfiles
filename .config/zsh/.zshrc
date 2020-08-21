@@ -98,6 +98,8 @@ alias trash-ls='trash-list | sort -r | grep `pwd`'
 alias calendar='xdg-open https://calendar.google.com'
 # Get folder size as output sort by name
 alias dir_size='du --max-depth=1 --human-readable | sort --key=2'
+# Avoid using deprecated scp
+alias scp='echo "scp is deprecated! Use rsync instead"'
 
 # compinit is set on oh-my-zsh.sh
 source /usr/share/fzf/key-bindings.zsh
