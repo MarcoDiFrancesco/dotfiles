@@ -87,7 +87,7 @@ alias ll='l'
 alias lll='exa -l | less'
 alias lt='exa -T'
 # Config repostory
-alias config='/usr/bin/git --git-dir=$HOME/projects/linux-config --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=/run/media/marco/TOSHIBA_MQ04ABF100/project/linux-config --work-tree=$HOME'
 # Ranger get directory on exit and cd into it
 alias r='ranger --choosedir=$HOME/.cache/ranger/dir; LASTDIR=`cat $HOME/.cache/ranger/dir`; cd "$LASTDIR"; rm $HOME/.cache/ranger/dir;'
 # Generate random password
@@ -100,7 +100,9 @@ alias calendar='xdg-open https://calendar.google.com'
 alias dir_size='du --max-depth=1 --human-readable | sort --key=2'
 # Avoid using deprecated scp
 alias scp='echo "scp is deprecated! Use rsync instead"'
-
+# Pip aliases to avoid using it
+alias pip='./.venv/bin/pip'
+alias pip-yes='bash -c pip'
 # compinit is set on oh-my-zsh.sh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
