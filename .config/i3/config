@@ -112,6 +112,10 @@ exec_always --no-startup-id polybar_start
 # Set wallpaper
 exec_always --no-startup-id feh --no-fehbg --bg-scale '/home/marco/Documents/wallpaper.jpeg'
 
+# Set keyboard keys
+exec_always --no-startup-id xmodmap /home/marco/.config/xmodmaprc/change_super_key
+
+
 # Set workspaces to specific monitor
 workspace 1 output eDP-1
 workspace 2 output eDP-1
@@ -131,13 +135,10 @@ for_window [class="^.*"] border pixel 3
 bindsym --release Print exec --no-startup-id "screenshot -c"
 bindsym --release Ctrl+Print exec --no-startup-id "screenshot -i"
 bindsym --release Shift+Print exec --no-startup-id "screenshot -l"
-
 # Chromium
 bindsym $mod4+c exec chromium
-
-# Chromium
+# Rofi
 bindsym $mod4+d exec rofi -show combi
-
 # Clipboard
 bindsym $mod4+v exec gpaste-client ui
 exec_always --no-startup-id gpaste-client start
