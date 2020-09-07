@@ -132,7 +132,8 @@ workspace 10 output DP-1
 for_window [class="^.*"] border pixel 3
 
 # Screenshot (Cropped, Imgurm, All screen)
-bindsym --release Print exec --no-startup-id "screenshot -c"
+#bindsym --release Print exec --no-startup-id "screenshot -c"
+bindsym --release Print exec --no-startup-id "imgur-screenshot"
 bindsym --release Ctrl+Print exec --no-startup-id "screenshot -i"
 bindsym --release Shift+Print exec --no-startup-id "screenshot -l"
 # Chromium
