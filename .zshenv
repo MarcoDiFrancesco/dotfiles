@@ -42,13 +42,6 @@ export GRADLE_USER_HOME="$HOME/.cache/gradle"
 # Urxvt config location
 #export RXVT_SOCKET="$HOME/.cache/urxvt/urxvtd-socket"
 
-# Start gnome keyring
-# https://wiki.archlinux.org/index.php/GNOME/Keyring#With_a_display_manager
-#if [ -n "$DESKTOP_SESSION" ];then
-#    eval $(gnome-keyring-daemon --start)
-#    export SSH_AUTH_SOCK
-#fi
-
 # Save the location of the current completion dump file.
 if [ -z "$ZSH_COMPDUMP" ]; then
     export ZSH_COMPDUMP="${HOME}/.cache/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
