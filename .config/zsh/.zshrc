@@ -91,9 +91,9 @@ alias config='/usr/bin/git --git-dir=/run/media/marco/TOSHIBA_MQ04ABF100/project
 # Ranger get directory on exit and cd into it
 alias r='ranger --choosedir=$HOME/.cache/ranger/dir; LASTDIR=`cat $HOME/.cache/ranger/dir`; cd "$LASTDIR"; rm $HOME/.cache/ranger/dir;'
 # Generate random password
-alias generatePassword='pwgen -s --numerals -1 16 | tr -d '\n' | xclip -selection clipboard'
+#alias generatePassword='pwgen -s --numerals -1 16 | tr -d '\n' | gpaste-client add-password generated-password'
 # Trash list order by date
-alias trash-ls='trash-list | sort -r | grep `pwd`'
+alias trash-ls='trash-list | sort | grep `pwd`'
 # Calendar alias
 alias calendar='xdg-open https://calendar.google.com'
 # Get folder size as output sort by name

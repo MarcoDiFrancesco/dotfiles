@@ -1,3 +1,6 @@
+# Overrides /usr/share/doc/ranger/config/commands.conf
+# Compare with https://raw.githubusercontent.com/ranger/ranger/master/ranger/config/commands.py
+
 from __future__ import absolute_import, division, print_function
 
 import os
