@@ -133,9 +133,9 @@ for_window [class="^.*"] border pixel 3
 
 # Screenshot (Cropped, Imgurm, All screen)
 #bindsym --release Print exec --no-startup-id "screenshot -c"
-bindsym --release Print exec --no-startup-id "imgur-screenshot"
-bindsym --release Ctrl+Print exec --no-startup-id "screenshot -i"
-bindsym --release Shift+Print exec --no-startup-id "screenshot -l"
+bindsym --release Print exec --no-startup-id "/home/marco/Documents/imgur-screenshot/imgur-screenshot"
+bindsym --release Ctrl+Print exec --no-startup-id scrot -s "/home/marco/Pictures/screenshot_$(date +"%Y-%m-%d")_$(date +"%H-%M-%S").png"
+bindsym --release Shift+Print exec --no-startup-id scrot "/home/marco/Pictures/screenshot_$(date +"%Y-%m-%d")_$(date +"%H-%M-%S").png"
 # Chromium
 bindsym $mod4+c exec chromium
 # Rofi
