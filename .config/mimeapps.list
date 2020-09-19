@@ -1,13 +1,26 @@
 [Default Applications]
-application/pdf=firefox.desktop
-text/html=chromium.desktop
 
+# ranger for directories, ranger-file for files
+application/zip=ranger-file.desktop
+
+# Pictures
+image/png=feh.desktop
+
+# Audio
 audio/mp3=vlc.desktop;
 audio/mp4=vlc.desktop;
+
+# Video
 video/mp4=vlc.desktop;
 video/avi=vlc.desktop;
+video/x-matroska=vlc.desktop; # .mkv
 
+# Chromium
+text/html=chromium.desktop
 x-scheme-handler/http=chromium.desktop
 x-scheme-handler/https=chromium.desktop
 x-scheme-handler/mailto=chromium.desktop
 x-scheme-handler/webcal=chromium.desktop
+
+# Firefox
+application/pdf=firefox.desktop
