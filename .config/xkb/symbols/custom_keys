@@ -1,0 +1,37 @@
+partial alphanumeric_keys
+xkb_symbols "keys" {
+    // A accents
+    replace key <AC01> { [ a, a, agrave, Agrave ] };
+    replace key <AC02> { [ s, S, aacute, Aacute ] };
+    // E accents
+    replace key <AD03> { [ e, E, egrave, Egrave ] };
+    replace key <AD04> { [ r, R, eacute, Eacute ] };
+    // I accents
+    replace key <AD08> { [ i, I, igrave, Igrave ] };
+    replace key <AE08> { [ 8, asterisk, iacute, Iacute ] };
+    // O accents
+    replace key <AD09> { [ o, O, ograve, Ograve ] };
+    replace key <AE09> { [ 9, parenleft, oacute, Oacute ] };
+    // U accents
+    replace key <AD07> { [ u, U, ugrave, Ugrave ] };
+    replace key <AE07> { [ 7, ampersand, uacute, Uacute ] };
+
+    // Add delete to backspace key
+    replace key <BKSP> { [ BackSpace, BackSpace, Delete ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<DELE>, clearmods=Mod4) ] };
+
+    // Add backtick to escape key
+    replace key <ESC> { [ Escape, Escape, grave ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<TLDE>, clearmods=Mod4) ] };
+
+    // Print key
+    replace key <AD10> { [ p, P, Print ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<I218>, clearmods=Mod4) ] };
+
+    // Volume keys
+    replace key <AB06> { [ n, N, XF86AudioLowerVolume ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<VOL->, clearmods=Mod4) ] };
+    replace key <AB07> { [ m, M, XF86AudioRaiseVolume ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<VOL+>, clearmods=Mod4) ] };
+
+    // Vim keys
+    replace key <AC06> { [ h, H, Left  ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<LEFT>, clearmods=Mod4) ] };
+    replace key <AC07> { [ j, J, Down  ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<DOWN>, clearmods=Mod4) ] };
+    replace key <AC08> { [ k, K, Up    ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<UP>, clearmods=Mod4) ] };
+    replace key <AC09> { [ l, L, Right ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<RGHT>, clearmods=Mod4) ] };
+};

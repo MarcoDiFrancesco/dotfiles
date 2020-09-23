@@ -708,7 +708,6 @@ xkb_compatibility "complete" {
     // interpret Caps_Lock+AnyOfOrNone(all) { // Lock the "CAPS behaviour" of making all lower case
     //     action= SetMods(modifiers=Mod4);
     // };
-    
     interpret ISO_Level2_Latch+Exactly(Shift) {
         useModMapMods=level1;
         action= LatchMods(modifiers=Shift,clearLocks,latchToLock);

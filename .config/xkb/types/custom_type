@@ -1,0 +1,11 @@
+xkb_types "type" {
+    type "CUST_MOD" {
+        modifiers= Shift+Mod4; 
+        map[Shift] = Level2;  // Maps shift and no Mod4. Shift+Alt goes here, too, because Alt isn't in modifiers.
+        map[Mod4] = Level3;
+        map[Shift+Mod4] = Level3;  // Maps shift and Mod4. Shift+Mod4+Alt goes here, too.
+        level_name[Level1]= "Base";
+        level_name[Level2]= "Shift";
+        level_name[Level3]= "Mod4";
+   };
+};
