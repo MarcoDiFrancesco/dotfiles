@@ -24,3 +24,4 @@ PATH="/home/marco/scripts:$PATH"
 
 # Picom compositor (taken from bspwm config)
 picom &
+

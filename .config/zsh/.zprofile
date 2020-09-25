@@ -23,3 +23,7 @@ fi
 if [ -f $HOME/.xsession-errors.old ]; then
 	rm $HOME/.xsession-errors.old
 fi
+
+# Set keyboard layout
+xkbcomp -I$HOME/.config/xkb ~/.config/xkb/map $DISPLAY
+
