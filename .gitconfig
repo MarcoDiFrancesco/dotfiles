@@ -1,0 +1,12 @@
+[user]
+	email = marcodifran@gmail.com
+	name = MarcoDiFrancesco
+[credential]
+	helper = libsecret
+[color]
+	ui = true
+[core]
+	pager = less -r
+	excludesfile = /home/marco/.config/git/gitignore
+[pull]
+	ff = only

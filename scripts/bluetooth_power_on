@@ -2,17 +2,24 @@
 
 # Unlock if bluetooth card is locked (password requested)
 if [[ $(rfkill -r | grep 'bluetooth hci0 blocked') = *bluetooth\ hci0\ blocked* ]]; then
+  echo "Card was blocked, unblocking card"
   sudo rfkill unblock bluetooth
-  echo "sudo rfkill unblock bluetooth"
+fi
+
+# Check if bluetooth service is running
+if ! systemctl is-active --quiet bluetooth ; then
+  echo "Bluetooth service is off, enabling"
+  sudo systemctl enable bluetooth
+  sudo systemctl start bluetooth
 fi
 
 # Enable bluetooth card if powerd off
 if [[ $(bluetoothctl show | grep 'Powered: no') = *Powered:\ no* ]]; then
+  echo "Powering on card"
   bluetoothctl power on
-  echo "bluetoothctl power on"
 else
   if [[ "$(bluetoothctl show | grep 'Powered: yes')" = *Powered:\ yes ]]; then
-    echo "Already on"
+    echo "Card was on, connecting to device"
     # Connect to mouse
     bluetoothctl connect CD:9F:B9:BD:FA:F4
   fi

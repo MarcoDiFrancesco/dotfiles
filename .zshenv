@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+
+export ZDOTDIR="$HOME/.config/zsh"
+
 # Add scripts folder to path
 export PATH="/home/marco/scripts:$PATH"
 
@@ -11,8 +14,6 @@ export ZSH_BASE=/usr/share/zsh
 export HISTFILE="$HOME/.cache/zsh/history" 
 export HISTSIZE=10000 # Number of commands loaded into memory
 export SAVEHIST=10000 # Number of commands saved into $HISTFILE
-
-export ZDOTDIR="$HOME/.config/zsh"
 
 # Preferred editor for local and remote sessions
 export EDITOR="vim"
@@ -39,11 +40,5 @@ export GNUPGHOME="$HOME/.cache/gnupg"
 # Gradle config location
 export GRADLE_USER_HOME="$HOME/.cache/gradle"
 
-# Urxvt config location
-#export RXVT_SOCKET="$HOME/.cache/urxvt/urxvtd-socket"
-
 # Save the location of the current completion dump file.
-if [ -z "$ZSH_COMPDUMP" ]; then
-    export ZSH_COMPDUMP="${HOME}/.cache/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
-fi
-
+export ZSH_COMPDUMP="${HOME}/.cache/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"

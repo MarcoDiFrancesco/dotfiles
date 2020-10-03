@@ -10,7 +10,7 @@ font pango:Noto Mono Regular 10
 # they are included here as an example. Modify as you see fit.
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # I'm not understanding the above config, another way to lock screen
 bindsym $mod4+$mod1+y exec --no-startup-id lock
 
@@ -25,7 +25,8 @@ set $refresh_i3status killall -SIGUSR1 i3status
 floating_modifier $mod4
 
 # start a terminal
-bindsym $mod4+s exec urxvtc >> /tmp/ranger.log 2>&1 &
+bindsym $mod4+s exec urxvt # TODO: set to urxvtc
+exec_always --no-startup-id xrdb $HOME/.config/urxvt/Xresources 
 
 # Kill focused window
 bindsym $mod4+w kill
@@ -105,7 +106,7 @@ bindsym $mod4+Shift+0 move container to workspace number $ws10
 bindsym $mod4+$mod1+r restart
 
 # Set dual monitor/screen
-exec_always --no-startup-id xrandr --output DP-1 --auto --right-of eDP-1
+exec_always --no-startup-id xrandr --output DP1 --auto --right-of eDP1
 # Start polybar top bars
 exec_always --no-startup-id polybar_start
 
@@ -114,19 +115,19 @@ exec_always --no-startup-id feh --no-fehbg --bg-scale '/home/marco/Documents/wal
 
 # Set keyboard keys
 exec_always --no-startup-id xmodmap /home/marco/.config/xmodmaprc/change_super_key
-
+exec_always --no-startup-id xkbcomp -I$HOME/.config/xkb ~/.config/xkb/map $DISPLAY
 
 # Set workspaces to specific monitor
-workspace 1 output eDP-1
-workspace 2 output eDP-1
-workspace 3 output eDP-1
-workspace 4 output eDP-1
-workspace 5 output eDP-1
-workspace 6 output DP-1
-workspace 7 output DP-1
-workspace 8 output DP-1
-workspace 9 output DP-1
-workspace 10 output DP-1
+workspace 1 output eDP1
+workspace 2 output eDP1
+workspace 3 output eDP1
+workspace 4 output eDP1
+workspace 5 output eDP1
+workspace 6 output DP1
+workspace 7 output DP1
+workspace 8 output DP1
+workspace 9 output DP1
+workspace 10 output DP1
 
 # Remove borders
 for_window [class="^.*"] border pixel 3

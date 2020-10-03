@@ -21,7 +21,7 @@ margin-top = 5
 margin-bottom = 5
 
 [bar/bar1]
-monitor = ${env:MONITOR:eDP-1}
+monitor = ${env:MONITOR:eDP1}
 inherit = bar/master
 
 ;modules-left = bspwm
@@ -30,7 +30,7 @@ modules-center = date
 modules-right = pulseaudio backlight ram cpu wlan energy-mode battery temperature mouse headphones powermenu
 
 [bar/bar2]
-monitor = ${env:MONITOR:DP-1}
+monitor = ${env:MONITOR:DP1}
 inherit = bar/master
 
 ;modules-left = bspwm
