@@ -23,6 +23,3 @@
 # Path is sourced also in .zshenv
 PATH="/home/marco/scripts:$PATH"
 
-# Picom compositor (taken from bspwm config)
-picom &
-

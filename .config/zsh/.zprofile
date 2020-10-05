@@ -7,7 +7,7 @@
 # Not placed in zshenv because doesn't get sourced before this file
 export RXVT_SOCKET="$HOME/.cache/urxvtd-socket"
 # Urxvt daemon
-urxvtd -q &
+#urxvtd -q &
 
 # $HOME/.xsession-errors is hard coded in LightDM
 # Link .xsession-errors in log folder

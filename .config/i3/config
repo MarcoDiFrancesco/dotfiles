@@ -29,6 +29,9 @@ exec_always --no-startup-id urxvtd
 bindsym $mod4+s exec urxvtc
 exec_always --no-startup-id xrdb $HOME/.config/urxvt/Xresources 
 
+# Compositor
+exec_always --no-startup-id picom 
+
 # Kill focused window
 bindsym $mod4+w kill
 
