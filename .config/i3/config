@@ -25,8 +25,9 @@ set $refresh_i3status killall -SIGUSR1 i3status
 floating_modifier $mod4
 
 # start a terminal
-exec_always --no-startup-id urxvtd
+exec_always --no-startup-id urxvtd -q
 bindsym $mod4+s exec urxvtc
+#bindsym $mod4+s exec urxvt
 exec_always --no-startup-id xrdb $HOME/.config/urxvt/Xresources 
 
 # Compositor

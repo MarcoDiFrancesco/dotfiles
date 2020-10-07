@@ -21,6 +21,6 @@ else
   if [[ "$(bluetoothctl show | grep 'Powered: yes')" = *Powered:\ yes ]]; then
     echo "Card was on, connecting to device"
     # Connect to mouse
-    bluetoothctl connect CD:9F:B9:BD:FA:F4
+    bluetoothctl connect CD:9F:B9:BD:FA:F5
   fi
 fi

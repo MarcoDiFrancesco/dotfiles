@@ -3,6 +3,8 @@
 # ranger for directories, ranger-file for files
 application/zip=ranger-file.desktop
 
+application/csv=onlyoffice-desktopeditors.desktop
+
 # Pictures
 image/png=feh.desktop
 
