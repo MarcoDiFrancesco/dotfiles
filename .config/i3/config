@@ -112,8 +112,6 @@ bindsym $mod4+$mod1+r restart
 
 # Set dual monitor/screen
 exec_always --no-startup-id xrandr --output DP1 --auto --right-of eDP1
-# Start polybar top bars
-exec_always --no-startup-id polybar_start
 
 # Set wallpaper
 exec_always --no-startup-id feh --no-fehbg --bg-scale '/home/marco/Documents/wallpaper.jpeg'
@@ -136,6 +134,9 @@ workspace 10 output DP1
 
 # Remove borders
 for_window [class="^.*"] border pixel 3
+
+# Start polybar top bars
+exec_always --no-startup-id polybar_start
 
 # Screenshot (Cropped, Imgurm, All screen)
 bindsym --release Print exec --no-startup-id screenshot -w

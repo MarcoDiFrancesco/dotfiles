@@ -1,9 +1,5 @@
 # Script sourced by LightDM
 
-# URXVT config file
-# Exected by i3
-#exec /usr/bin/xrdb $HOME/.config/urxvt/Xresources &
-
 # Not placed in zshenv because doesn't get sourced before this file
 export RXVT_SOCKET="$HOME/.cache/urxvtd-socket"
 # Urxvt daemon
