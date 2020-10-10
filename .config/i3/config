@@ -24,14 +24,8 @@ set $refresh_i3status killall -SIGUSR1 i3status
 # Use Mouse+$mod4 to drag floating windows to their wanted position
 floating_modifier $mod4
 
-# start a terminal
-exec_always --no-startup-id urxvtd -q
-bindsym $mod4+s exec urxvtc
-#bindsym $mod4+s exec urxvt
-exec_always --no-startup-id xrdb $HOME/.config/urxvt/Xresources 
-
-# Compositor
-exec_always --no-startup-id picom 
+# Remove borders
+for_window [class="^.*"] border pixel 3
 
 # Kill focused window
 bindsym $mod4+w kill
@@ -51,24 +45,23 @@ bindsym $mod1+Shift+Right move right
 # Fullscreen mode for the focused container
 bindsym $mod4+f fullscreen toggle
 
-# Split in horizontal and vertical orientation (use toggle split to change orientation)
-bindsym $mod4+g split h
-bindsym $mod4+h split v
+# Choose where to spawn a new tab: bottom / left / toggle between the two
+#bindsym $mod4+g split h
+#bindsym $mod4+h split v
+bindsym $mod4+g split toggle
 
-# change container layout (stacked, tabbed, toggle split)
+# Change container layout: stacked (vertically), tabbed (horizontaly)
 #bindsym $mod4+y layout stacking
-#bindsym $mod4+t layout tabbed
+bindsym $mod4+r layout tabbed
+# Toggle orientation of 2 adjacent tabs (vertical / horizontal) 
 bindsym $mod4+e layout toggle split
-
 # Toggle floating / tiling
 bindsym $mod4+t floating toggle
-
-# Change focus between tiling / floating windows
+# Toggle focus of floating windows / window below
 #bindsym $mod4+space focus mode_toggle
-
-# focus the parent / child container
-#bindsym $mod4+a focus parent
-#bindsym $mod4+d focus child
+# Focus the parent / child container
+#bindsym $mod4+y focus parent
+#bindsym $mod4+u focus child
 
 # Define names for default workspaces.
 # We use variables to avoid repeating the names in multiple places.
@@ -112,13 +105,20 @@ bindsym $mod4+$mod1+r restart
 
 # Set dual monitor/screen
 exec_always --no-startup-id xrandr --output DP1 --auto --right-of eDP1
-
 # Set wallpaper
 exec_always --no-startup-id feh --no-fehbg --bg-scale '/home/marco/Documents/wallpaper.jpeg'
-
 # Set keyboard keys
 exec_always --no-startup-id xmodmap /home/marco/.config/xmodmaprc/change_super_key
 exec_always --no-startup-id xkbcomp -I$HOME/.config/xkb ~/.config/xkb/map $DISPLAY
+# Start polybar top bars
+exec_always --no-startup-id polybar_start
+# Start gpaste daemon
+exec_always --no-startup-id gpaste-client start
+# start a terminal
+exec_always --no-startup-id urxvtd -q
+exec_always --no-startup-id xrdb $HOME/.config/urxvt/Xresources 
+# Compositor
+exec_always --no-startup-id picom 
 
 # Set workspaces to specific monitor
 workspace 1 output eDP1
@@ -132,20 +132,13 @@ workspace 8 output DP1
 workspace 9 output DP1
 workspace 10 output DP1
 
-# Remove borders
-for_window [class="^.*"] border pixel 3
-
-# Start polybar top bars
-exec_always --no-startup-id polybar_start
-
 # Screenshot (Cropped, Imgurm, All screen)
-bindsym --release Print exec --no-startup-id screenshot -w
-bindsym --release Shift+Print exec --no-startup-id screenshot -s
+bindsym --release Print exec --no-startup-id screenshot -s
+bindsym --release Shift+Print exec --no-startup-id screenshot -w
 bindsym --release Ctrl+Print exec --no-startup-id "/home/marco/Documents/imgur-screenshot/imgur-screenshot"
-# Chromium
-bindsym $mod4+c exec chromium
-# Rofi
+
+# Shortcuts
+bindsym $mod4+s exec urxvtc
 bindsym $mod4+d exec rofi -show combi
-# Clipboard
+bindsym $mod4+c exec chromium
 bindsym $mod4+v exec gpaste-client ui
-exec_always --no-startup-id gpaste-client start
