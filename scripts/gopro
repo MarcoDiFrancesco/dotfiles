@@ -13,8 +13,9 @@ then
     sudo chmod 777 $DEV_MOUNT_DIR
     simple-mtpfs --device 1 $DEV_MOUNT_DIR
   else
-    sudo umount $DEV_MOUNT_DIR
-    simple-mtpfs --device 1 $DEV_MOUNT_DIR
+    echo "Already mounted"
+  #  sudo umount $DEV_MOUNT_DIR
+  #  simple-mtpfs --device 1 $DEV_MOUNT_DIR
   fi
   cd $DEV_MOUNT_DIR
   exec zsh -c ranger

@@ -119,6 +119,8 @@ exec_always --no-startup-id urxvtd -q
 exec_always --no-startup-id xrdb $HOME/.config/urxvt/Xresources 
 # Compositor
 exec_always --no-startup-id picom 
+# Disk mount
+exec_always --no-startup-id killall udiskie; udiskie 
 
 # Set workspaces to specific monitor
 workspace 1 output eDP1
