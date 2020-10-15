@@ -1,4 +1,4 @@
-xkb_types "type" {
+xkb_types {
     type "CUST_MOD" {
         modifiers= Shift+Mod4; 
         map[Shift] = Level2;  // Maps shift and no Mod4. Shift+Alt goes here, too, because Alt isn't in modifiers.

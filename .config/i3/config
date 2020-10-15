@@ -108,7 +108,6 @@ exec_always --no-startup-id xrandr --output DP1 --auto --right-of eDP1
 # Set wallpaper
 exec_always --no-startup-id feh --no-fehbg --bg-scale '/home/marco/Documents/wallpaper.jpeg'
 # Set keyboard keys
-exec_always --no-startup-id xmodmap /home/marco/.config/xmodmaprc/change_super_key
 exec_always --no-startup-id xkbcomp -I$HOME/.config/xkb ~/.config/xkb/map $DISPLAY
 # Start polybar top bars
 exec_always --no-startup-id polybar_start
