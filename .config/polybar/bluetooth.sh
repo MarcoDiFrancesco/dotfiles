@@ -12,7 +12,7 @@ bluetooth_print() {
                     # Disconnected
                     printf "%s" "%{F#66ffffff}"
                 fi
-                if [ $1 = "CD:9F:B9:BD:FA:F4" ]; then
+                if [ $1 = "CD:9F:B9:BD:FA:F5" ]; then
                     # Mouse
                     printf "%s" ""
                 elif [ $1 = "1C:52:16:3A:9A:65" ]; then
@@ -23,7 +23,7 @@ bluetooth_print() {
             else
                 # Disconnected
                 # Print disconnected only in one device
-                if [ $1 = "CD:9F:B9:BD:FA:F4" ]; then
+                if [ $1 = "CD:9F:B9:BD:FA:F5" ]; then
                     echo "%{F#66ffffff}"
                 elif [ $1 = "1C:52:16:3A:9A:65" ]; then
                     echo ""
@@ -49,7 +49,9 @@ toggle_device() {
 toggle_bluetooth() {
     if [[ "$(bluetoothctl show | grep 'Powered: no')" = *Powered:\ no ]]; then
         bluetoothctl power on
+        echo "Bluetooth powered on"
     elif [[ "$(bluetoothctl show | grep 'Powered: yes')" = *Powered:\ yes ]]; then
+        echo "Bluetooth already off"
         bluetoothctl power off
     fi
 }
@@ -62,13 +64,13 @@ case "$1" in
         toggle_device 1C:52:16:3A:9A:65
         ;;
     --toggle-mouse)
-        toggle_device CD:9F:B9:BD:FA:F4
+        toggle_device CD:9F:B9:BD:FA:F5
         ;;
     --print-headphones)
         bluetooth_print 1C:52:16:3A:9A:65
         ;;
     --print-mouse)
-        bluetooth_print CD:9F:B9:BD:FA:F4
+        bluetooth_print CD:9F:B9:BD:FA:F5
         ;;
     *)
         bluetooth_print
