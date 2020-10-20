@@ -1,5 +1,7 @@
 #!/bin/bash
 
+MAC=CD:9F:B9:BD:FA:FA
+
 # Unlock if bluetooth card is locked (password requested)
 if [[ $(rfkill -r | grep 'bluetooth hci0 blocked') = *bluetooth\ hci0\ blocked* ]]; then
   echo "Card was blocked, unblocking card"
@@ -21,6 +23,7 @@ else
   if [[ "$(bluetoothctl show | grep 'Powered: yes')" = *Powered:\ yes ]]; then
     echo "Card was on, connecting to device"
     # Connect to mouse
-    bluetoothctl connect CD:9F:B9:BD:FA:F5
+    bluetoothctl connect $MAC
   fi
 fi
+
