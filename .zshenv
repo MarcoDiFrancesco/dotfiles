@@ -4,8 +4,8 @@
 
 export ZDOTDIR="$HOME/.config/zsh"
 
-# Add scripts folder to path
-export PATH="/home/marco/scripts:$PATH"
+# Sourced in .profile, for some reasons here it isn't sourced early enough
+#export PATH="/home/marco/scripts:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/usr/share/oh-my-zsh
