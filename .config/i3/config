@@ -48,8 +48,9 @@ bindsym $mod4+g split toggle
 # Change container layout: stacked (vertically), tabbed (horizontaly)
 #bindsym $mod4+y layout stacking
 bindsym $mod4+r layout tabbed
-# Toggle orientation of 2 adjacent tabs (vertical / horizontal) 
-bindsym $mod4+e layout toggle split
+# Toggle orientation of 2 adjacent tabs (vertical / horizontal)
+# Replaced by mod+alt+(left/right) for vertical or mod+alt+(up/down) for horizontal
+#bindsym $mod4+e layout toggle split
 # Toggle floating / tiling
 bindsym $mod4+t floating toggle
 # Toggle focus of floating windows / window below
@@ -99,7 +100,7 @@ bindsym $mod4+Shift+0 move container to workspace number $ws10
 bindsym $mod4+$mod1+r restart
 
 # Set dual monitor/screen
-exec_always --no-startup-id xrandr --output DP1 --auto --right-of eDP1
+exec_always --no-startup-id xrandr --output DP1 --right-of eDP1
 # Set wallpaper
 exec_always --no-startup-id feh --no-fehbg --bg-scale '/home/marco/Documents/wallpaper.jpeg'
 # Set keyboard keys
@@ -144,5 +145,6 @@ bindsym --release Ctrl+Print exec --no-startup-id "/home/marco/Documents/imgur-s
 # Shortcuts
 bindsym $mod4+s exec urxvtc
 bindsym $mod4+d exec rofi -show combi
-bindsym $mod4+c exec chromium
+bindsym $mod4+Shift+d exec rofimoji --copy-only
+bindsym $mod4+e exec chromium
 bindsym $mod4+v exec gpaste-client ui
