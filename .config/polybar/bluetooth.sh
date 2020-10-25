@@ -1,6 +1,9 @@
 #!/bin/sh
 # Credits to https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/system-bluetooth-bluetoothctl
 
+MAC_MOUSE=CD:9F:B9:BD:FA:FA
+MAC_HEADPHONES=1C:52:16:3A:9A:65
+
 bluetooth_print() {
     while true; do
         if [ "$(systemctl is-active "bluetooth.service")" = "active" ]; then
@@ -12,10 +15,10 @@ bluetooth_print() {
                     # Disconnected
                     printf "%s" "%{F#66ffffff}"
                 fi
-                if [ $1 = "CD:9F:B9:BD:FA:F5" ]; then
+                if [ $1 = $MAC_MOUSE ]; then
                     # Mouse
                     printf "%s" ""
-                elif [ $1 = "1C:52:16:3A:9A:65" ]; then
+                elif [ $1 = $MAC_HEADPHONES ]; then
                     # Headphones
                     printf "%s" ""
                 fi
@@ -23,9 +26,9 @@ bluetooth_print() {
             else
                 # Disconnected
                 # Print disconnected only in one device
-                if [ $1 = "CD:9F:B9:BD:FA:F5" ]; then
+                if [ $1 = $MAC_MOUSE ]; then
                     echo "%{F#66ffffff}"
-                elif [ $1 = "1C:52:16:3A:9A:65" ]; then
+                elif [ $1 = $MAC_HEADPHONES ]; then
                     echo ""
                 fi
             fi
@@ -61,16 +64,16 @@ case "$1" in
         toggle_bluetooth
         ;;
     --toggle-headphones)
-        toggle_device 1C:52:16:3A:9A:65
+        toggle_device $MAC_HEADPHONES
         ;;
     --toggle-mouse)
-        toggle_device CD:9F:B9:BD:FA:F5
+        toggle_device $MAC_MOUSE
         ;;
     --print-headphones)
-        bluetooth_print 1C:52:16:3A:9A:65
+        bluetooth_print $MAC_HEADPHONES
         ;;
     --print-mouse)
-        bluetooth_print CD:9F:B9:BD:FA:F5
+        bluetooth_print $MAC_MOUSE
         ;;
     *)
         bluetooth_print
