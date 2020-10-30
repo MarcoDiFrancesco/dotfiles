@@ -99,8 +99,6 @@ bindsym $mod4+Shift+0 move container to workspace number $ws10
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod4+$mod1+r restart
 
-# Set dual monitor/screen
-#exec_always --no-startup-id xrandr --output DP1 --right-of eDP1
 # Set wallpaper
 exec_always --no-startup-id feh --no-fehbg --bg-scale '/home/marco/Documents/wallpaper.jpeg'
 # Set keyboard keys
