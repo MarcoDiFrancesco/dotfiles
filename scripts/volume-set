@@ -7,10 +7,10 @@ while getopts 'idm' flag
 do
   case "${flag}" in
     i)
-        pamixer -i 5
+        pamixer -i 2
     ;;
     d)
-        pamixer -d 5
+        pamixer -d 2
     ;;
     m)
         pamixer --set-volume 0
