@@ -1,0 +1,23 @@
+#!/bin/bash
+# Source: https://unix.stackexchange.com/a/190155/337926
+
+export DISPLAY=:0 # If not placed crontab will not show the notification TODO test it
+
+ICON="/home/marco/Documents/low-battery.svg" # eye candy
+
+BATTERY_LEVEL=$(cat /sys/class/power_supply/BAT0/capacity)
+TOO_LOW=5
+
+STATUS=$(cat /sys/class/power_supply/BAT0/status)
+STATUS_NOT_CHARGING="Discharging"
+# Notification lenght in millisenconds. Putting exactly 60 sec makes appear
+# one notification, but when it disappears, the following one does not appear
+NOTIFICATION_LENGHT=$((59*1000))
+if [ $BATTERY_LEVEL -le $TOO_LOW -a "$STATUS" = $STATUS_NOT_CHARGING ]; then
+    # Send notification that lasts for 5 minutes
+    # Variables are needed: https://bbs.archlinux.org/viewtopic.php?pid=1690539#p1690539
+    sudo -u marco DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -u critical -i "$ICON" -t ${NOTIFICATION_LENGHT} "Battery low" "Battery level is ${BATTERY_LEVEL}%!" 
+fi
+
+exit 0
+

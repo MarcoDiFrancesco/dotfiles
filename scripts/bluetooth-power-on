@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MAC=CD:9F:B9:BD:FA:FC
+MAC=CD:9F:B9:BD:FA:FE
 
 # Unlock if bluetooth card is locked (password requested)
 if [[ $(rfkill -r | grep 'bluetooth hci0 blocked') = *bluetooth\ hci0\ blocked* ]]; then
@@ -27,3 +27,19 @@ else
   fi
 fi
 
+
+# IMPORTED FROM bluetooth_power_off
+
+# Unlock if bluetooth card is locked (password requested)
+# if [[ $(rfkill -r | grep 'bluetooth hci0 blocked') = *bluetooth\ hci0\ blocked* ]]; then
+#   sudo rfkill unblock bluetooth
+#   echo "sudo rfkill unblock bluetooth"
+# fi
+
+# # Disable bluetooth card if powerd on
+# if [[ $(bluetoothctl show | grep 'Powered: yes') = *Powered:\ yes* ]]; then
+#   bluetoothctl power off
+#   echo "bluetoothctl power off"
+# else
+#   echo "Already off"
+# fi
