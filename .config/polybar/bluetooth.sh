@@ -1,7 +1,7 @@
 #!/bin/sh
 # Credits to https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/system-bluetooth-bluetoothctl
 
-MAC_MOUSE=CD:9F:B9:BD:FA:FA
+MAC_MOUSE=CD:9F:B9:BD:FA:FE
 MAC_HEADPHONES=1C:52:16:3A:9A:65
 
 bluetooth_print() {

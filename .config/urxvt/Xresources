@@ -72,9 +72,11 @@ URxvt.keysym.Control-Left: \033[1;5D
 !URxvt.keysym.C-BackSpace: ^[w  # Not able to understand how to make it work
 
 !! Set transparency
-URxvt.depth: 32
-URxvt.background: rgba:1111/1111/1111/dddd
-
+!!URxvt.depth: 32
+!!URxvt.background: rgba:1111/1111/1111/dddd
+!!urxvt*background: rgba:0000/0000/0200/c800
+urxvt*transparent: true
+urxvt*shading: 30
 !! Extensions
 !! matcher detects links
 !! resize-font used to resize font on the fly
