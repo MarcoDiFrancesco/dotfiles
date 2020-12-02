@@ -19,7 +19,9 @@ bindsym $mod4+$mod1+y exec --no-startup-id lock
 # Refres i3status
 set $refresh_i3status killall -SIGUSR1 i3status
 
-# Remove borders
+# Remove borders from all programs
+for_window [class="TelegramDesktop"] floating enable
+for_window [class="Notion"] floating enable
 for_window [class="^.*"] border pixel 3
 
 # Kill focused window
