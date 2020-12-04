@@ -1,15 +1,14 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-
-export ZDOTDIR="$HOME/.config/zsh"
+export RXVT_SOCKET="$HOME/.cache/urxvtd-socket"
 
 # Sourced in .profile, for some reasons here it isn't sourced early enough
-#export PATH="/home/marco/scripts:$PATH"
+export PATH="/home/marco/scripts:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/usr/share/oh-my-zsh
 export ZSH_BASE=/usr/share/zsh
+export ZDOTDIR="$HOME/.config/zsh"
+# Save the location of the current completion dump file.
+export ZSH_COMPDUMP="${HOME}/.cache/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 
 export HISTFILE="$HOME/.cache/zsh/history" 
 export HISTSIZE=10000 # Number of commands loaded into memory
@@ -40,5 +39,3 @@ export GNUPGHOME="$HOME/.cache/gnupg"
 # Gradle config location
 export GRADLE_USER_HOME="$HOME/.cache/gradle"
 
-# Save the location of the current completion dump file.
-export ZSH_COMPDUMP="${HOME}/.cache/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"

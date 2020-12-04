@@ -1,7 +1,20 @@
 #!/bin/bash
+
+sleep 0.4
+
 echo "Display setup"
 xrandr --output eDP1 --off
 xrandr --output eDP1 --mode 1920x1080
-#xrandr --output DP1 --mode 2560x1440
 xrandr --output DP1 --auto
 xrandr --output DP1 --right-of eDP1
+
+sleep 1
+
+# Start polybar
+killall polybar
+polybar bar1 &
+polybar bar2 &
+
+# Set wallpaper
+feh --no-fehbg --bg-scale '/home/marco/Documents/wallpaper-gradient.png'
+

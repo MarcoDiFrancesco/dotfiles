@@ -1,3 +1,3 @@
 #!/usr/bin/bash
-dm-tool lock
+#dm-tool lock
 systemctl suspend
