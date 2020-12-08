@@ -67,7 +67,10 @@ for_window [class="^.*"] border pixel 3
 
 # Suspend and lock
 bindsym $mod4+$mod1+y exec --no-startup-id betterlockscreen -s
+bindsym XF86Sleep exec --no-startup-id betterlockscreen -s
 bindsym $mod4+$mod1+Shift+y exec --no-startup-id betterlockscreen -l
+bindsym XF86ScreenSaver exec --no-startup-id betterlockscreen -l
+bindsym Pause exec --no-startup-id betterlockscreen -l
 
 # Kill focused window
 bindsym $mod4+w kill

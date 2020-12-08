@@ -102,7 +102,6 @@ alias dir_size='du --max-depth=1 --human-readable | sort --key=2'
 alias scp='echo "scp is deprecated! Use rsync instead"'
 # Pip aliases to avoid using it
 alias pip='./.venv/bin/pip'
-alias pip-yes='bash -c pip'
 # compinit is set on oh-my-zsh.sh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
