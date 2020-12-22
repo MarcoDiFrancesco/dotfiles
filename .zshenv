@@ -4,13 +4,21 @@ export RXVT_SOCKET="$HOME/.cache/urxvtd-socket"
 export PATH="/home/marco/scripts:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH=/usr/share/oh-my-zsh
-export ZSH_BASE=/usr/share/zsh
+if [ $(hostname) = MarcoSSD ]; then
+	export ZSH="$HOME/.oh-my-zsh"
+	export ZSH_BASE="$ZSH/custom"
+else
+	export ZSH=/usr/share/oh-my-zsh
+        export ZSH_BASE=/usr/share/zsh
+fi
 export ZDOTDIR="$HOME/.config/zsh"
-# Save the location of the current completion dump file.
-export ZSH_COMPDUMP="${HOME}/.cache/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 
-export HISTFILE="$HOME/.cache/zsh/history" 
+# Save the location of the current completion dump file.
+export ZSH_CACHE="$HOME/.cache/zsh"
+# Create directory if doesn't exist
+mkdir -p $ZSH_CACHE
+export ZSH_COMPDUMP="$ZSH_CACHE/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+export HISTFILE="$ZSH_CACHE/history" 
 export HISTSIZE=10000 # Number of commands loaded into memory
 export SAVEHIST=10000 # Number of commands saved into $HISTFILE
 

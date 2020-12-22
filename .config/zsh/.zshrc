@@ -71,7 +71,6 @@ plugins=(
     git
     extract
 )
-
 source $ZSH/oh-my-zsh.sh
 # Plugins installed with pacman
 source $ZSH_BASE/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -105,10 +104,13 @@ alias dir_size='du --max-depth=1 --human-readable | sort --key=2'
 alias scp='echo "scp is deprecated! Use rsync instead"'
 # Pip aliases to avoid using it
 alias pip='./.venv/bin/pip'
-# compinit is set on oh-my-zsh.sh
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
 
+
+# compinit is set on oh-my-zsh.sh
+if command -v exa &> /dev/null; then
+	source /usr/share/fzf/key-bindings.zsh
+	source /usr/share/fzf/completion.zsh
+fi
 #eval "`pip completion --zsh`"
 #eval "`pipenv --completion`"
 
