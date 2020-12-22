@@ -82,10 +82,13 @@ source $ZSH_BASE/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 export CODESTATS_API_KEY="SFMyNTY.VFdGeVkyOUVhVVp5WVc1alpYTmpidz09IyNOamczTXc9PQ.Q5knPIVxz568Al7Tev_xqahXr4_J7xcihLB7uyWbaBQ" 
 source $ZSH/custom/plugins/code-stats-zsh/codestats.plugin.zsh
 
-alias ls='exa'
-alias ll='l'
-alias lll='exa -l | less'
-alias lt='exa -T'
+if command -v exa &> /dev/null; then
+	alias ls='exa'
+	alias ll='l'
+	alias lll='exa -l | less'
+	alias lt='exa -T'
+fi
+
 # Config repostory
 alias config='git --git-dir=$HOME/projects/dotfiles --work-tree=$HOME'
 # Ranger get directory on exit and cd into it
