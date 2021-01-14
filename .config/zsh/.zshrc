@@ -72,14 +72,26 @@ plugins=(
     extract
 )
 source $ZSH/oh-my-zsh.sh
-# Plugins installed with pacman
-source $ZSH_BASE/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $ZSH_BASE/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
-# Codestats plugin cloned from:
-# https://gitlab.com/code-stats/code-stats-zsh
+# Custom plugins
+PLUGIN=$ZSH_BASE/plugins/zsh-syntax-highlighting
+if [ ! -d $PLUGIN ]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGIN
+fi
+source $PLUGIN/zsh-syntax-highlighting.zsh
+
+PLUGIN=$ZSH_BASE/plugins/zsh-autosuggestions
+if [ ! -d $PLUGIN ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git $PLUGIN
+fi
+source $PLUGIN/zsh-autosuggestions.plugin.zsh
+
 export CODESTATS_API_KEY="SFMyNTY.VFdGeVkyOUVhVVp5WVc1alpYTmpidz09IyNOamczTXc9PQ.Q5knPIVxz568Al7Tev_xqahXr4_J7xcihLB7uyWbaBQ" 
-source $ZSH/custom/plugins/code-stats-zsh/codestats.plugin.zsh
+PLUGIN=$ZSH_BASE/plugins/code-stats-zsh
+if [ ! -d $PLUGIN ]; then
+  git clone https://gitlab.com/code-stats/code-stats-zsh.git $PLUGIN
+fi
+source $PLUGIN/codestats.plugin.zsh
 
 if command -v exa &> /dev/null; then
 	alias ls='exa'

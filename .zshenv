@@ -4,7 +4,7 @@ export RXVT_SOCKET="$HOME/.cache/urxvtd-socket"
 export PATH="/home/marco/scripts:$PATH"
 
 # Path to your oh-my-zsh installation.
-if [ $(hostname) = MarcoSSD ]; then
+if [ -d "$HOME/.oh-my-zsh" ]; then
 	export ZSH="$HOME/.oh-my-zsh"
 	export ZSH_BASE="$ZSH/custom"
 else
