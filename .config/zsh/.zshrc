@@ -132,7 +132,7 @@ fi
 # Change cursor shape
 printf '\033[5 q\r'
 
-# Load NVM for WSL
+# Load nvm for WSL
 NVM_DIR="$HOME/.nvm"
 if [ -d "$NVM_DIR" ]; then
 	export NVM_DIR
