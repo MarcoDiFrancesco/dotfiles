@@ -37,8 +37,8 @@ URxvt.colorUL: #87afd7
 !! Fonts
 URxvt*font:           xft:Inconsolata Nerd Font Mono:pixelsize=18:minspace=False, xft:DejaVu Sans:pixelsize=18
 URxvt*boldFont:       xft:Inconsolata Nerd Font Mono:pixelsize=18:minspace=False, xft:DejaVu Sans:pixelsize=18
-!!URxvt*italicFont:     xft:DejaVu Sans Mono:autohint=true:italic:size=12
-!!URxvt*boldItalicFont: xft:DejaVu Sans Mono:autohint=true:bold:italic:size=12
+URxvt*italicFont:     xft:DejaVu Sans Mono:autohint=true:italic:size=12
+URxvt*boldItalicFont: xft:DejaVu Sans Mono:autohint=true:bold:italic:size=12
 
 !! Copy and paste
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard

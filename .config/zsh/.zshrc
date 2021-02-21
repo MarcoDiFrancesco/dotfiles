@@ -89,7 +89,8 @@ source $PLUGIN/zsh-autosuggestions.plugin.zsh
 export CODESTATS_API_KEY="SFMyNTY.VFdGeVkyOUVhVVp5WVc1alpYTmpidz09IyNOamczTXc9PQ.Q5knPIVxz568Al7Tev_xqahXr4_J7xcihLB7uyWbaBQ" 
 PLUGIN=$ZSH_BASE/plugins/code-stats-zsh
 if [ ! -d $PLUGIN ]; then
-  git clone https://gitlab.com/code-stats/code-stats-zsh.git $PLUGIN
+  echo "Installing code-stats-zsh"
+  sudo git clone https://gitlab.com/code-stats/code-stats-zsh.git $PLUGIN
 fi
 source $PLUGIN/codestats.plugin.zsh
 

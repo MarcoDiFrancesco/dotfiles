@@ -1,8 +1,0 @@
-#!/bin/bash
-PATH=/home/marco/.cache/zsh/history
-TMP_PATH=/tmp/history_temp
-mv $PATH $TMP_PATH
-# Overwrite all to .history
-strings /tmp/history_temp > $PATH
-fc -R $PATH
-rm $TMP_PATH
