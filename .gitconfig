@@ -8,5 +8,6 @@
 [core]
 	pager = less -r
 	excludesfile = /home/marco/.config/git/gitignore
+	hooksPath = /home/marco/.config/git/hooks/
 [pull]
 	ff = only
