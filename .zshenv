@@ -55,6 +55,3 @@ mkdir -p "$XDG_CACHE_HOME/less"
 export LESSKEY="$XDG_CACHE_HOME/less/lesskey"
 # Disable history setting file to a non existing location
 export LESSHISTFILE=-
-
-# Vim config file
-export VIMINIT='source "$XDG_CONFIG_HOME/vim/vimrc"'
