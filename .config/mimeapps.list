@@ -8,12 +8,14 @@ audio/mp4=vlc.desktop;
 video/mp4=vlc.desktop;
 video/avi=vlc.desktop;
 video/x-matroska=vlc.desktop; # .mkv
-text/html=chromium.desktop
-x-scheme-handler/http=chromium.desktop
-x-scheme-handler/https=chromium.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/mailto=chromium.desktop
 x-scheme-handler/webcal=chromium.desktop
 x-scheme-handler/discord-478576776990425110=discord-478576776990425110.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
 
 [Added Associations]
 x-scheme-handler/tg=userapp-Telegram Desktop-RXR4Y0.desktop;
