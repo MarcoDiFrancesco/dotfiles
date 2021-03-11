@@ -3515,7 +3515,7 @@ avcodec-hw=vaapi
 file-logging=1
 
 # Log filename (string)
-logfile=/var/log/vlc/vlc.log
+logfile=/var/log/vlc.log
 
 # Log format (string)
 #logmode=text
