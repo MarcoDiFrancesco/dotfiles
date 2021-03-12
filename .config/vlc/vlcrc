@@ -3607,7 +3607,7 @@ freetype-font=Bitstream Vera Sans
 #audio-time-stretch=1
 
 # Audio output module (string)
-aout=any
+#aout=
 
 # Media role (string)
 #role=video
@@ -3745,7 +3745,7 @@ aout=any
 #deinterlace-mode=auto
 
 # Video output module (string)
-vout=any
+#vout=
 
 # Video filter module (string)
 #video-filter=
@@ -3799,7 +3799,7 @@ vout=any
 #audio-language=
 
 # Subtitle language (string)
-sub-language=English
+#sub-language=
 
 # Menu language (string)
 #menu-language=
@@ -4090,7 +4090,7 @@ vod-server=any
 #preparse-timeout=5000
 
 # Allow metadata network access (boolean)
-metadata-network-access=1
+#metadata-network-access=0
 
 # Subdirectory behavior (string)
 #recursive=collapse
@@ -4150,7 +4150,7 @@ metadata-network-access=1
 #global-key-play-pause=
 
 # Play/Pause (string)
-key-play-pause=Space	Media Play Pause	k
+#key-play-pause=Space	Media Play Pause
 
 # Pause only (string)
 #global-key-pause=
@@ -4168,31 +4168,31 @@ key-play-pause=Space	Media Play Pause	k
 #global-key-faster=
 
 # Faster (string)
-key-faster=
+#key-faster=+
 
 # Slower (string)
 #global-key-slower=
 
 # Slower (string)
-key-slower=
+#key-slower=-
 
 # Normal rate (string)
 #global-key-rate-normal=
 
 # Normal rate (string)
-key-rate-normal=
+#key-rate-normal==
 
 # Faster (fine) (string)
 #global-key-rate-faster-fine=
 
 # Faster (fine) (string)
-key-rate-faster-fine==
+#key-rate-faster-fine=]
 
 # Slower (fine) (string)
 #global-key-rate-slower-fine=
 
 # Slower (fine) (string)
-key-rate-slower-fine=-
+#key-rate-slower-fine=[
 
 # Next (string)
 #global-key-next=
@@ -4222,49 +4222,49 @@ key-rate-slower-fine=-
 #global-key-jump-extrashort=
 
 # Very short backwards jump (string)
-key-jump-extrashort=Shift+Left	j	h
+#key-jump-extrashort=Shift+Left
 
 # Very short forward jump (string)
 #global-key-jump+extrashort=
 
 # Very short forward jump (string)
-key-jump+extrashort=Shift+Right	l
+#key-jump+extrashort=Shift+Right
 
 # Short backwards jump (string)
 #global-key-jump-short=
 
 # Short backwards jump (string)
-key-jump-short=
+#key-jump-short=Alt+Left
 
 # Short forward jump (string)
 #global-key-jump+short=
 
 # Short forward jump (string)
-key-jump+short=
+#key-jump+short=Alt+Right
 
 # Medium backwards jump (string)
 #global-key-jump-medium=
 
 # Medium backwards jump (string)
-key-jump-medium=Ctrl+Left	Shift+j
+#key-jump-medium=Ctrl+Left
 
 # Medium forward jump (string)
 #global-key-jump+medium=
 
 # Medium forward jump (string)
-key-jump+medium=Ctrl+Right	Shift+l
+#key-jump+medium=Ctrl+Right
 
 # Long backwards jump (string)
 #global-key-jump-long=
 
 # Long backwards jump (string)
-key-jump-long=Ctrl+Shift+Left	Shift+Alt+j
+#key-jump-long=Ctrl+Alt+Left
 
 # Long forward jump (string)
 #global-key-jump+long=
 
 # Long forward jump (string)
-key-jump+long=Ctrl+Shift+Right	Shift+Alt+l
+#key-jump+long=Ctrl+Alt+Right
 
 # Next frame (string)
 #global-key-frame-next=
@@ -4360,7 +4360,7 @@ key-jump+long=Ctrl+Shift+Right	Shift+Alt+l
 #global-key-subdelay-up=
 
 # Subtitle delay up (string)
-key-subdelay-up=r
+#key-subdelay-up=h
 
 # Subtitle delay down (string)
 #global-key-subdelay-down=
@@ -4378,13 +4378,13 @@ key-subdelay-up=r
 #global-key-subsync-marksub=
 
 # Subtitle sync / bookmark subtitle timestamp (string)
-key-subsync-marksub=
+#key-subsync-marksub=Shift+j
 
 # Subtitle sync / synchronize audio & subtitle timestamps (string)
 #global-key-subsync-apply=
 
 # Subtitle sync / synchronize audio & subtitle timestamps (string)
-key-subsync-apply=
+#key-subsync-apply=Shift+k
 
 # Subtitle sync / reset audio & subtitle synchronization (string)
 #global-key-subsync-reset=
@@ -4408,13 +4408,13 @@ key-subsync-apply=
 #global-key-audiodelay-up=
 
 # Audio delay up (string)
-key-audiodelay-up=y
+#key-audiodelay-up=k
 
 # Audio delay down (string)
 #global-key-audiodelay-down=
 
 # Audio delay down (string)
-key-audiodelay-down=u
+#key-audiodelay-down=j
 
 # Cycle audio track (string)
 #global-key-audio-track=
@@ -4492,13 +4492,13 @@ key-audiodelay-down=u
 #global-key-deinterlace=
 
 # Toggle deinterlacing (string)
-key-deinterlace=
+#key-deinterlace=d
 
 # Cycle deinterlace modes (string)
 #global-key-deinterlace-mode=
 
 # Cycle deinterlace modes (string)
-key-deinterlace-mode=
+#key-deinterlace-mode=Shift+d
 
 # Show controller in fullscreen (string)
 #global-key-intf-show=
@@ -4600,13 +4600,13 @@ key-deinterlace-mode=
 #global-key-random=
 
 # Random (string)
-key-random=
+#key-random=r
 
 # Normal/Loop/Repeat (string)
 #global-key-loop=
 
 # Normal/Loop/Repeat (string)
-key-loop=
+#key-loop=l
 
 # Shrink the viewpoint field of view (360°) (string)
 #global-key-viewpoint-fov-in=
@@ -4660,13 +4660,13 @@ key-loop=
 #extrashort-jump-size=3
 
 # Short jump length (integer)
-short-jump-size=5
+#short-jump-size=10
 
 # Medium jump length (integer)
-medium-jump-size=10
+#medium-jump-size=60
 
 # Long jump length (integer)
-long-jump-size=60
+#long-jump-size=300
 
 # Set playlist bookmark 1 (string)
 #global-key-set-bookmark1=

@@ -3,6 +3,7 @@
 sleep 0.4
 
 echo "Display setup"
+xrandr --dpi 100 # Needs testing
 xrandr --output eDP1 --off
 xrandr --output eDP1 --mode 1920x1080
 xrandr --output DP1 --auto
