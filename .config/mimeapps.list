@@ -2,20 +2,17 @@
 application/zip=ranger-file.desktop
 application/csv=onlyoffice-desktopeditors.desktop
 application/pdf=firefox.desktop
-image/png=feh.desktop
-audio/mp3=vlc.desktop;
-audio/mp4=vlc.desktop;
-video/mp4=vlc.desktop;
-video/avi=vlc.desktop;
+image/png=org.gnome.eog.desktop
+image/jpeg=org.gnome.eog.desktop
+audio/mp3=vlc.desktop
+audio/mp4=vlc.desktop
+video/mp4=vlc.desktop
+video/avi=vlc.desktop
 video/x-matroska=vlc.desktop; # .mkv
 text/html=google-chrome.desktop
 x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/mailto=google-chrome.desktop
 x-scheme-handler/webcal=google-chrome.desktop
-x-scheme-handler/discord-478576776990425110=discord-478576776990425110.desktop
 x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/unknown=google-chrome.desktop
-
-[Added Associations]
-x-scheme-handler/tg=userapp-Telegram Desktop-RXR4Y0.desktop;
