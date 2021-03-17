@@ -126,7 +126,7 @@ bindsym --release Ctrl+Print exec --no-startup-id "/home/marco/Documents/imgur-s
 bindsym $mod4+s exec urxvtc
 bindsym $mod4+d exec rofi -show combi
 bindsym $mod4+Shift+d exec rofimoji --copy-only
-bindsym $mod4+e exec google-chrome-stable
+bindsym $mod4+e exec google-chrome-stable --profile-directory="Default"
 bindsym $mod4+v exec gpaste-client ui
 
 # Bluetooth
