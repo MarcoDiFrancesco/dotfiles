@@ -4,6 +4,7 @@ application/csv=onlyoffice-desktopeditors.desktop
 application/pdf=firefox.desktop
 image/png=org.gnome.eog.desktop
 image/jpeg=org.gnome.eog.desktop
+image/svg+xml=org.gnome.eog.desktop
 audio/mp3=vlc.desktop
 audio/mp4=vlc.desktop
 video/mp4=vlc.desktop
