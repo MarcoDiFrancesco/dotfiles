@@ -22,8 +22,11 @@ export ZSH_CACHE="$XDG_CACHE_HOME/zsh"
 mkdir -p $ZSH_CACHE
 export ZSH_COMPDUMP="$ZSH_CACHE/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 export HISTFILE="$ZSH_CACHE/history" 
-export HISTSIZE=10000 # Number of commands loaded into memory
-export SAVEHIST=10000 # Number of commands saved into $HISTFILE
+export HISTSIZE=100000 # Number of commands loaded into memory
+export SAVEHIST=100000 # Number of commands saved into $HISTFILE
+
+# Delete duplicates from history
+$HOME/scripts/history-clean
 
 # Preferred editor for local and remote sessions
 export EDITOR="vim"
@@ -55,3 +58,4 @@ mkdir -p "$XDG_CACHE_HOME/less"
 export LESSKEY="$XDG_CACHE_HOME/less/lesskey"
 # Disable history setting file to a non existing location
 export LESSHISTFILE=-
+

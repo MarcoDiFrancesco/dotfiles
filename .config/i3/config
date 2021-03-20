@@ -11,6 +11,10 @@ font pango:Noto Mono Regular 10
 # Refresh i3status
 set $refresh_i3status killall -SIGUSR1 i3status
 
+# Focus when an app requests it
+# https://i3wm.org/docs/userguide.html#focus_on_window_activation
+focus_on_window_activation focus
+
 # Define names for default workspaces.
 set $ws1 "1"
 set $ws2 "2"
