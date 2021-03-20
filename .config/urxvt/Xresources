@@ -40,16 +40,6 @@ URxvt*boldFont:       xft:Inconsolata Nerd Font Mono:pixelsize=18:minspace=False
 URxvt*italicFont:     xft:DejaVu Sans Mono:autohint=true:italic:size=12
 URxvt*boldItalicFont: xft:DejaVu Sans Mono:autohint=true:bold:italic:size=12
 
-!! Copy and paste
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-
-!!  Disable previous copy and paste
-URxvt.keysym.Control-Meta-c: builtin-string:
-URxvt.keysym.Control-Meta-v: builtin-string:
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-
 !! Appearance
 URxvt*letterSpace: 1
 URxvt.lineSpace: 0
@@ -62,21 +52,28 @@ URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 
-!! Keybinds
-URxvt.keysym.Shift-Up: command:\033]720;1\007
-URxvt.keysym.Shift-Down: command:\033]721;1\007
+!! Move one word right and left
 URxvt.keysym.Control-Up: \033[1;5A
 URxvt.keysym.Control-Down: \033[1;5B
 URxvt.keysym.Control-Right: \033[1;5C
 URxvt.keysym.Control-Left: \033[1;5D
-!URxvt.keysym.C-BackSpace: ^[w  # Not able to understand how to make it work
+!! Delete one word
+URxvt.keysym.C-BackSpace: \033[33~
+!! Copy and paste
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+!! Disable previous copy and paste
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 !! Set transparency
 !!URxvt.depth: 32
 !!URxvt.background: rgba:1111/1111/1111/dddd
 !!urxvt*background: rgba:0000/0000/0200/c800
 urxvt*transparent: true
-urxvt*shading: 30
+urxvt*shading: 20
 !! Extensions
 !! matcher detects links
 !! resize-font used to resize font on the fly

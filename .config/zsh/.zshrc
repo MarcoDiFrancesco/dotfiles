@@ -109,15 +109,12 @@ alias r='ranger --choosedir=$HOME/.cache/ranger/dir; LASTDIR=`cat $HOME/.cache/r
 #alias generatePassword='pwgen -s --numerals -1 16 | tr -d '\n' | gpaste-client add-password generated-password'
 # Trash list order by date
 alias trash-ls='trash-list | sort | grep `pwd`'
-# Calendar alias
-alias calendar='xdg-open https://calendar.google.com'
 # Get folder size as output sort by name
 alias dir_size='du --max-depth=1 --human-readable | sort --key=2'
 # Avoid using deprecated scp
 alias scp='echo "scp is deprecated! Use rsync instead"'
 # Pip aliases to avoid using it
 alias pip='./.venv/bin/pip'
-
 
 # compinit is set on oh-my-zsh.sh
 if command -v exa &> /dev/null; then
@@ -129,6 +126,15 @@ fi
 
 # https://www.topbug.net/blog/2016/09/27/make-gnu-less-more-powerful/
 #export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
+
+# Get urxvt ctrl+backspace escape character and set it to delete word
+# https://unix.stackexchange.com/a/39731/337926
+bindkey '^[[33~' backward-delete-word
+# Don't stop word deletion on the characters below on ctrl+backspace (removed /)
+# https://unix.stackexchange.com/a/392199/337926
+autoload -U select-word-style
+select-word-style bash
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # Change cursor shape
 printf '\033[5 q\r'
