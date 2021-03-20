@@ -1,21 +1,23 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# udev runs as root, so we need to tell it how to connect to the X server
+export HOME="/home/marco"
+export DISPLAY=:0
+export XAUTHORITY=$HOME/.Xauthority
 
 sleep 0.4
 
-echo "Display setup"
-xrandr --dpi 100 # Needs testing
+# Dispaly setup
+xrandr --dpi 100
 xrandr --output eDP1 --off
 xrandr --output eDP1 --mode 1920x1080
 xrandr --output DP1 --auto
 xrandr --output DP1 --right-of eDP1
 
-sleep 1
-
 # Start polybar
 killall polybar
-polybar bar1 &
-polybar bar2 &
+/usr/bin/polybar --config=$HOME/.config/polybar/config bar1 &
+/usr/bin/polybar --config=$HOME/.config/polybar/config bar2 &
 
 # Set wallpaper
-feh --no-fehbg --bg-scale '/home/marco/Documents/wallpaper-gradient.png'
-
+feh --no-fehbg --bg-scale "$HOME/Documents/wallpaper-gradient.png"
