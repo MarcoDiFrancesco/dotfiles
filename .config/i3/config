@@ -140,7 +140,7 @@ exec --no-startup-id $HOME/scripts/bluetooth-power-on
 # Set keyboard keys
 exec_always --no-startup-id xkbcomp -I$HOME/.config/xkb ~/.config/xkb/map $DISPLAY
 # Start gpaste daemon
-exec_always --no-startup-id gpaste-client start
+exec_always --no-startup-id gpaste-client daemon-reexec
 # Start terminal daemon
 exec --no-startup-id urxvtd -q
 exec --no-startup-id xrdb $HOME/.config/urxvt/Xresources 
