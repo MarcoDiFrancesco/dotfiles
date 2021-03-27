@@ -64,6 +64,7 @@ workspace 9 output DP1
 workspace 10 output DP1
 
 # Remove borders from all programs
+for_window [class="Gnome-screenshot"] floating enable
 for_window [class="TelegramDesktop"] floating enable
 for_window [class="Notion"] floating enable
 for_window [class="^.*"] border pixel 3
@@ -129,7 +130,6 @@ bindsym --release Ctrl+Print exec --no-startup-id "/home/marco/Documents/imgur-s
 # Shortcuts
 bindsym $mod4+s exec urxvtc
 bindsym $mod4+d exec rofi -show combi
-bindsym $mod4+Shift+d exec rofimoji --copy-only
 bindsym $mod4+e exec google-chrome-stable --profile-directory="Default"
 bindsym $mod4+v exec gpaste-client ui
 
