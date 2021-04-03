@@ -70,6 +70,7 @@ for_window [class="Notion"] floating enable
 for_window [class="^.*"] border pixel 3
 
 # Suspend and lock
+exec --no-startup-id xidlehook --not-when-audio --timer 600 "betterlockscreen -l" ''
 bindsym $mod4+$mod1+y exec --no-startup-id betterlockscreen -s
 bindsym XF86Sleep exec --no-startup-id betterlockscreen -s
 bindsym $mod4+$mod1+Shift+y exec --no-startup-id betterlockscreen -l
@@ -108,7 +109,7 @@ bindsym $mod4+r layout tabbed
 # Toggle floating / tiling
 bindsym $mod4+t floating toggle
 # Toggle focus of floating windows / window below
-#bindsym $mod4+space focus mode_toggle
+bindsym $mod4+Tab focus mode_toggle
 # Focus the parent / child container
 #bindsym $mod4+y focus parent
 #bindsym $mod4+u focus child

@@ -17,3 +17,7 @@ x-scheme-handler/mailto=google-chrome.desktop
 x-scheme-handler/webcal=google-chrome.desktop
 x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-WV1800.desktop
+
+[Added Associations]
+x-scheme-handler/tg=userapp-Telegram Desktop-WV1800.desktop;
