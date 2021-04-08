@@ -1,6 +1,6 @@
 # Check "xmodmap -pm" for Mod keybinds
 set $mod1 Mod1
-set $Mod4 Mod4
+set $mod4 Mod4
 
 # Use Mouse+$mod4 to drag floating windows to their wanted position
 floating_modifier $mod4
@@ -132,6 +132,8 @@ bindsym --release Ctrl+Print exec --no-startup-id "/home/marco/Documents/imgur-s
 bindsym $mod4+s exec urxvtc
 bindsym $mod4+d exec rofi -show combi
 bindsym $mod4+e exec google-chrome-stable --profile-directory="Default"
+bindsym $mod4+$mod1+e exec google-chrome-stable --profile-directory="Profile 1"
+bindsym $mod4+Shift+e exec google-chrome-stable --profile-directory="Profile 2"
 bindsym $mod4+v exec gpaste-client ui
 
 # Bluetooth

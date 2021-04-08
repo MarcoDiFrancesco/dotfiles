@@ -60,6 +60,7 @@ alias config='git --git-dir=$HOME/projects/dotfiles --work-tree=$HOME'
 alias r='ranger --choosedir=$HOME/.cache/ranger/dir; LASTDIR=`cat $HOME/.cache/ranger/dir`; cd "$LASTDIR"; rm $HOME/.cache/ranger/dir;'
 # Trash list order by date
 alias trash-ls='trash-list | sort | grep "`pwd`"'
+alias trash-rs='trash-restore | grep'
 # Get folder size as output sort by name
 alias dir_size='du --max-depth=1 --human-readable | sort --key=2'
 # Avoid using deprecated scp
