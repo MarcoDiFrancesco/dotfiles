@@ -67,7 +67,7 @@ workspace 10 output DP1
 for_window [class="Gnome-screenshot"] floating enable
 for_window [class="TelegramDesktop"] floating enable
 for_window [class="Notion"] floating enable
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 1
 
 # Suspend and lock
 exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 600 "betterlockscreen -l" ''
