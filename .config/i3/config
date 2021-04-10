@@ -66,6 +66,7 @@ workspace 10 output DP1
 # Remove borders from all programs
 for_window [class="Gnome-screenshot"] floating enable
 for_window [class="TelegramDesktop"] floating enable
+for_window [class="Slack"] floating enable
 for_window [class="Notion"] floating enable
 for_window [class="^.*"] border pixel 1
 
