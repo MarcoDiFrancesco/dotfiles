@@ -71,7 +71,7 @@ for_window [class="Notion"] floating enable
 for_window [class="^.*"] border pixel 1
 
 # Suspend and lock
-exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 600 "betterlockscreen -l" ''
+exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 540 "screen-saver -s" 'screen-saver -r' --timer 60 'betterlockscreen -s' 'screen-saver -r'
 bindsym $mod4+$mod1+y exec --no-startup-id betterlockscreen -s
 bindsym XF86Sleep exec --no-startup-id betterlockscreen -s
 bindsym $mod4+$mod1+Shift+y exec --no-startup-id betterlockscreen -l
@@ -128,7 +128,8 @@ bindsym XF86AudioMute exec volume-set -m
 # Screenshot (Cropped, Imgurm, All screen)
 bindsym --release Print exec --no-startup-id screenshot -s
 bindsym --release Shift+Print exec --no-startup-id screenshot -w
-bindsym --release Ctrl+Print exec --no-startup-id "/home/marco/Documents/imgur-screenshot/imgur-screenshot"
+#bindsym --release Ctrl+Print exec --no-startup-id "/home/marco/Documents/imgur-screenshot/imgur-screenshot"
+bindsym --release Ctrl+Print exec --no-startup-id imgur-screenshot
 # Shortcuts
 bindsym $mod4+s exec urxvtc
 bindsym $mod4+d exec rofi -show combi

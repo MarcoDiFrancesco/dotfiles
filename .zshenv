@@ -38,6 +38,8 @@ mkdir -p "$XDG_CACHE_HOME/less"
 export LESSKEY="$XDG_CACHE_HOME/less/lesskey"
 # Disable history setting file to a non existing location
 export LESSHISTFILE=-
+# -R used to colorize
+export LESS='-R --ignore-case --mouse --wheel-lines=3'
 
 # Nvidia
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
