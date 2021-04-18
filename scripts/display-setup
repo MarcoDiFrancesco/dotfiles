@@ -8,11 +8,27 @@ export XAUTHORITY=$HOME/.Xauthority
 sleep 0.4
 
 # Dispaly setup
-xrandr --dpi 100
-xrandr --output eDP1 --off
 xrandr --output eDP1 --mode 1920x1080
-xrandr --output DP1 --auto
-xrandr --output DP1 --right-of eDP1
+if xrandr | grep -q "\bDP1 connected\b"; then
+	# External monitor connected
+	xrandr --output DP1 --auto
+	if grep -q "open" /proc/acpi/button/lid/LID/state; then
+		# Lid open
+		echo "Lid open"
+		xrandr --output DP1 --right-of eDP1
+	else
+		# Lid closed
+		echo "Lid closed"
+		xrandr --output eDP1 --off
+	fi
+else
+	# External monitor disconnected
+	echo "External monitor disconnected"
+	xrandr --output DP1 --off
+fi
+
+# On wake up sometimes dpi is not 100
+xrandr --dpi 100
 
 # Start polybar
 killall polybar
