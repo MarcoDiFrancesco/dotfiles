@@ -9,8 +9,10 @@ sleep 0.4
 
 # Dispaly setup
 xrandr --output eDP1 --mode 1920x1080
-if xrandr | grep -q "\bDP1 connected\b"; then
+if xrandr | grep -q "\bDP1 connected\b"; then	
 	# External monitor connected
+	# Sleep to fix half of the screen blank on startup
+	sleep 0.1
 	xrandr --output DP1 --auto
 	if grep -q "open" /proc/acpi/button/lid/LID/state; then
 		# Lid open

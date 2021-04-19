@@ -71,12 +71,12 @@ for_window [class="Notion"] floating enable
 for_window [class="^.*"] border pixel 1
 
 # Suspend and lock, xset to blank screen
-exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 540 "screen-saver -s" 'screen-saver -r' --timer 60 'xset s 10 && betterlockscreen -s && xset s 0' 'screen-saver -r'
-bindsym $mod4+$mod1+y exec --no-startup-id       xset s 10 && betterlockscreen -s && xset s 0
-bindsym XF86Sleep exec --no-startup-id           xset s 10 && betterlockscreen -s && xset s 0
-bindsym $mod4+$mod1+Shift+y exec --no-startup-id xset s 10 && betterlockscreen -l && xset s 0
-bindsym XF86ScreenSaver exec --no-startup-id     xset s 10 && betterlockscreen -l && xset s 0
-bindsym Pause exec --no-startup-id               xset s 10 && betterlockscreen -l && xset s 0
+exec --no-startup-id lock -h
+bindsym $mod4+$mod1+y exec --no-startup-id       lock -s
+bindsym XF86Sleep exec --no-startup-id           lock -s
+bindsym $mod4+$mod1+Shift+y exec --no-startup-id lock -l
+bindsym XF86ScreenSaver exec --no-startup-id     lock -l
+bindsym Pause exec --no-startup-id               lock -l
 
 # Kill focused window
 bindsym $mod4+w kill

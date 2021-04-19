@@ -8,8 +8,7 @@ GET_DEV=$(lsblk -io NAME,MODEL | grep TOSHIBA_MQ04ABF100 | awk '{print $1;}')
 DEV_DIR="/dev/${GET_DEV}1"
 
 # If folder does not exist
-if [[ ! -d "${DEV_MOUNT_DIR}" ]]
-then
+if [[ ! -d "${DEV_MOUNT_DIR}" ]]; then
   sudo mkdir -p $DEV_MOUNT_DIR
   sudo mount $DEV_DIR $DEV_MOUNT_DIR
 fi

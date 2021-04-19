@@ -8,7 +8,7 @@ fi
 
 if [[ $(nmcli device show wlp3s0 | grep 'GENERAL.STATE: * 30 (disconnected)') = *GENERAL.STATE:*30* ]]; then
   echo "Already off"
-else 
+else
   nmcli device disconnect wlp3s0
   echo "Wlan turned off"
 fi

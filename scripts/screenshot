@@ -3,14 +3,13 @@
 pic_name="/home/marco/Pictures/screenshot_$(date +"%Y-%m-%d")_$(date +"%H-%M-%S").png"
 
 # Get window (-w) selection (-s)
-while getopts 'ws' flag
-do
+while getopts 'ws' flag; do
   case "${flag}" in
-    w)
-      gnome-screenshot --window --file=$pic_name
+  w)
+    gnome-screenshot --window --file=$pic_name
     ;;
-    s)
-      gnome-screenshot --area --file=$pic_name
+  s)
+    gnome-screenshot --area --file=$pic_name
     ;;
   esac
 done

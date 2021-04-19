@@ -5,10 +5,8 @@
 
 DEV_MOUNT_DIR="$MOUNT_DIR/GoProHERO4"
 
-if [[ $(simple-mtpfs -l) = *1:\ GoProHERO4* ]]
-then
-  if [[ ! -d "${DEV_MOUNT_DIR}" ]]
-  then
+if [[ $(simple-mtpfs -l) = *1:\ GoProHERO4* ]]; then
+  if [[ ! -d "${DEV_MOUNT_DIR}" ]]; then
     sudo mkdir -p $DEV_MOUNT_DIR
     sudo chmod 777 $DEV_MOUNT_DIR
     simple-mtpfs --device 1 $DEV_MOUNT_DIR

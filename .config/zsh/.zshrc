@@ -81,7 +81,7 @@ bindkey '^[[33~' backward-delete-word
 # https://unix.stackexchange.com/a/392199/337926
 autoload -U select-word-style
 select-word-style bash
-export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+export WORDCHARS='*?_.[]~=&;!#$%^(){}<>'
 
 # Change cursor shape
 printf '\033[5 q\r'

@@ -9,7 +9,7 @@ if [[ $(rfkill -r | grep 'bluetooth hci0 blocked') = *bluetooth\ hci0\ blocked* 
 fi
 
 # Check if bluetooth service is running
-if ! systemctl is-active --quiet bluetooth ; then
+if ! systemctl is-active --quiet bluetooth; then
   echo "Bluetooth service is off, enabling"
   sudo systemctl enable bluetooth
   sudo systemctl start bluetooth
@@ -26,7 +26,6 @@ else
     bluetoothctl connect $MAC
   fi
 fi
-
 
 # IMPORTED FROM bluetooth_power_off
 

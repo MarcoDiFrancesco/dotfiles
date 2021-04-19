@@ -3,48 +3,47 @@
 brightness=$(xbacklight -get)
 
 # Get increase (-i) or decrease (-d)
-while getopts 'id' flag
-do
+while getopts 'id' flag; do
   case "${flag}" in
-    i)
-      case "$brightness" in
-        [0-5])
-          brightness=$((brightness+1))
-        ;;
-        [6-9])
-          brightness=$((brightness+3))
-        ;;
-        [1-8]*)
-          brightness=$((brightness+5))
-        ;;
-        [9]*)
-          brightness=$((100))
-        ;;
-        *)
-          echo 'Brightness increase error'
-        ;;
-      esac
+  i)
+    case "$brightness" in
+    [0-5])
+      brightness=$((brightness + 1))
+      ;;
+    [6-9])
+      brightness=$((brightness + 3))
+      ;;
+    [1-8]*)
+      brightness=$((brightness + 5))
+      ;;
+    [9]*)
+      brightness=$((100))
+      ;;
+    *)
+      echo 'Brightness increase error'
+      ;;
+    esac
     ;;
-    d)
-      case "$brightness" in
-        1)
-          echo 'Too low' 
-        ;;
-        [2-5])
-          brightness=$((brightness-1))
-        ;;
-        [6-9])
-          brightness=$((brightness-3))
-        ;;
-        [1-9]*)
-          brightness=$((brightness-5))
-        ;;
-        #[7-9]*)
-        #  brightness=$((brightness-10))
-        #;;
-        *)
-          echo 'Brightness increase error'
-        ;;
+  d)
+    case "$brightness" in
+    1)
+      echo 'Too low'
+      ;;
+    [2-5])
+      brightness=$((brightness - 1))
+      ;;
+    [6-9])
+      brightness=$((brightness - 3))
+      ;;
+    [1-9]*)
+      brightness=$((brightness - 5))
+      ;;
+    #[7-9]*)
+    #  brightness=$((brightness-10))
+    #;;
+    *)
+      echo 'Brightness increase error'
+      ;;
     esac
     ;;
   esac

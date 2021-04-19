@@ -3,34 +3,34 @@
 path="$1"
 # Check if directory is specified
 if [[ -z $path ]]; then
-    echo "Add directory as argument"
-    exit 1;
+	echo "Add directory as argument"
+	exit 1
 elif [[ ! -d $path ]]; then
-    echo "Specified path is not a directory"
-    exit 1;
+	echo "Specified path is not a directory"
+	exit 1
 fi
 
 destdir=$path/encrypted
 # Create directory
 if [[ ! -e $destdir ]]; then
-    mkdir $destdir
-    echo "${destdir} directory created"
+	mkdir $destdir
+	echo "${destdir} directory created"
 fi
 
 # Loop over files in path
 for filepath in $path/*; do
-    # If is not a regular file
-    [[ ! -f $filepath ]] && continue
- 
-    # From: /home/marco/file.txt
-    # To:   file.txt
-    filename="${filepath##*/}"
-    destpath=$destdir/$filename.gpg
-    if [[ -e $destpath ]]; then
-        echo "[ Already exists ] ${filename}"
-        continue
-    fi
-    echo -en "\r[   Generating   ] ${filename}"
-    gpg --recipient marcodifran@gmail.com --output $destpath --encrypt $filepath
-    echo -en "\r[      Done      ] ${filename}\n"
+	# If is not a regular file
+	[[ ! -f $filepath ]] && continue
+
+	# From: /home/marco/file.txt
+	# To:   file.txt
+	filename="${filepath##*/}"
+	destpath=$destdir/$filename.gpg
+	if [[ -e $destpath ]]; then
+		echo "[ Already exists ] ${filename}"
+		continue
+	fi
+	echo -en "\r[   Generating   ] ${filename}"
+	gpg --recipient marcodifran@gmail.com --output $destpath --encrypt $filepath
+	echo -en "\r[      Done      ] ${filename}\n"
 done
