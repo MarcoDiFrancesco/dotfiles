@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+NOW="`date +%y-%m-%d_%H:%M:%S.%N`" 
+echo $NOW
+echo $NOW >> "/home/marco/scripts/TEST-OUTPUT";

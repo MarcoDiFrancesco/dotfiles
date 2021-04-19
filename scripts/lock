@@ -1,0 +1,53 @@
+#!/usr/bin/bash
+
+exec_hook() {
+  # --not-when-fullscreen removed because would not allow sleep also if fullscreen in another window
+  xidlehook \
+    --not-when-audio \
+    --detect-sleep \
+    --timer 540 'lock -b' 'lock -r' \
+    --timer 60 'lock -l' 'lock -r'
+}
+
+brightness_reset() {
+  xrandr --output DP1 --brightness 1
+  xrandr --output eDP1 --brightness 1
+}
+
+while getopts 'hlbr' flag; do
+  case "${flag}" in
+
+  # hook (-h)
+  h)
+    killall xidlehook
+    exec_hook
+    ;;
+
+  # lock (-l)
+  l)
+    # xset used for screen saver respectively for 10 sec and infinity
+    killall xidlehook
+    brightness_reset
+    xset s 10
+    betterlockscreen -l &&
+      xset s 0 &&
+      exec_hook
+    ;;
+
+  # brightness set (-b)
+  b)
+    brightness=1
+    for i in {1..25}; do
+      echo "Brightness ${brightness}"
+      brightness=$(echo "$brightness - 0.02" | bc)
+      xrandr --output DP1 --brightness $brightness
+      xrandr --output eDP1 --brightness $brightness
+    done
+    ;;
+
+  # brightness reset (-r)
+  r)
+    brightness_reset
+    ;;
+  esac
+done

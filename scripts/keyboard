@@ -1,0 +1,11 @@
+#!/bin/bash
+
+export HOME="/home/marco"
+export DISPLAY=:0
+export XAUTHORITY=$HOME/.Xauthority
+
+# If display server is running, timeout set because the command takes time
+# https://stackoverflow.com/a/11965765/7924557
+if timeout 0.1 xset q &>/dev/null; then
+  xkbcomp -I$HOME/.config/xkb ~/.config/xkb/map $DISPLAY
+fi
