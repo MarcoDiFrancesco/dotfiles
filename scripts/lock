@@ -9,12 +9,22 @@ exec_hook() {
     --timer 60 'lock -l' 'lock -r'
 }
 
+exec_lock() {
+  # xset used for screen saver respectively for 10 sec and infinity
+  killall xidlehook
+  brightness_reset
+  xset s 10
+  betterlockscreen -l &&
+    xset s 0 &&
+    exec_hook
+}
+
 brightness_reset() {
   xrandr --output DP1 --brightness 1
   xrandr --output eDP1 --brightness 1
 }
 
-while getopts 'hlbr' flag; do
+while getopts 'hlsbr' flag; do
   case "${flag}" in
 
   # hook (-h)
@@ -25,13 +35,16 @@ while getopts 'hlbr' flag; do
 
   # lock (-l)
   l)
-    # xset used for screen saver respectively for 10 sec and infinity
-    killall xidlehook
-    brightness_reset
-    xset s 10
-    betterlockscreen -l &&
-      xset s 0 &&
-      exec_hook
+    exec_lock
+    ;;
+
+  # sleep (-s)
+  # Not using betterlockscreen -s because would not be possible to emulate the behaviour:
+  # if was sleeping, waken up and then password was not inserted just sleep again because
+  # on i3lock, xidlehook inserts text in the password field.
+  s)
+    systemctl suspend
+    exec_lock
     ;;
 
   # brightness set (-b)

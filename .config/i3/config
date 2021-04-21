@@ -72,8 +72,8 @@ for_window [class="^.*"] border pixel 1
 
 # Suspend and lock, xset to blank screen
 exec_always --no-startup-id lock -h
-bindsym $mod4+$mod1+y exec --no-startup-id       betterlockscreen -s
-bindsym XF86Sleep exec --no-startup-id           betterlockscreen -s
+bindsym $mod4+$mod1+y exec --no-startup-id       lock -s
+bindsym XF86Sleep exec --no-startup-id           lock -s
 bindsym $mod4+$mod1+Shift+y exec --no-startup-id lock -l
 bindsym XF86ScreenSaver exec --no-startup-id     lock -l
 bindsym Pause exec --no-startup-id               lock -l
