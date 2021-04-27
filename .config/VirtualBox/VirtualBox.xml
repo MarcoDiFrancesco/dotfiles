@@ -10,13 +10,13 @@
     <ExtraData>
       <ExtraDataItem name="GUI/Details/Elements" value="general,system,preview,display,storage,audio,network,usb,sharedFolders,description"/>
       <ExtraDataItem name="GUI/GroupDefinitions/" value="n=GLOBAL,m=b59745b8-3904-469c-861a-8369d2192f2d"/>
-      <ExtraDataItem name="GUI/LastItemSelected" value="n=GLOBAL"/>
-      <ExtraDataItem name="GUI/LastWindowPosition" value="1,28,2558,1411"/>
+      <ExtraDataItem name="GUI/LastItemSelected" value="m=ubuntu-18.04"/>
+      <ExtraDataItem name="GUI/LastWindowPosition" value="1,28,1278,1411"/>
+      <ExtraDataItem name="GUI/LogViewerOptions" value="monospace,noFontStyleName,9"/>
       <ExtraDataItem name="GUI/RecentFolderCD" value="/run/media/marco/TOSHIBA_MQ04ABF100/VirtualBox/ubuntu-18.04"/>
       <ExtraDataItem name="GUI/RecentListCD" value="/run/media/marco/TOSHIBA_MQ04ABF100/VirtualBox/ubuntu-18.04/ubuntu-18.04.5-desktop-amd64.iso,/home/marco/Downloads/ubuntu-20.10-desktop-amd64.iso"/>
-      <ExtraDataItem name="GUI/SplitterSizes" value="932,1625"/>
+      <ExtraDataItem name="GUI/SplitterSizes" value="342,935"/>
       <ExtraDataItem name="GUI/SuppressMessages" value="remindAboutAutoCapture,remindAboutMouseIntegration,confirmGoingFullscreen"/>
-      <ExtraDataItem name="GUI/Toolbar" value="false"/>
       <ExtraDataItem name="GUI/Tools/LastItemsSelected" value="Welcome,Details"/>
       <ExtraDataItem name="GUI/UpdateDate" value="never"/>
     </ExtraData>
