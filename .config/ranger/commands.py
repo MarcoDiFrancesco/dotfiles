@@ -6,7 +6,7 @@ from __future__ import absolute_import, division, print_function
 import os
 
 # You always need to import ranger.api.commands here to get the Command class:
-from ranger.api.commands import Command
+from ranger.api.commands import Command, command_alias_factory
 from ranger.core.loader import CommandLoader
 
 
@@ -22,8 +22,7 @@ class mount_hdd(Command):
 
 
 class fzf_select(Command):
-    """
-    :fzf_select
+    """:fzf_select
 
     Find a file using fzf.
 
@@ -57,88 +56,95 @@ class fzf_select(Command):
 
 
 class extract(Command):
-    """:extract [<exported_file>]
+    """:extract
 
-    Extract marked files to current directory
+    Extract marked files in directory with same filename
+    but without extension
     """
 
     def execute(self):
-        cwd = self.fm.thisdir
-        copied_files = cwd.get_selection()
+        from pathlib import Path
 
-        if not copied_files:
-            return
+        cwd = self.fm.thisdir
+        original_path = cwd.path
+        files = cwd.get_selection()
+
+        if len(files) > 1:
+            raise SyntaxError("Extract one file at a time")
+
+        # atool package
+        command = ["aunpack"]
+        file = files[0]
+        # /dir/file.txt
+        file = Path(files[0].path)
+        # /dir/file
+        dest_dir = file.parent / file.stem
+        if os.path.exists(dest_dir):
+            raise FileExistsError(f"Directory '{file.stem}' already exists")
+        command.append("-X")
+        command.append(dest_dir)
+        command.append(file)
+        descr = "Extracting"
+        obj = CommandLoader(
+            args=command,
+            descr=descr,
+            read=True,
+        )
+
+        # Deselect files
+        cwd.marked_items.clear()
 
         def refresh(_):
             cwd = self.fm.get_directory(original_path)
             cwd.load_content()
-
-        one_file = copied_files[0]
-        cwd = self.fm.thisdir
-        extrat_to = cwd.path
-        au_flags = ["-X", cwd.path]
-        au_flags += self.line.split()[1:]
-        au_flags += ["-e"]
-
-        self.fm.copy_buffer.clear()
-        self.fm.cut_buffer = False
-        if len(copied_files) == 1:
-            descr = "extracting: " + os.path.basename(one_file.path)
-        else:
-            descr = "extracting files from: " + os.path.basename(one_file.dirname)
-        obj = CommandLoader(
-            args=["aunpack"] + au_flags + [f.path for f in copied_files],
-            descr=descr,
-            read=True,
-        )
 
         obj.signal_bind("after", refresh)
         self.fm.loader.add(obj)
 
 
 class compress(Command):
-    """:compress
+    """:compress <filename>
 
-    Compress selected files to current directory
+    Compress selected files to archive
     """
 
     def execute(self):
         cwd = self.fm.thisdir
+        original_path = cwd.path
         marked_files = cwd.get_selection()
+        # ["compress", "dest.zip"]
+        args = self.line.split()
+        if len(args) != 2:
+            raise SyntaxError("Specify archive name with extension")
+        # e.g. myfile.zip
+        dest_name = args[1]
 
-        if not marked_files:
-            return
+        descr = "Compressing files in: " + os.path.basename(dest_name)
+        command = ["apack"]
+        command.append(dest_name)
+        command += [os.path.relpath(f.path, cwd.path) for f in marked_files]
+        obj = CommandLoader(
+            args=command,
+            descr=descr,
+            read=True,
+        )
+
+        # Deselect files
+        cwd.marked_items.clear()
 
         def refresh(_):
             cwd = self.fm.get_directory(original_path)
             cwd.load_content()
 
-        original_path = cwd.path
-        parts = self.line.split()
-        # au_flags = parts[1:]
-        if self.arg(1):
-            au_flags = parts[1:]
-        else:
-            au_flags = "gigi.zip"
-
-        descr = "Compressing files in: " + os.path.basename(parts[1])
-
-        obj = CommandLoader(
-            args=["apack"] + au_flags
-            # + [os.path.relpath(f.path, cwd.path) for f in marked_files],
-            + [os.path.relpath(f.path, cwd.path) for f in marked_files],
-            descr=descr,
-            read=True,
-        )
-
         obj.signal_bind("after", refresh)
         self.fm.loader.add(obj)
 
     def tab(self, tabnum):
-        """ Complete with current folder name """
+        """Complete with current folder name"""
 
-        extension = [".zip", ".tar.gz", ".rar", ".7z"]
-        return [
-            "compress " + os.path.basename(self.fm.thisdir.path) + ext
-            for ext in extension
-        ]
+        extension = [".zip", ".tar.gz", ".7z"]
+        # From ':compress dest' take 'dest'
+        new_name = self.args[1]
+        # From 'new_name.z' to 'new_name'
+        new_name = new_name.split(".")[0]
+        return ["compress " + new_name + ext for ext in extension]
