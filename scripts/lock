@@ -13,7 +13,7 @@ exec_lock() {
   # xset used for screen saver respectively for 10 sec and infinity
   killall xidlehook
   brightness_reset
-  xset s 10
+  xset s 20
   betterlockscreen -l &&
     xset s 0 &&
     exec_hook
