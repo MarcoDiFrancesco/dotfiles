@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
 exec_hook() {
-  # --not-when-fullscreen removed because would not allow sleep also if fullscreen in another window
+  # --not-when-fullscreen removed because would not allow sleep also
+  # if fullscreen in another window
   xidlehook \
     --not-when-audio \
     --detect-sleep \
@@ -9,13 +10,16 @@ exec_hook() {
     --timer 60 'lock -l' 'lock -r'
 }
 
+# Execte on lock screen
 exec_lock() {
-  # xset used for screen saver respectively for 10 sec and infinity
   killall xidlehook
   brightness_reset
+  # Screen saver
   xset s 20
+  # Keyboard setup required if keyboard pluged while sleeping
   betterlockscreen -l &&
     xset s 0 &&
+    keyboard &&
     exec_hook
 }
 
@@ -39,9 +43,9 @@ while getopts 'hlsbr' flag; do
     ;;
 
   # sleep (-s)
-  # Not using betterlockscreen -s because would not be possible to emulate the behaviour:
-  # if was sleeping, waken up and then password was not inserted just sleep again because
-  # on i3lock, xidlehook inserts text in the password field.
+  # Not using betterlockscreen -s because if was sleeping, waken up
+  # and then password was not inserted on i3lock, xidlehook inserts 
+  # text in the password field.
   s)
     systemctl suspend
     exec_lock
