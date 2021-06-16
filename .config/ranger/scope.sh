@@ -134,6 +134,11 @@ handle_image() {
         image/svg+xml|image/svg)
             convert -- "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
             exit 1;;
+	
+	## Gimp
+	image/x-xcf)
+	    # Do nothing
+	    exit 6;;
 
         ## DjVu
         # image/vnd.djvu)

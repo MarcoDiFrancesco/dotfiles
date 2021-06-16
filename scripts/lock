@@ -12,12 +12,14 @@ exec_hook() {
 
 # Execte on lock screen
 exec_lock() {
+  echo "Killing xidlehook"
   killall xidlehook
   brightness_reset
   # Screen saver
   xset s 20
   # Keyboard setup required if keyboard pluged while sleeping
-  betterlockscreen -l &&
+  betterlockscreen -l
+  until ! pgrep i3lock; do sleep 1; done &&
     xset s 0 &&
     keyboard &&
     exec_hook
