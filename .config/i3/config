@@ -64,6 +64,8 @@ workspace 9 output DP1
 workspace 10 output DP1
 
 # Remove borders from all programs
+# Get class with xprops command
+for_window [class="com.marcodifrancesco.*"] floating enable
 for_window [class="Gnome-screenshot"] floating enable
 for_window [class="TelegramDesktop"] floating enable
 for_window [class="Slack"] floating enable
