@@ -1,13 +1,13 @@
 ZSH_THEME="agnoster"
+#ZSH_THEME="fwalch"
+#ZSH_THEME="mytheme"
+#ZSH_THEME="~/.config/zsh/.zsh-theme"
 
 # Uncomment the following line to automatically update without prompting.
 DISABLE_UPDATE_PROMPT="true"
 
-# Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=14
-
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -68,8 +68,8 @@ alias scp='echo "scp is deprecated! Use rsync instead"'
 # Pip aliases to avoid using it
 alias pip='./.venv/bin/pip'
 
-# compinit is set in oh-my-zsh.sh
-if command -v exa &> /dev/null; then
+# fzf (ctrl+r)
+if command -v fzf &> /dev/null; then
 	source /usr/share/fzf/key-bindings.zsh
 	source /usr/share/fzf/completion.zsh
 fi

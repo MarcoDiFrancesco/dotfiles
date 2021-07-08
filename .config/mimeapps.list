@@ -1,7 +1,8 @@
 [Default Applications]
-application/zip=ranger-file.desktop
 application/csv=onlyoffice-desktopeditors.desktop
+application/json=code.desktop
 application/pdf=firefox.desktop
+application/zip=ranger-file.desktop
 image/png=org.gnome.eog.desktop
 image/jpeg=org.gnome.eog.desktop
 image/svg+xml=org.gnome.eog.desktop
@@ -10,7 +11,7 @@ audio/mp4=vlc.desktop
 audio/x-wav=vlc.desktop
 video/mp4=vlc.desktop
 video/avi=vlc.desktop
-video/x-matroska=vlc.desktop; # .mkv
+video/x-matroska=vlc.desktop;
 text/html=google-chrome.desktop
 x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
@@ -20,6 +21,4 @@ x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/unknown=google-chrome.desktop
 x-scheme-handler/tg=userapp-Telegram Desktop-WV1800.desktop
 x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
-
-[Added Associations]
-x-scheme-handler/tg=userapp-Telegram Desktop-WV1800.desktop;
+x-scheme-handler/discord-478576776990425110=discord-478576776990425110.desktop
