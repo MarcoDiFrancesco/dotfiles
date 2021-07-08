@@ -3,8 +3,11 @@
 pamixer --unmute
 
 # Get increase (-i) decrease (-d) mute (-m)
-while getopts 'idm' flag; do
+while getopts 'gidm' flag; do
   case "${flag}" in
+  g)
+    echo "$(pamixer --get-volume)%"
+    ;;
   i)
     pamixer -i 2
     ;;

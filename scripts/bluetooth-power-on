@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MAC=CD:9F:B9:BD:FB:00
+MAC=CA:C9:FC:48:31:81
 
 # Unlock if bluetooth card is locked (password requested)
 if [[ $(rfkill -r | grep 'bluetooth hci0 blocked') = *bluetooth\ hci0\ blocked* ]]; then

@@ -24,18 +24,15 @@ margin-bottom = 5
 monitor = ${env:MONITOR:eDP1}
 inherit = bar/master
 
-;modules-left = bspwm
 modules-left = i3
 modules-center = date
-modules-right = pulseaudio backlight ram cpu wlan battery temperature mouse powermenu
-; removed: headphones
+; removed: headphones wlan
+modules-right = audio backlight ram cpu battery temperature mouse
 
 [bar/bar2]
 monitor = ${env:MONITOR:DP1}
 inherit = bar/master
 
-;modules-left = bspwm
 modules-left = i3
 modules-center = date
-modules-right = pulseaudio backlight ram cpu wlan battery temperature mouse powermenu
-; removed: headphones
+modules-right = audio backlight ram cpu battery temperature mouse
