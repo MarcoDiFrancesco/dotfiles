@@ -1,16 +1,17 @@
 #!/bin/bash
 
 path="$1"
+
 # Check if directory is specified
 if [[ -z $path ]]; then
-	echo "Add directory as argument"
+	echo "Add directory as argument like -> 'encrypt-files video-list'"
 	exit 1
 elif [[ ! -d $path ]]; then
 	echo "Specified path is not a directory"
 	exit 1
 fi
 
-destdir=$path/encrypted
+destdir=$path-encrypted
 # Create directory
 if [[ ! -e $destdir ]]; then
 	mkdir $destdir
@@ -26,6 +27,8 @@ for filepath in $path/*; do
 	# To:   file.txt
 	filename="${filepath##*/}"
 	destpath=$destdir/$filename.gpg
+	
+	# If file is already encrypted skip
 	if [[ -e $destpath ]]; then
 		echo "[ Already exists ] ${filename}"
 		continue
