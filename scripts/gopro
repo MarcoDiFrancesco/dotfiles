@@ -3,20 +3,18 @@
 # Mount GoPro with simple-mtpfs checking if it's already mounted
 # MOUNT_DIR set in ~/.zshenv
 
-DEV_MOUNT_DIR="$MOUNT_DIR/GoProHERO4"
+DEV_MOUNT_DIR="$MOUNT_DIR/GoProTMP"
 
 if [[ $(simple-mtpfs -l) = *1:\ GoProHERO4* ]]; then
   if [[ ! -d "${DEV_MOUNT_DIR}" ]]; then
-    sudo mkdir -p $DEV_MOUNT_DIR
-    sudo chmod 777 $DEV_MOUNT_DIR
+    echo "GoPro mounted"
+    # Needs both read and write permissions (755 not working)
+    sudo mkdir --mode=777 -p $DEV_MOUNT_DIR
     simple-mtpfs --device 1 $DEV_MOUNT_DIR
   else
-    echo "Already mounted"
-  #  sudo umount $DEV_MOUNT_DIR
-  #  simple-mtpfs --device 1 $DEV_MOUNT_DIR
+    echo "GoPro already mounted"
   fi
-  cd $DEV_MOUNT_DIR
-  exec zsh -c ranger
+  echo "DO NOW USE RANGER, just copy file with 'cp -rv GoPro ~/Downloads'"
 else
-  echo "GoPro device not detected in port 1"
+  echo "GoPro device not connected"
 fi
