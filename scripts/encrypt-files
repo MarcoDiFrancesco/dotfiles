@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO: ADD CHECK FOR UPPERCASE CHARACTERS, IN CASE FAIL
+
 path="$1"
 
 # Check if directory is specified
