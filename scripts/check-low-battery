@@ -11,7 +11,7 @@ TOO_LOW=5
 STATUS=$(cat /sys/class/power_supply/BAT0/status)
 STATUS_NOT_CHARGING="Discharging"
 # Notification lenght in millisenconds. Putting exactly 60 sec makes appear
-# one notification, but when it disappears, the following one does not appear
+# one notification but when it disappears the following one does not appear
 NOTIFICATION_LENGHT=$((59 * 1000))
 if [ $BATTERY_LEVEL -le $TOO_LOW -a "$STATUS" = $STATUS_NOT_CHARGING ]; then
   # Send notification that lasts for 5 minutes
