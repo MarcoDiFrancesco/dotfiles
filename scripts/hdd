@@ -4,14 +4,17 @@
 # MOUNT_DIR set in ~/.zshenv
 
 DEV_MOUNT_DIR="$MOUNT_DIR/TOSHIBA_MQ04ABF100"
-GET_DEV=$(lsblk -io NAME,MODEL | grep TOSHIBA_MQ04ABF100 | awk '{print $1;}')
+GET_DEV=$(lsblk -io NAME,MODEL | grep "TOSHIBA MQ04ABF100" | awk '{print $1;}')
 DEV_DIR="/dev/${GET_DEV}1"
 
 # If folder does not exist
 if [[ ! -d "${DEV_MOUNT_DIR}" ]]; then
   sudo mkdir -p $DEV_MOUNT_DIR
   sudo mount $DEV_DIR $DEV_MOUNT_DIR
+else
+  echo "Already mounted"
 fi
+
 # Used in ranger and making cd from ranger
 #cd $DEV_MOUNT_DIR
 #exec zsh -c ranger

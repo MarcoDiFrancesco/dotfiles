@@ -4,13 +4,13 @@ export HOME="/home/marco"
 export DISPLAY=:0
 export XAUTHORITY=$HOME/.Xauthority
 
-# Switch off caps
-if ! xset q | grep "Caps Lock:   off"; then
-  xdotool key Caps_Lock
-fi
-
 # If display server is running, timeout set because the command takes time
 # https://stackoverflow.com/a/11965765/7924557
 if timeout 0.1 xset q &>/dev/null; then
+  # Switch off caps
+  if ! xset q | grep "Caps Lock:   off"; then
+    xdotool key Caps_Lock
+  fi
+
   xkbcomp -I$HOME/.config/xkb ~/.config/xkb/map $DISPLAY
 fi

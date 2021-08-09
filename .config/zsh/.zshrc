@@ -1,10 +1,3 @@
-#ZSH_THEME="agnoster"
-#ZSH_THEME="fwalch"
-#ZSH_THEME="mytheme"
-
-# Source theme instead of using the default ones
-source ~/.config/zsh/.zsh-theme
-
 # Uncomment the following line to automatically update without prompting.
 DISABLE_UPDATE_PROMPT="true"
 
@@ -14,15 +7,16 @@ COMPLETION_WAITING_DOTS="true"
 # Command execution timestamp
 HIST_STAMPS="yyyy-mm-dd"
 
-# History command is overritten somewhere
-#alias hist='fc -il 1 | less +G'
-
 # Plugins
 plugins=(
     git
     extract
 )
+
 source $ZSH/oh-my-zsh.sh
+
+# Theme must be sourced after oh-my-zsh.sh
+source ~/.config/zsh/.zsh-theme
 
 # Custom plugins
 PLUGIN=$ZSH_BASE/plugins/zsh-syntax-highlighting
