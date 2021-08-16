@@ -7,37 +7,29 @@ COMPLETION_WAITING_DOTS="true"
 # Command execution timestamp
 HIST_STAMPS="yyyy-mm-dd"
 
-# Plugins
-plugins=(
-    git
-    extract
-)
-
 source $ZSH/oh-my-zsh.sh
 
 # Theme must be sourced after oh-my-zsh.sh
 source ~/.config/zsh/.zsh-theme
 
 # Custom plugins
-PLUGIN=$ZSH_BASE/plugins/zsh-syntax-highlighting
+PLUGIN=$ZSH_BASE/plugins
 if [ ! -d $PLUGIN ]; then
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGIN
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGIN/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-history-substring-search $PLUGIN/zsh-history-substring-search
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git $PLUGIN/zsh-autosuggestions
 fi
-source $PLUGIN/zsh-syntax-highlighting.zsh
 
-PLUGIN=$ZSH_BASE/plugins/zsh-autosuggestions
-if [ ! -d $PLUGIN ]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git $PLUGIN
-fi
-source $PLUGIN/zsh-autosuggestions.plugin.zsh
+source $PLUGIN/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $PLUGIN/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $PLUGIN/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
-export CODESTATS_API_KEY="SFMyNTY.VFdGeVkyOUVhVVp5WVc1alpYTmpidz09IyNOamczTXc9PQ.Q5knPIVxz568Al7Tev_xqahXr4_J7xcihLB7uyWbaBQ" 
-PLUGIN=$ZSH_BASE/plugins/code-stats-zsh
-if [ ! -d $PLUGIN ]; then
-  echo "Installing code-stats-zsh"
-  sudo git clone https://gitlab.com/code-stats/code-stats-zsh.git $PLUGIN
-fi
-source $PLUGIN/codestats.plugin.zsh
+# zsh-history-substring-search bindings
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# Plugins
+plugins=(git extract)
 
 if command -v exa &> /dev/null; then
 	alias ls='exa'
@@ -85,6 +77,7 @@ if [ -d "$NVM_DIR" ]; then
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 fi
 
+# TOCHECK if they are useful
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
@@ -93,5 +86,5 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
-
 setopt PUSHD_IGNORE_DUPS
+

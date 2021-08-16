@@ -64,12 +64,13 @@ workspace 9 output DP1
 workspace 10 output DP1
 
 # Remove borders from all programs
-# Get class with xprops command
+# Get class with xprop command
 for_window [class="com.marcodifrancesco.*"] floating enable
 for_window [class="Gnome-screenshot"] floating enable
 for_window [class="TelegramDesktop"] floating enable
 for_window [class="Slack"] floating enable
 for_window [class="Notion"] floating enable
+for_window [class="Teams"] floating enable
 for_window [class="^.*"] border pixel 1
 
 # Suspend and lock, xset to blank screen
