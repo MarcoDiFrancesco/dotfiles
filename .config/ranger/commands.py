@@ -5,8 +5,7 @@ from __future__ import absolute_import, division, print_function
 
 import os
 
-# You always need to import ranger.api.commands here to get the Command class:
-from ranger.api.commands import Command, command_alias_factory
+from ranger.api.commands import Command
 from ranger.core.loader import CommandLoader
 
 
@@ -21,6 +20,26 @@ class mount_hdd(Command):
         self.fm.cd("/run/media/" + os.getenv("USER"))
 
 
+class imgur_screenshot(Command):
+    """:imgur_screenshot <filename>
+
+    Upload image to Imgur
+    """
+
+    def execute(self):
+        cwd = self.fm.thisdir
+        original_path = cwd.path
+        files = cwd.get_selection()
+        assert len(files) == 1, "Extract one file at a time"
+        command = ["imgur-screenshot", str(files[0])]
+        descr = "Uploading to Imgur"
+        obj = CommandLoader(
+            args=command,
+            descr=descr,
+        )
+        self.fm.loader.add(obj)
+
+
 class fzf_select(Command):
     """:fzf_select
 
@@ -32,8 +51,8 @@ class fzf_select(Command):
     """
 
     def execute(self):
-        import subprocess
         import os.path
+        import subprocess
 
         if self.quantifier:
             # match only directories
@@ -88,7 +107,7 @@ class extract(Command):
         obj = CommandLoader(
             args=command,
             descr=descr,
-            read=True,
+            # read=True,
         )
 
         # Deselect files
@@ -126,7 +145,7 @@ class compress(Command):
         obj = CommandLoader(
             args=command,
             descr=descr,
-            read=True,
+            silent=True
         )
 
         # Deselect files
