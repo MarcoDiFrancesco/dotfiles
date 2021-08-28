@@ -7,6 +7,12 @@ COMPLETION_WAITING_DOTS="true"
 # Command execution timestamp
 HIST_STAMPS="yyyy-mm-dd"
 
+# Plugins
+plugins=(
+  git
+  extract
+)
+
 source $ZSH/oh-my-zsh.sh
 
 # Theme must be sourced after oh-my-zsh.sh
@@ -28,9 +34,6 @@ source $PLUGIN/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# Plugins
-plugins=(git extract)
-
 if command -v exa &> /dev/null; then
 	alias ls='exa'
 	alias ll='l'
@@ -51,6 +54,7 @@ alias dir_size='du --max-depth=1 --human-readable | sort --key=2'
 alias scp='echo "scp is deprecated! Use rsync instead"'
 # Pip aliases to avoid using it
 alias pip='./.venv/bin/pip'
+alias sv='source .venv/bin/activate'
 
 # fzf (ctrl+r)
 if command -v fzf &> /dev/null; then
