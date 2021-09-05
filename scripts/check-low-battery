@@ -1,7 +1,7 @@
 #!/bin/bash
 # Source: https://unix.stackexchange.com/a/190155/337926
 
-export DISPLAY=:0 # If not placed crontab will not show the notification TODO test it
+export DISPLAY=:0 # If not placed crontab will not show the notification
 
 ICON="/home/marco/Documents/low-battery.svg" # eye candy
 

@@ -10,6 +10,7 @@ sleep 0.4
 # Dispaly setup
 xrandr --output eDP1 --mode 1920x1080
 if xrandr | grep -q "\bDP1 connected\b"; then	
+	echo "CONNECTED" >> /tmp/display.log
 	# External monitor connected
 	# Sleep to fix half of the screen blank on startup
 	sleep 0.1
@@ -24,6 +25,7 @@ if xrandr | grep -q "\bDP1 connected\b"; then
 		xrandr --output eDP1 --off
 	fi
 else
+	echo "DISCONNECTED" >> /tmp/display.log
 	# External monitor disconnected
 	echo "External monitor disconnected"
 	xrandr --output DP1 --off
