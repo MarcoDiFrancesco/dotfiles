@@ -34,7 +34,7 @@ configuration {
 /*	auto-select: false;*/
 /*	parse-hosts: false;*/
 /*	parse-known-hosts: true;*/
-	combi-modi: "drun,emoji,run";
+	combi-modi: "drun,run,emoji";
 /*	matching: "normal";*/
 /*	tokenize: true;*/
 /*	m: "-5";*/
