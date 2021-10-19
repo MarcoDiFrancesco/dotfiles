@@ -6,7 +6,7 @@ export DISPLAY=:0 # If not placed crontab will not show the notification
 ICON="/home/marco/Documents/low-battery.svg" # eye candy
 
 BATTERY_LEVEL=$(cat /sys/class/power_supply/BAT0/capacity)
-TOO_LOW=5
+TOO_LOW=10
 
 STATUS=$(cat /sys/class/power_supply/BAT0/status)
 STATUS_NOT_CHARGING="Discharging"
@@ -17,6 +17,9 @@ if [ $BATTERY_LEVEL -le $TOO_LOW -a "$STATUS" = $STATUS_NOT_CHARGING ]; then
   # Send notification that lasts for 5 minutes
   # Variables are needed: https://bbs.archlinux.org/viewtopic.php?pid=1690539#p1690539
   sudo -u marco DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -u critical -i "$ICON" -t ${NOTIFICATION_LENGHT} "Battery low" "Battery level is ${BATTERY_LEVEL}%!"
+  echo "Battry low"
+else
+  echo "Battery not low"
 fi
 
 exit 0
