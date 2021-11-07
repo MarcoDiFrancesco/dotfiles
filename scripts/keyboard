@@ -1,16 +1,26 @@
 #!/bin/bash
 
+exec >> /var/log/keyboard.log 2>&1
+echo "=== Run: $(date '+%Y-%m-%d %H:%M:%S') ==="
+
 export HOME="/home/marco"
-export DISPLAY=:0
+export DISPLAY=":0.0"
 export XAUTHORITY=$HOME/.Xauthority
 
 # If display server is running, timeout set because the command takes time
 # https://stackoverflow.com/a/11965765/7924557
 if timeout 0.1 xset q &>/dev/null; then
+  echo "Running xkbcomp"
+  # Sleep needed for xkbcomp
+  sleep 0.5
+  xkbcomp -I$HOME/.config/xkb ~/.config/xkb/map $DISPLAY &> /dev/null
+
   # Switch off caps
-  if ! xset q | grep "Caps Lock:   off"; then
+  if ! xset q | grep "Caps Lock:   off" > /dev/null; then
+    echo "Running xdotools"
     xdotool key Caps_Lock
   fi
-
-  xkbcomp -I$HOME/.config/xkb ~/.config/xkb/map $DISPLAY
+  echo "Running scripts/logkeys-start"
+  /home/marco/scripts/logkeys-start
 fi
+echo "=== End ==="

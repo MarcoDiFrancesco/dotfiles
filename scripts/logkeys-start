@@ -1,0 +1,27 @@
+#!/bin/bash
+exec >> /var/log/logkeys-start.log 2>&1
+echo "=== Run: $(date '+%Y-%m-%d %H:%M:%S') ==="
+
+killall -q logkeys
+# sleep 10
+sleep 1
+
+export HOME="/home/marco"
+export DISPLAY=":0.0"
+export XAUTHORITY=$HOME/.Xauthority
+
+log_dir="/var/log/logkeys"
+mkdir -p $log_dir
+
+# e.g. link: /dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-event-kbd
+for link in /dev/input/by-path/*-kbd; do	
+	# e.g. event_link: /dev/input/event4
+	event_link=$(realpath $link)
+	# e.g. link_name: pci-0000:00:14.0-usb-0:1:1.0-event-kbd
+	link_name=$(basename ${link})
+
+	echo "Starting $link_name"
+	logkeys --start --device $event_link --output $log_dir/$link_name
+	rm /var/run/logkeys.pid
+done
+echo "=== End ==="
