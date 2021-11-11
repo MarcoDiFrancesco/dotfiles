@@ -71,6 +71,7 @@ for_window [class="TelegramDesktop"] floating enable
 for_window [class="Slack"] floating enable
 for_window [class="Notion"] floating enable
 for_window [class="Teams"] floating enable
+for_window [class="obsidian"] floating enable
 for_window [class="^.*"] border pixel 1
 
 # Suspend and lock, xset to blank screen

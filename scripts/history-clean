@@ -3,13 +3,13 @@ ROOT="/home/marco/.cache/zsh"
 DATENOW="$(date +%y-%m-%d_%H:%M:%S.%N)"
 
 # Remove duplicate commands
-cat -n "$ROOT/history" | sort -r | sort -t ';' -uk2 | sort -nk1 | cut -f2- >$ROOT/history-new
+cat -n "$ROOT/history" | sort -r | sort -t ';' -uk2 | sort -nk1 | cut -f2- > $ROOT/history-new
 # Remove lines ending with \
-sed -i.bak '/.*\\$/d' $ROOT/history-new
-
+sed --in-place '/.*\\$/d' $ROOT/history-new
+# Remove lines longer than n characters
+sed --in-place '/.\{135\}/d' history-new
 # Rename oldest file to tmp
 mv $ROOT/history $ROOT/history-$DATENOW
 mv $ROOT/history-new $ROOT/history
 FILE_OLDEST=$(find $ROOT -name 'history-*' | sort -r | tail -1)
 mv $FILE_OLDEST /tmp
-mv $ROOT/history-new.bak /tmp
