@@ -13,6 +13,8 @@ if timeout 0.1 xset q &>/dev/null; then
   echo "Running xkbcomp"
   # Sleep needed for xkbcomp
   sleep 0.5
+  # TODO: remove it, added because of a xorg bug https://gitlab.freedesktop.org/xorg/xserver/-/issues/1249
+  xkbcomp -I$HOME/.config/xkb ~/.config/xkb/map.TMP $DISPLAY &> /dev/null
   xkbcomp -I$HOME/.config/xkb ~/.config/xkb/map $DISPLAY &> /dev/null
 
   # Switch off caps

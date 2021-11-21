@@ -1,4 +1,4 @@
-# Check "xmodmao -pm" for Mod keybinds
+# Check "xmodmap -pm" for Mod keybinds
 set $mod1 Mod1
 set $mod4 Mod4
 
