@@ -93,21 +93,22 @@ class extract(Command):
 
         # atool package
         command = ["aunpack"]
-        file = files[0]
+        f = files[0]
         # /dir/file.txt
-        file = Path(files[0].path)
+        f = Path(files[0].path)
         # /dir/file
-        dest_dir = file.parent / file.stem
-        if os.path.exists(dest_dir):
-            raise FileExistsError(f"Directory '{file.stem}' already exists")
+        dest_dir = f.parent / f.stem
+        if dest_dir.exists():
+            raise FileExistsError(f"Directory '{f.stem}' already exists")
+        # aunpack -X requires existing directory
+        dest_dir.mkdir()
         command.append("-X")
-        command.append(dest_dir)
-        command.append(file)
+        command.append(str(dest_dir))
+        command.append(str(f))
         descr = "Extracting"
         obj = CommandLoader(
             args=command,
             descr=descr,
-            # read=True,
         )
 
         # Deselect files
