@@ -105,10 +105,9 @@ class extract(Command):
         command.append("-X")
         command.append(str(dest_dir))
         command.append(str(f))
-        descr = "Extracting"
         obj = CommandLoader(
             args=command,
-            descr=descr,
+            descr="Extracting",
         )
 
         # Deselect files
