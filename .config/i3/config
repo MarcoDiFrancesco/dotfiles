@@ -72,7 +72,7 @@ for_window [class="Slack"] floating enable
 for_window [class="Notion"] floating enable
 for_window [class="Teams"] floating enable
 for_window [class="obsidian"] floating enable
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 
 # Suspend and lock, xset to blank screen
 exec_always --no-startup-id lock -h
