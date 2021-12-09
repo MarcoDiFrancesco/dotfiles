@@ -75,6 +75,8 @@ for_window [class="obsidian"] floating enable
 # Zotero citation to google docs and its progress bar
 for_window [title="Progress"] floating enable
 for_window [title="Quick Format Citation"] floating enable
+# Pycharm
+for_window [title="win0"] floating enable
 # Set border to 2 pixels
 for_window [class="^.*"] border pixel 2
 
