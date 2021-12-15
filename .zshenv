@@ -5,7 +5,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export RXVT_SOCKET="$XDG_CACHE_HOME/urxvtd-socket"
 
 # Sourced in .profile, for some reasons here it isn't sourced early enough
-export PATH="/home/marco/scripts:$PATH"
+export PATH="$HOME/scripts:$PATH"
+# Ruby gem path, for bundle command
+export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
 # Path to your oh-my-zsh installation
 if [ -d "$HOME/.oh-my-zsh" ]; then

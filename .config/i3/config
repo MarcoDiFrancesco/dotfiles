@@ -71,6 +71,8 @@ for_window [class="TelegramDesktop"] floating enable
 for_window [class="Slack"] floating enable
 for_window [class="Notion"] floating enable
 for_window [class="Teams"] floating enable
+# Zoom floating windows, not the meeting nor homepage
+for_window [class="zoom"] floating enable
 for_window [class="obsidian"] floating enable
 # Zotero citation to google docs and its progress bar
 for_window [title="Progress"] floating enable
