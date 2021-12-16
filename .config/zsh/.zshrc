@@ -54,7 +54,7 @@ alias dir_size='du --max-depth=1 --human-readable | sort --key=2'
 alias scp='echo "scp is deprecated! Use rsync instead"'
 # Pip aliases to avoid using it
 alias pip='./.venv/bin/pip'
-alias sv='source .venv/bin/activate'
+alias se='source .venv/bin/activate'
 
 # fzf (ctrl+r)
 if command -v fzf &> /dev/null; then
