@@ -15,8 +15,8 @@ exec_lock() {
   echo "Killing xidlehook"
   killall xidlehook
   brightness_reset
-  # Screen saver
-  xset s 20
+  # Screen saver after n seconds
+  xset s 60
   # Keyboard setup required if keyboard pluged while sleeping
   betterlockscreen -l
   until ! pgrep i3lock; do sleep 1; done &&
