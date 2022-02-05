@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# TODO: update screenshot script and merge it
+pic_name="/home/marco/Pictures/screenshot_$(date +"%Y-%m-%d")_$(date +"%H-%M-%S").png"
+gnome-screenshot --area --file=$pic_name
+
+txt_file="/tmp/tesseract-ocr"
+screenshot -a
+sleep 0.1
+tesseract $pic_name $txt_file
+cat "$txt_file.txt" | gpaste-client add
+notify-send -t 3000 "Tesseract - OCR" "Copied to clipboard"

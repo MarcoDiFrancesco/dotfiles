@@ -7,7 +7,7 @@ exec_hook() {
     --not-when-audio \
     --detect-sleep \
     --timer 540 'lock -b' 'lock -r' \
-    --timer 60 'lock -l' 'lock -r'
+    --timer 40 'lock -l' 'lock -r'
 }
 
 # Execte on lock screen
