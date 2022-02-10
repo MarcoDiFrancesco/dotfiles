@@ -59,3 +59,11 @@ export GOPATH="$XDG_CACHE_HOME/go"
 export GNUPGHOME="$XDG_CACHE_HOME/gnupg"
 # Gradle (Android Studio)
 export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
+# Rust
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+# Node Npm
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+# GPG
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+# Conda
+export CONDARC="$XDG_CONFIG_HOME/conda/condarc"

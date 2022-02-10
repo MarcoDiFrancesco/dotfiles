@@ -93,3 +93,6 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 setopt PUSHD_IGNORE_DUPS
 
+# Soruce list of conda environments
+source ~/scripts/activate-conda.sh
+
