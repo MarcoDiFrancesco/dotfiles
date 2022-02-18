@@ -83,15 +83,14 @@ if [ -d "$NVM_DIR" ]; then
 fi
 
 # TOCHECK if they are useful
-setopt EXTENDED_HISTORY
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_FIND_NO_DUPS
-setopt HIST_SAVE_NO_DUPS
-setopt HIST_BEEP
-setopt PUSHD_IGNORE_DUPS
+# Add timestamp to command
+#setopt EXTENDED_HISTORY
+#setopt HIST_EXPIRE_DUPS_FIRST
+#setopt HIST_IGNORE_SPACE
+#setopt HIST_FIND_NO_DUPS
+#setopt HIST_SAVE_NO_DUPS
+#setopt HIST_BEEP
+#setopt PUSHD_IGNORE_DUPS
 
 # Soruce list of conda environments
 source ~/scripts/activate-conda.sh

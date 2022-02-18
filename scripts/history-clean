@@ -1,6 +1,6 @@
 #!/bin/bash
 ROOT="/home/marco/.cache/zsh"
-DATENOW="$(date +%y-%m-%d_%H:%M:%S.%N)"
+DATENOW="$(date +%y-%m-%d_%H:%M:%S.%3N)"
 
 # Remove duplicate commands
 cat -n "$ROOT/history" | sort -r | sort -t ';' -uk2 | sort -nk1 | cut -f2- > $ROOT/history-new

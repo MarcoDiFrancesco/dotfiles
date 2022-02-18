@@ -67,3 +67,7 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 # Conda
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
+# Ruby
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME/bundle"
+export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
+export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME/bundle"
