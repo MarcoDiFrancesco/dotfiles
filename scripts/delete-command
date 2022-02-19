@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Delete commands from zsh history file and put them in a temporary file
+# Example: 'delete-command ls -l'
+# Will delete all command(s) matching exactly the arguments, so it will
+# not delete the following commands:
+# - ls -l | wc -l
+# - ls -la
+# - echo ls -l
+
+ROOT="/home/marco/.cache/zsh"
+# Join commands arguments in one string
+COMMAND_TO_DEL="$*"
+
+# Escape keyword for regex
+ESCAPED_KEYWORD=$(printf '%s\n' "$COMMAND_TO_DEL" | sed -e 's/[]\/$*.^[]/\\&/g')
+REGEX="^: [0-9]*:0;$ESCAPED_KEYWORD$"
+
+# Save to temporary file
+DEST_FILE="$ROOT/history-$(date +%y-%m-%d_%H:%M:%S.%3N)"
+# ^ and $ are start and end of the file
+grep -E "$REGEX" $ROOT/history > $DEST_FILE
+
+# Delete lines from original file
+sed --in-place "/$REGEX/d" $ROOT/history
+
+echo "Deleted $(wc -l $DEST_FILE | awk '{print $1}') lines"
