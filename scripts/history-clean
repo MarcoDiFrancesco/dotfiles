@@ -11,6 +11,10 @@ sed --in-place '/.\{135\}/d' $ROOT/history-new
 # Rename oldest file to tmp
 mv $ROOT/history $ROOT/history-$DATENOW
 mv $ROOT/history-new $ROOT/history
-FILE_OLDEST=$(find $ROOT -name 'history-*' | sort -r | tail -1)
-mv $FILE_OLDEST /tmp
+
+# Move old files to tmp
+CACHE_DEST=/tmp/zsh-cache
+mkdir -p $CACHE_DEST
+find $ROOT -name "history-*" -mtime +7 -exec mv -t $CACHE_DEST {} + 
+
 echo "History file '/home/marco/.cache/zsh/history' cleaned"
