@@ -1,17 +1,13 @@
 #!/bin/bash
 
-AMOUNT=50
+AMOUNT=80
 WHAT=words
 START=yes
 
-while getopts ":n:wpbls" opt; do
+while getopts ":n:s" opt; do
   case $opt in
     n)
       AMOUNT=$OPTARG
-      ;;
-    s)
-      # Start with 'Lorem ipsum...'
-      START=true
       ;;
     *)
       echo "Invalid option: -$OPTARG" >&2
@@ -21,5 +17,5 @@ done
 
 curl -s -X POST https://www.lipsum.com/feed/json -d "amount=$AMOUNT" -d "what=$WHAT" -d"start=$START" | jq -r '.feed.lipsum' | gpaste-client add
 
-notify-send -t 3000 "Lorem ipsum generator" "Copied to clipboard"
+notify-send -t 3000 "Lorem ipsum generator" "Copied $AMOUNT $WHAT to clipboard"
 
