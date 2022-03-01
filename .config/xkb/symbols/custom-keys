@@ -1,8 +1,10 @@
 xkb_symbols {
     // A accents
+    // TODO: use letter above (q) instead of right
     replace key <AC01> { [ a, A , agrave, Agrave ] };
     replace key <AC02> { [ s, S, aacute, Aacute ] };
     // E accents
+    // TODO: use letter above (3) instead of right
     replace key <AD03> { [ e, E, egrave, Egrave ] };
     replace key <AD04> { [ r, R, eacute, Eacute ] };
     // I accents
@@ -12,6 +14,7 @@ xkb_symbols {
     replace key <AD09> { [ o, O, ograve, Ograve ] };
     replace key <AE09> { [ 9, parenleft, oacute, Oacute ] };
     // U accents
+    // TODO: substituted below, decide what to do
     replace key <AD07> { [ u, U, ugrave, Ugrave ] };
     replace key <AE07> { [ 7, ampersand, uacute, Uacute ] };
 

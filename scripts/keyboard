@@ -19,9 +19,17 @@ if timeout 0.1 xset q &>/dev/null; then
 
   # Switch off caps
   if ! xset q | grep "Caps Lock:   off" > /dev/null; then
-    echo "Running xdotools"
+    echo "Running xdotools caps lock"
     xdotool key Caps_Lock
   fi
+
+  # Switch off caps
+  if ! xset q | grep "Num Lock:    off" > /dev/null; then
+    echo "Running xdotools num lock"
+    xdotool key Num_Lock
+  fi
+
+
   echo "Running scripts/logkeys-start"
   /home/marco/scripts/logkeys-start
 fi
