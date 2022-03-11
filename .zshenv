@@ -55,7 +55,7 @@ export NPM_CONFIG_USERCONFIG="$XDG_CACHE_HOME/npm"
 export IPYTHONDIR="$XDG_CACHE_HOME/jupiter"
 # Golang
 export GOPATH="$XDG_CACHE_HOME/go"
-# GnuPG
+# GPG
 export GNUPGHOME="$XDG_CACHE_HOME/gnupg"
 # Gradle (Android Studio)
 export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
@@ -63,8 +63,6 @@ export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 # Node Npm
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
-# GPG
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 # Conda
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 # Ruby
