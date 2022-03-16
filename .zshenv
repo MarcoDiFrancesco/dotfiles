@@ -51,6 +51,8 @@ export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export ANDROID_SDK_HOME="$XDG_CACHE_HOME/android"
 # Npm
 export NPM_CONFIG_USERCONFIG="$XDG_CACHE_HOME/npm"
+# Jarn (used by aur, so probably does not work)
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 # IPython
 export IPYTHONDIR="$XDG_CACHE_HOME/jupiter"
 # Golang
@@ -69,3 +71,7 @@ export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME/bundle"
 export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
 export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME/bundle"
+# Jupyter
+export JUPYTER_CONFIG_DIR="$XDG_DATA_HOME"/jupyter 
+# Zoom
+export SSB_HOME="$XDG_DATA_HOME/zoom"
