@@ -62,7 +62,7 @@ export GNUPGHOME="$XDG_CACHE_HOME/gnupg"
 # Gradle (Android Studio)
 export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
 # Rust
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export CARGO_HOME="$XDG_CACHE_HOME/cargo"
 # Node Npm
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 # Conda
@@ -70,8 +70,8 @@ export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 # Ruby
 export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME/bundle"
 export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
-export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME/bundle"
+export BUNDLE_USER_PLUGIN="$XDG_CACHE_HOME/bundle"
 # Jupyter
-export JUPYTER_CONFIG_DIR="$XDG_DATA_HOME"/jupyter 
+export JUPYTER_CONFIG_DIR="$XDG_CACHE_HOME"/jupyter 
 # Zoom
-export SSB_HOME="$XDG_DATA_HOME/zoom"
+export SSB_HOME="$XDG_CACHE_HOME/zoom"
