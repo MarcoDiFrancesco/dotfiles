@@ -35,7 +35,7 @@ fi
 xrandr --dpi 100
 
 # Start polybar
-killall polybar
+killall -w polybar
 /usr/bin/polybar --config=$HOME/.config/polybar/config bar1 &
 /usr/bin/polybar --config=$HOME/.config/polybar/config bar2 &
 
