@@ -2,15 +2,33 @@
 # Run in current shell instead of sub-shell with "source source-env"
 # 'se' set in .zshrc
 
-function source_file () {
-	if [ -f $1 ]; then
-		source $1
-		echo "✅ $2"
-	else
-		echo "❌ $2"
-	fi
+function source_file() {
+  if [ -f $1 ]; then
+    source $1
+    echo "✅ $2"
+  else
+    echo "❌ $2"
+  fi
 }
 
-source_file ".venv/bin/activate" "virtual env"
 source_file ".envvars" "env vars"
 
+# Venv
+VENV=".venv/bin/activate"
+if [ -f $VENV ]; then
+  source $VENV
+  echo "✅ venv"
+  VENV_SOURCED=true
+else
+  echo "❌ venv"
+fi
+
+# Pipenv
+if [ "$VENV_SOURCED" = true ]; then
+  echo "⏩ skipping pipenv"
+elif pipenv --venv &>/dev/null; then
+  echo "✅ pipenv"
+  pipenv shell 2>/dev/null
+else
+  echo "❌ pipenv"
+fi
