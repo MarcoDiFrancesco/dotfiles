@@ -15,7 +15,7 @@ while getopts ":n:s" opt; do
   esac
 done
 
-curl -s -X POST https://www.lipsum.com/feed/json -d "amount=$AMOUNT" -d "what=$WHAT" -d"start=$START" | jq -r '.feed.lipsum' | gpaste-client add
+curl -s -X POST https://www.lipsum.com/feed/json -d "amount=$AMOUNT" -d "what=$WHAT" -d"start=$START" | jq -r '.feed.lipsum' | tr '\n' ' ' | gpaste-client add
 
 notify-send -t 3000 "Lorem ipsum generator" "Copied $AMOUNT $WHAT to clipboard"
 

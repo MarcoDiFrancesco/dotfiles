@@ -168,7 +168,7 @@ exec_always --no-startup-id $HOME/scripts/keyboard
 exec_always --no-startup-id gpaste-client daemon-reexec
 # Start terminal daemon
 exec --no-startup-id urxvtd -q
-exec --no-startup-id xrdb $HOME/.config/urxvt/Xresources 
+exec --no-startup-id xrdb $HOME/.config/urxvt/Xresources
 # Compositor
 exec --no-startup-id picom 
 # Disk mount
