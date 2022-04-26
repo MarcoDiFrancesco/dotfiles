@@ -1,0 +1,4 @@
+#!/bin/bash
+# Count words from clipboard
+NUMBER=$(xsel | wc -w)
+notify-send -t 3000 "$NUMBER words"
