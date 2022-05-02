@@ -1,27 +1,8 @@
 xkb_symbols {
-    // A accents
-    // TODO: use letter above (q) instead of right
-    replace key <AC01> { [ a, A , agrave, Agrave ] };
-    replace key <AC02> { [ s, S, aacute, Aacute ] };
-    // E accents
-    // TODO: use letter above (3) instead of right
-    replace key <AD03> { [ e, E, egrave, Egrave ] };
-    replace key <AD04> { [ r, R, eacute, Eacute ] };
-    // I accents
-    replace key <AD08> { [ i, I, igrave, Igrave ] };
-    replace key <AE08> { [ 8, asterisk, iacute, Iacute ] };
-    // O accents
-    replace key <AD09> { [ o, O, ograve, Ograve ] };
-    replace key <AE09> { [ 9, parenleft, oacute, Oacute ] };
-    // U accents
-    // TODO: substituted below, decide what to do
-    replace key <AD07> { [ u, U, ugrave, Ugrave ] };
-    replace key <AE07> { [ 7, ampersand, uacute, Uacute ] };
-
     // Add delete to backspace key
     replace key <BKSP> { [ BackSpace, BackSpace, Delete ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<DELE>, clearmods=Mod4) ] };
 
-    // Add backtick to escape key
+    // Add backtick (so also tilde) to escape key
     replace key <ESC> { [ Escape, Escape, grave ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<TLDE>, clearmods=Mod4) ] };
 
     // Print key
@@ -36,7 +17,7 @@ xkb_symbols {
     replace key <AC07> { [ j, J, Down  ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<DOWN>, clearmods=Mod4) ] };
     replace key <AC08> { [ k, K, Up    ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<UP>, clearmods=Mod4) ] };
     replace key <AC09> { [ l, L, Right ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<RGHT>, clearmods=Mod4) ] };
-    
+
     // Begin, Bottom, Top, End
     replace key <AD06> { [ y, Y, KP_Home ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<KP7>, clearmods=Mod4) ] };
     replace key <AD07> { [ u, U, KP_Next ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<KP3>, clearmods=Mod4) ] };

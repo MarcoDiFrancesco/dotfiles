@@ -7,6 +7,5 @@
 	ui = true
 [core]
 	excludesfile = /home/marco/.config/git/gitignore
-	hooksPath = /home/marco/.config/git/hooks/
 [pull]
 	ff = only
