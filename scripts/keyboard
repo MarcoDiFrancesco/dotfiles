@@ -7,7 +7,7 @@ export HOME="/home/marco"
 export DISPLAY=":0.0"
 export XAUTHORITY=$HOME/.Xauthority
 
-# If display server is running, timeout set because the command takes time
+# If display server is running, timeout set because the command takes time to fail
 # https://stackoverflow.com/a/11965765/7924557
 if timeout 0.1 xset q &>/dev/null; then
   echo "Running xkbcomp"
@@ -15,18 +15,17 @@ if timeout 0.1 xset q &>/dev/null; then
   sleep 0.5
   xkbcomp -I$HOME/.config/xkb ~/.config/xkb/map $DISPLAY &> /dev/null
 
-  # Switch off caps
+  # Switch off caps lock key if enabled
   if ! xset q | grep "Caps Lock:   off" > /dev/null; then
     echo "Running xdotools caps lock"
     xdotool key Caps_Lock
   fi
 
-  # Switch off caps
+  # Switch off num lock key if enabled
   if ! xset q | grep "Num Lock:    off" > /dev/null; then
     echo "Running xdotools num lock"
     xdotool key Num_Lock
   fi
-
 
   echo "Running scripts/logkeys-start"
   /home/marco/scripts/logkeys-start

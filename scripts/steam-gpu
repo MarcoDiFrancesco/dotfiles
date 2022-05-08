@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# 38 fps on Terraria
+#optirun -b primus steam
+
+# 60 fps on Terraria
+primusrun steam

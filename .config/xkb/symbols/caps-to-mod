@@ -1,3 +1,5 @@
+// Check with 'xmodmap -pm'
+// This mapping does not change xmodmap itself, it just moves the keys used by it.
 xkb_symbols {
     // Caps_Lock to Super_L
     replace key <CAPS> { [ Super_L ] };

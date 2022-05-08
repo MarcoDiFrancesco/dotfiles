@@ -57,6 +57,10 @@ URxvt*scrollTtyOutput:      false
 URxvt*scrollWithBuffer:     true
 URxvt*scrollTtyKeypress:    true
 
+!! Send KP_Home to Home
+URxvt.keysym.KP_Home: \033[7~
+URxvt.keysym.KP_End: \033[8~
+
 !! Move one word right and left
 URxvt.keysym.Control-Up: \033[1;5A
 URxvt.keysym.Control-Down: \033[1;5B
@@ -74,9 +78,6 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 !! Set transparency
-!!URxvt.depth: 32
-!!URxvt.background: rgba:1111/1111/1111/dddd
-!!urxvt*background: rgba:0000/0000/0200/c800
 urxvt*transparent: true
 urxvt*shading: 20
 !! Extensions

@@ -31,6 +31,7 @@ source $PLUGIN/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $PLUGIN/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 # zsh-history-substring-search bindings
+# use 'cat' to find key codes
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
@@ -66,13 +67,14 @@ fi
 # Get urxvt ctrl+backspace escape character and set it to delete word
 # https://unix.stackexchange.com/a/39731/337926
 bindkey '^[[33~' backward-delete-word
+
 # Don't stop word deletion on the characters below on ctrl+backspace (removed /)
 # https://unix.stackexchange.com/a/392199/337926
 autoload -U select-word-style
 select-word-style bash
 export WORDCHARS='*?_.[]~=&;!#$%^(){}<>'
 
-# Change cursor shape
+# Cursor shape
 printf '\033[5 q\r'
 
 # Load nvm for WSL
@@ -81,16 +83,6 @@ if [ -d "$NVM_DIR" ]; then
 	export NVM_DIR
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 fi
-
-# TOCHECK if they are useful
-# Add timestamp to command
-#setopt EXTENDED_HISTORY
-#setopt HIST_EXPIRE_DUPS_FIRST
-#setopt HIST_IGNORE_SPACE
-#setopt HIST_FIND_NO_DUPS
-#setopt HIST_SAVE_NO_DUPS
-#setopt HIST_BEEP
-#setopt PUSHD_IGNORE_DUPS
 
 # Soruce list of conda environments
 source ~/scripts/activate-conda.sh

@@ -1,4 +1,5 @@
 # Check "xmodmap -pm" for Mod keybinds
+# Changes made in ~/.config/xkb/symbols/caps-to-mod
 set $mod1 Mod1
 set $mod4 Mod4
 
