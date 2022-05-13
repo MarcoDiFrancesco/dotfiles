@@ -1,6 +1,17 @@
 #!/bin/bash
 
-# 38 fps on Terraria
+# Steam suggested order:
+# - If the primusrun command is available, run the game via primusrun <command>.
+# - If the optirun command is available, run the game via optirun <command>.
+# - If neither is available, run the game as normal.
+
+# 38 fps on Terraria - CPU
+#steam
+
+# Terraria not starting from Steam's interface
+#optirun steam
+
+# 38 fps on Terraria - 500 MB of Video Memory
 #optirun -b primus steam
 
 # 60 fps on Terraria
