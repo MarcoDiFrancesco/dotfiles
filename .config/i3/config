@@ -180,3 +180,5 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/scripts/display-setup
 # Imwheel
 exec_always --no-startup-id imwheel --kill -b 45
+# ActivityWatch
+exec_always --no-startup-id sleep 3; killall aw-qt; aw-qt
