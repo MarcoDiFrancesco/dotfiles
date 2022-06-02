@@ -154,9 +154,10 @@ bindsym --release Ctrl+Print exec --no-startup-id imgur-screenshot
 bindsym $mod4+s exec urxvtc
 bindsym $mod4+d exec rofi -show combi
 bindsym $mod4+e exec firefox
+# Chrome: profile number in ~/.config/google-chrome/Profile *
 bindsym $mod4+$mod1+e exec google-chrome-stable --profile-directory="Default"
 bindsym $mod4+Shift+e exec google-chrome-stable --profile-directory="Profile 1"
-bindsym $mod4+Ctrl+e exec google-chrome-stable --profile-directory="Profile 2"
+bindsym $mod4+Ctrl+e exec google-chrome-stable --profile-directory="Profile 6"
 bindsym $mod4+v exec gpaste-client ui
 
 # Bluetooth
@@ -181,4 +182,4 @@ exec_always --no-startup-id $HOME/scripts/display-setup
 # Imwheel
 exec_always --no-startup-id imwheel --kill -b 45
 # ActivityWatch
-exec_always --no-startup-id sleep 3; killall aw-qt; aw-qt
+exec_always --no-startup-id sleep 3; killall -r aw-*; aw-qt
