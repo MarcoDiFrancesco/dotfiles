@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 exec_hook() {
+  killall xidlehook
   # --not-when-fullscreen removed because would not allow sleep also
   # if fullscreen in another window
   xidlehook \
@@ -11,16 +12,31 @@ exec_hook() {
 }
 
 # Execte on lock screen
-exec_lock() {
+# TODO: remove after testing exec_lock_v2
+#exec_lock() {
+#  echo "Killing xidlehook"
+#  killall xidlehook
+#  brightness_reset
+#  # Screen saver after n seconds
+#  xset s 60
+#  # Keyboard setup required if keyboard pluged while sleeping
+#  betterlockscreen -l
+#  # Wait for unlock
+#  until ! pgrep i3lock; do sleep 1; done &&
+#    xset s 0 &&
+#    keyboard &&
+#    exec_hook
+#}
+
+# Execte on lock screen
+exec_lock_v2() {
   echo "Killing xidlehook"
   killall xidlehook
   brightness_reset
-  # Screen saver after n seconds
-  xset s 60
   # Keyboard setup required if keyboard pluged while sleeping
-  betterlockscreen -l
+  betterlockscreen -l --off 15
+  # Wait for unlock
   until ! pgrep i3lock; do sleep 1; done &&
-    xset s 0 &&
     keyboard &&
     exec_hook
 }
@@ -30,18 +46,18 @@ brightness_reset() {
   xrandr --output eDP1 --brightness 1
 }
 
-while getopts 'hlsbr' flag; do
+while getopts 'hlsbri' flag; do
   case "${flag}" in
 
   # hook (-h)
   h)
-    killall xidlehook
     exec_hook
     ;;
 
   # lock (-l)
   l)
-    exec_lock
+    # exec_lock
+    exec_lock_v2
     ;;
 
   # sleep (-s)
@@ -50,7 +66,8 @@ while getopts 'hlsbr' flag; do
   # text in the password field.
   s)
     systemctl suspend
-    exec_lock
+    # exec_lock
+    exec_lock_v2
     ;;
 
   # brightness set (-b)
