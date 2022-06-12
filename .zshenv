@@ -29,7 +29,7 @@ export HISTSIZE=100000 # Number of commands loaded into memory
 export SAVEHIST=100000 # Number of commands saved into $HISTFILE
 
 # Delete duplicates from history
-$HOME/scripts/history-clean
+$HOME/scripts/history-clean > /dev/null
 
 # Preferred editor for local and remote sessions
 export EDITOR="vim"
