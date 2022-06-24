@@ -1,0 +1,12 @@
+#!/bin/bash
+# e.g. notsigned.pdf
+ORIGINAL=$1
+# e.g. signed.pdf
+DEST=$2
+if [ ! $# -eq 2 ]; then
+    echo "Arguments not passed, example below"
+    echo "convert ORIGINAL.pdf DESTINATION.pdf"
+else
+    convert -density 150 $ORIGINAL -colorspace gray +noise Gaussian -rotate 0.5 -depth 2 $DEST
+    echo "Done"
+fi

@@ -1,0 +1,7 @@
+#!/bin/bash
+IN="xclip -selection c"
+OUT="$IN" | tr '[:upper:]' '[:lower:]' 
+echo $OUT
+
+# This script does not work, until I will use xclip as main clipboard
+notify-send -t 1000 'Needs fix'
