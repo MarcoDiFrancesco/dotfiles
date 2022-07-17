@@ -15,4 +15,8 @@ while getopts 'ws' flag; do
 done
 
 # Copy to clipboard
-gpaste-client file $pic_name
+#gpaste-client file $pic_name
+xclip -selection clipboard -t image/png -i $pic_name
+
+notify-send -t 3000 "Screenshot" "Copied to clipboard"
+

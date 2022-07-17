@@ -158,7 +158,8 @@ bindsym $mod4+e exec firefox
 bindsym $mod4+$mod1+e exec google-chrome-stable --profile-directory="Default"
 bindsym $mod4+Shift+e exec google-chrome-stable --profile-directory="Profile 1"
 bindsym $mod4+Ctrl+e exec google-chrome-stable --profile-directory="Profile 6"
-bindsym $mod4+v exec gpaste-client ui
+#bindsym $mod4+v exec gpaste-client ui
+bindsym $mod4+v exec CM_LAUNCHER=rofi clipmenu
 
 # Bluetooth
 exec --no-startup-id $HOME/scripts/bluetooth-power-on
