@@ -1,6 +1,11 @@
 #!/bin/bash
+# Run as root from: /etc/udev/rules.d/00-keyboard.rules
 
-exec >> /var/log/keyboard.log 2>&1
+# Setup logger if root, otherwise print
+if (( EUID == 0 )); then
+    exec >> /var/log/keyboard.log 2>&1
+fi
+
 echo "=== Run: $(date '+%Y-%m-%d %H:%M:%S') ==="
 
 export HOME="/home/marco"
@@ -11,8 +16,8 @@ export XAUTHORITY=$HOME/.Xauthority
 # https://stackoverflow.com/a/11965765/7924557
 if timeout 0.1 xset q &>/dev/null; then
   echo "Running xkbcomp"
-  # Sleep needed for xkbcomp
-  sleep 0.5
+  # Sleep needed for xkbcomp, 0.5s for I3, 3s for KDE
+  sleep 3
   xkbcomp -I$HOME/.config/xkb ~/.config/xkb/map $DISPLAY &> /dev/null
 
   # Switch off caps lock key if enabled
@@ -27,7 +32,8 @@ if timeout 0.1 xset q &>/dev/null; then
     xdotool key Num_Lock
   fi
 
-  echo "Running scripts/logkeys-start"
-  /home/marco/scripts/logkeys-start
+  #echo "Running scripts/logkeys-start"
+  #/home/marco/scripts/logkeys-start
 fi
 echo "=== End ==="
+

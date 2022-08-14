@@ -1,6 +1,0 @@
-#!/bin/bash
-
-xmodmap -e "clear control"       
-xmodmap -e "add Mod2 = Control_L"
-xmodmap -e "add Mod3 = Control_R" 
-

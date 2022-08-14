@@ -1,4 +1,12 @@
 #!/bin/bash
+# Run as root from: /etc/udev/rules.d/10-logkeys-start.rules
+
+if (( EUID != 0 )); then
+    echo "You must be root to run this script." 1>&2
+    exit 1
+fi
+
+# Setup logger
 exec >> /var/log/logkeys-start.log 2>&1
 echo "=== Run: $(date '+%Y-%m-%d %H:%M:%S') ==="
 
@@ -21,7 +29,8 @@ for link in /dev/input/by-path/*-kbd; do
 	link_name=$(basename ${link})
 
 	echo "Starting $link_name"
-	logkeys --start --device $event_link --output $log_dir/$link_name
-	rm /var/run/logkeys.pid
+	# logkeys-git aur package
+	/usr/bin/logkeys --start --device $event_link --output $log_dir/$link_name
+	rm -f /var/run/logkeys.pid
 done
 echo "=== End ==="
