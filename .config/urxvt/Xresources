@@ -41,10 +41,11 @@ URxvt*italicFont:     xft:DejaVu Sans Mono:autohint=true:italic:size=12
 URxvt*boldItalicFont: xft:DejaVu Sans Mono:autohint=true:bold:italic:size=12
 
 !! Appearance
-URxvt*letterSpace: 1
+!! Removed for fitting with kde
+!!URxvt*letterSpace: 1
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
-URxvt.internalBorder: 5
+URxvt.internalBorder: 3
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
 URxvt.saveline: 2048

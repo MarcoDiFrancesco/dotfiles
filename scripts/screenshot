@@ -9,7 +9,7 @@ while getopts 'ws' flag; do
     gnome-screenshot --window --file=$pic_name
     ;;
   s)
-    gnome-screenshot --area --file=$pic_name
+    gnome-screenshot --area --file=$pic_name --delay=1
     ;;
   esac
 done

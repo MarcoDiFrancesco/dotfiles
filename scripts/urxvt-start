@@ -1,6 +1,0 @@
-#!/bin/bash
-# Start daemon
-#urxvtd -q &
-# Source urxvt look
-xrdb $HOME/.config/urxvt/Xresources &
-

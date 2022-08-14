@@ -20,12 +20,14 @@ source ~/.config/zsh/.zsh-theme
 
 # Custom plugins
 PLUGIN=$ZSH_BASE/plugins
-if [ ! -d $PLUGIN ]; then
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGIN/zsh-syntax-highlighting
-  git clone https://github.com/zsh-users/zsh-history-substring-search $PLUGIN/zsh-history-substring-search
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git $PLUGIN/zsh-autosuggestions
-fi
-
+# Manual clone
+: '
+sudo mkdir $PLUGIN
+sudo chown marco:marco $PLUGIN
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGIN/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-history-substring-search $PLUGIN/zsh-history-substring-search
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $PLUGIN/zsh-autosuggestions
+'
 source $PLUGIN/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $PLUGIN/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $PLUGIN/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh

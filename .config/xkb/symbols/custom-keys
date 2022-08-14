@@ -9,11 +9,12 @@ xkb_symbols {
     // replace key <TLDE> { [ grave, asciitilde, grave ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<TLDE>, clearmods=Mod4) ] };
 
     // Print key
-    replace key <AD10> { [ p, P, Print ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<I218>, clearmods=Mod4) ] };
+    //replace key <AD10> { [ p, P, Print ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<I218>, clearmods=Mod4) ] };
 
     // Volume keys
-    replace key <AB06> { [ n, N, XF86AudioLowerVolume ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<VOL->, clearmods=Mod4) ] };
-    replace key <AB07> { [ m, M, XF86AudioRaiseVolume ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<VOL+>, clearmods=Mod4) ] };
+    // Not workig n and m keys with kde
+    //replace key <AB06> { [ n, N, XF86AudioLowerVolume ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<VOL->, clearmods=Mod4) ] };
+    //replace key <AB07> { [ m, M, XF86AudioRaiseVolume ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<VOL+>, clearmods=Mod4) ] };
 
     // Vim keys
     replace key <AC06> { [ h, H, Left  ], type = "CUST_MOD", actions = [ NoAction(), NoAction(), RedirectKey(keycode=<LEFT>, clearmods=Mod4) ] };
