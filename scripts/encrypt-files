@@ -2,9 +2,40 @@
 
 trap "echo Exited!; exit;" SIGINT SIGTERM
 
-path="$1"
+print_usage() {
+  printf "Usage:\n"
+  printf "    -s | --skip : Skip files integrity checks\n"
+  printf "\n"
+  printf "Example:\n"
+  printf "    encrypt-files --skip MyDirectory\n"
+}
 
-# Check if directory is specified
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -s|--skip)
+      SKIP_TEST="true"
+      echo "INFO: Skipping file integrity checks"
+      shift # past argument
+      ;;
+    # -s|--searchpath)
+    #   SEARCHPATH="$2"
+    #   shift # past argument
+    #   shift # past value
+    #   ;;
+    -*|--*)
+      print_usage
+      exit 1
+      ;;
+    *)
+      # String with all paths after arguments
+      POSITIONAL_ARGS+=("$1") # save positional arg
+      shift # past argument
+      ;;
+  esac
+done
+
+path="$POSITIONAL_ARGS"
+# Check if directory is passed as argument
 if [[ -z $path ]]; then
   echo "Add directory as argument like 'encrypt-files video-list'"
   exit 1
@@ -32,6 +63,7 @@ for filepath in $path/*; do
   # From: /home/marco/file.txt
   # To:   file.txt
   filename="${filepath##*/}"
+
   # destpath=$destdir/$filename.gpg
   destpath=$destdir/$filename.7z
 
@@ -39,14 +71,16 @@ for filepath in $path/*; do
   if [[ -e $destpath ]]; then
     # echo "[ Already exists ] ${filename}"
     echo -en "[    Testing     ] ${filename}"
-    if ! 7z t -p"${psw}" $destpath > /dev/null; then
-      echo "There was an error extracting '$filename'"
-      exit 1
+    if [ ! "$SKIP_TEST" = "true" ]; then
+      if ! 7z t -p"${psw}" "$destpath" >/dev/null; then
+        echo "Error extracting '$filename'"
+        exit 1
+      fi
     fi
   else
     echo -en "\r[   Generating   ] ${filename}"
     # gpg --recipient marcodifran@gmail.com --output $destpath --encrypt $filepath
-    7z a $destpath $filepath -p"${psw}" > /dev/null
+    7z a "$destpath" "$filepath" -p"${psw}" >/dev/null
   fi
   echo -en "\r[      Done      ] ${filename}\n"
 done
