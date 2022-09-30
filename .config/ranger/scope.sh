@@ -92,9 +92,10 @@ handle_image() {
 
   ## Video
   video/*)
-      # Thumbnail
-      ffmpegthumbnailer -i "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}" -s 0 -t 0 && exit 6
-      exit 1;;
+    # Thumbnail
+    ffmpegthumbnailer -i "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}" -s 0 -t 0 && exit 6
+    exit 1
+    ;;
 
   # PDF
   application/pdf)

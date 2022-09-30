@@ -67,8 +67,9 @@ if command -v fzf &> /dev/null; then
 fi
 
 # Get urxvt ctrl+backspace escape character and set it to delete word
-# https://unix.stackexchange.com/a/39731/337926
 bindkey '^[[33~' backward-delete-word
+# Get konsole ctrl+backspace escape character and set it to delete word
+bindkey '\C-H' backward-delete-word
 
 # Don't stop word deletion on the characters below on ctrl+backspace (removed /)
 # https://unix.stackexchange.com/a/392199/337926

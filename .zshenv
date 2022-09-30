@@ -1,5 +1,7 @@
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 # Urxvt socket
 export RXVT_SOCKET="$XDG_CACHE_HOME/urxvtd-socket"
@@ -43,6 +45,8 @@ export LESSHISTFILE=-
 # -R used to colorize
 export LESS='-R --ignore-case --mouse --wheel-lines=3'
 
+# Gtk
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 # Nvidia
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 # Docker
@@ -75,3 +79,6 @@ export BUNDLE_USER_PLUGIN="$XDG_CACHE_HOME/bundle"
 export JUPYTER_CONFIG_DIR="$XDG_CACHE_HOME"/jupyter 
 # Zoom
 export SSB_HOME="$XDG_CACHE_HOME/zoom"
+# Vim
+export GVIMINIT='let $MYGVIMRC="$XDG_CONFIG_HOME/vim/gvimrc" | source $MYGVIMRC'
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'

@@ -142,11 +142,7 @@ class compress(Command):
         command = ["apack"]
         command.append(dest_name)
         command += [os.path.relpath(f.path, cwd.path) for f in marked_files]
-        obj = CommandLoader(
-            args=command,
-            descr=descr,
-            silent=True
-        )
+        obj = CommandLoader(args=command, descr=descr, silent=True)
 
         # Deselect files
         cwd.marked_items.clear()

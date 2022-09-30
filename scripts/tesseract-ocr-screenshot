@@ -1,7 +1,12 @@
 #!/bin/bash
 pic_name="/home/marco/Pictures/screenshot_$(date +"%Y-%m-%d")_$(date +"%H-%M-%S").png"
-spectacle --background --copy-image --region --nonotify --output=$pic_name
+spectacle --background --region --nonotify --output=$pic_name
+# If press exit button
+[ ! -f $pic_name ] && exit 0
+
+# Run tesseract
 txt_file="/tmp/tesseract-ocr"
 tesseract $pic_name $txt_file
-xclip -selection clipboard < $txt_file
+# Remove newspace with echo -n
+echo -n "$(cat $txt_file.txt)" | xclip -selection clipboard
 notify-send -t 3000 "Tesseract - OCR" "Copied to clipboard"
