@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=/home/marco/scripts/daemons/yin-yang-start
+Icon=dialog-scripts
+Name=yin-yang-start
+Path=
+Type=Application
+X-KDE-AutostartScript=true

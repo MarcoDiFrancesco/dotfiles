@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=/home/marco/scripts/daemons/urxvt-start
+Icon=dialog-scripts
+Name=urxvt-start
+Path=
+Type=Application
+X-KDE-AutostartScript=true
