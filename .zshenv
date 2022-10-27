@@ -82,3 +82,5 @@ export SSB_HOME="$XDG_CACHE_HOME/zoom"
 # Vim
 export GVIMINIT='let $MYGVIMRC="$XDG_CONFIG_HOME/vim/gvimrc" | source $MYGVIMRC'
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+# Firefox - Smooth scrolling
+export MOZ_USE_XINPUT2=1

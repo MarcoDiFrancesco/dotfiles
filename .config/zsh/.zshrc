@@ -47,7 +47,7 @@ fi
 # Config repostory
 alias config='git --git-dir=$HOME/projects/dotfiles --work-tree=$HOME'
 # Ranger get directory on exit and cd into it
-alias r='ranger --choosedir=$HOME/.cache/ranger/dir; LASTDIR=`cat $HOME/.cache/ranger/dir`; cd "$LASTDIR"; rm $HOME/.cache/ranger/dir;'
+alias r='ranger --choosedir=$HOME/.cache/ranger/dir; LASTDIR=`cat $HOME/.cache/ranger/dir`; cd "$LASTDIR"; rm -f $HOME/.cache/ranger/dir;'
 # Trash list order by date
 alias trash-ls='trash-list | sort | grep "`pwd`"'
 alias trash-rs='trash-restore | grep'

@@ -12,7 +12,7 @@ x-scheme-handler/chrome=firefox.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
 x-scheme-handler/mailto=viagee.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-2QYXQ1.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-2QYXQ1.desktop;userapp-Telegram Desktop-EZDXT1.desktop;
 
 [Default Applications]
 application/csv=onlyoffice-desktopeditors.desktop
@@ -46,7 +46,7 @@ x-scheme-handler/mailto=viagee.desktop
 x-scheme-handler/msteams=teams.desktop
 x-scheme-handler/obsidian=obsidian.desktop
 x-scheme-handler/slack=slack.desktop
-x-scheme-handler/tg=userapp-Telegram Desktop-2QYXQ1.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-EZDXT1.desktop
 x-scheme-handler/unknown=google-chrome.desktop
 x-scheme-handler/webcal=google-chrome.desktop
 x-scheme-handler/notion=notion-app.desktop
