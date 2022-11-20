@@ -1,0 +1,9 @@
+#!/bin/bash
+pic_name="/home/marco/Pictures/screenshot_$(date +"%Y-%m-%d")_$(date +"%H-%M-%S").png"
+spectacle --background --region --nonotify --output=$pic_name
+# If press exit button
+[ ! -f $pic_name ] && exit 0
+
+# Run pix2tex
+~/Documents/latex-ocr/.venv/bin/pix2tex $pic_name
+notify-send -t 3000 "Latex - OCR" "Copied to clipboard"

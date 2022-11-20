@@ -1,0 +1,9 @@
+#!/bin/bash
+
+IMAGE=$1
+
+if [ ! -f "$IMAGE" ]; then
+  echo "Specify image e.g. 'backgroundremover image.png'"
+fi
+
+~/Documents/backgroundremover/.venv/bin/backgroundremover -i "$IMAGE" -o "$IMAGE.new.png"
