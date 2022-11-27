@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "# Run manually this script"
+echo "sudo simple-mtpfs --list-devices"
+echo "mkdir ~/Downloads/gopro"
+echo "simple-mtpfs --device 1 ~/Downloads/gopro"
+echo "ls ~/Downloads/gopro/DCIM"
+echo "cp -rv ~/Downloads/gopro/DCIM ~/Downloads"
