@@ -40,6 +40,27 @@ class imgur_screenshot(Command):
         self.fm.loader.add(obj)
 
 
+class backgroundremover(Command):
+    """:backgroundremover <filename>
+
+    Remove background from image
+    """
+
+    def execute(self):
+        cwd = self.fm.thisdir
+        original_path = cwd.path
+        files = cwd.get_selection()
+        assert len(files) == 1, "Extract one file at a time"
+        # f"/home/marco/Documents/backgroundremover/.venv/bin/backgroundremover -i '{str(files[0])}' -o '{str(files[0])}'",
+        command = ["backgroundremover", str(files[0])]
+        descr = "Removing background from image"
+        obj = CommandLoader(
+            args=command,
+            descr=descr,
+        )
+        self.fm.loader.add(obj)
+
+
 class fzf_select(Command):
     """:fzf_select
 

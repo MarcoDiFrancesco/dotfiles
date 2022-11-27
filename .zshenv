@@ -21,6 +21,10 @@ else
 fi
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
+# Fix locale for kde
+export LANGUAGE="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
 # Save the location of the current completion dump file.
 export ZSH_CACHE="$XDG_CACHE_HOME/zsh"
 # Create directory if doesn't exist
