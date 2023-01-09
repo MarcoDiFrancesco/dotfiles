@@ -75,7 +75,7 @@ bindkey '\C-H' backward-delete-word
 # https://unix.stackexchange.com/a/392199/337926
 autoload -U select-word-style
 select-word-style bash
-export WORDCHARS='*?_.[]~=&;!#$%^(){}<>'
+export WORDCHARS='*?_[]~=&;!#$%^(){}<>'
 
 # Cursor shape
 printf '\033[5 q\r'

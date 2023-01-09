@@ -1,9 +1,10 @@
-# VSCode folder
+# VSCode
 .vscode
-# Python enviroment
-.venv
-# Python cache
+
+# Python
 __pycache__
 .ipynb_checkpoints
-# Pycharm
+.venv
+
+# IntelliJ - e.g. Pycharm, DataSpell
 .idea

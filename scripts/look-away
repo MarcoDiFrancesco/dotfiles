@@ -1,0 +1,8 @@
+#!/bin/bash
+
+while true; do
+  echo "Notification sent"
+  notify-send -t 20000 "Look away"
+  # 20*60 sec
+  sleep 1200
+done
