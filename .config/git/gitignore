@@ -8,3 +8,6 @@ __pycache__
 
 # IntelliJ - e.g. Pycharm, DataSpell
 .idea
+
+# Dolphin
+.directory

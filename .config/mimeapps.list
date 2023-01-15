@@ -42,6 +42,7 @@ x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/chrome=firefox.desktop
 x-scheme-handler/discord-478576776990425110=discord-478576776990425110.desktop
 x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
+x-scheme-handler/freetube=freetube.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
 x-scheme-handler/mailto=viagee.desktop

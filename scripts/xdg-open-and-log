@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+LOGFILE=~/.cache/ranger-log/ranger.log
+echo "=== Run: $(date '+%Y-%m-%d %H:%M:%S') ===" >> $LOGFILE
+nohup xdg-open $@ >> $LOGFILE 2>&1 &
+
+echo "Command:"
+echo "    xdg-open $@"
+echo "Log:"
+echo "    cat ~/.cache/ranger-log/ranger.log"

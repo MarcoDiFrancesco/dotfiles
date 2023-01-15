@@ -2,7 +2,7 @@
 
 while true; do
   echo "Notification sent"
-  notify-send -t 20000 "Look away"
-  # 20*60 sec
+  # 20 mins
   sleep 1200
+  notify-send -t 20000 "Look away"
 done
