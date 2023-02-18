@@ -6,6 +6,8 @@ COMPLETION_WAITING_DOTS="true"
 
 # Command execution timestamp
 HIST_STAMPS="yyyy-mm-dd"
+# Overwriting .zshenv option otherwise VSCode does not use history
+HISTFILE="$ZSH_CACHE/history"
 
 # Plugins
 plugins=(

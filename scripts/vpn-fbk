@@ -1,9 +1,0 @@
-#!/bin/bash
-sudo systemctl start pulsesecure
-
-echo "\n============="
-echo "URL:  https://sslgate.fbk.eu"
-echo "USER: mdifrancesco"
-echo "=============\n"
-
-/opt/pulsesecure/bin/pulseUI
