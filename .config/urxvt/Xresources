@@ -84,6 +84,9 @@ urxvt*shading: 20
 !! Extensions
 !! matcher detects links
 !! resize-font used to resize font on the fly
-URxvt.perl-ext-common: default,matcher,resize-font
+
+!! Disable paste confirmation
+URxvt.perl-ext-common: default,-confirm-paste
+
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
