@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=ranger
-Comment=Open direcory
+Comment=Show Directory
 Icon=utilities-terminal
 Terminal=false
 Exec=urxvt -e ranger

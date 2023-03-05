@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=ranger
-Comment=Open direcory and select file
+Comment=Show File
 Icon=utilities-terminal
 Terminal=false
 Exec=urxvt -e ranger --selectfile

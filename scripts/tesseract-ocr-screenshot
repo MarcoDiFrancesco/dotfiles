@@ -9,4 +9,4 @@ txt_file="/tmp/tesseract-ocr"
 tesseract $pic_name $txt_file
 # Remove newspace with echo -n
 echo -n "$(cat $txt_file.txt)" | xclip -selection clipboard
-notify-send -t 3000 "Tesseract - OCR" "Copied to clipboard"
+notify-send -t 3000 -a "Tesseract - OCR" "Copied to clipboard" "$(cat $txt_file.txt)"

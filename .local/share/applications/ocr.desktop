@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=OCR Tesseract
+Icon=object-rotate-left
+Terminal=false
+Exec=~/scripts/tesseract-ocr-screenshot
+MimeType=inode/directory;

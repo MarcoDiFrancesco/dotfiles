@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=OCR Latex
+Icon=object-rotate-left
+Terminal=false
+Exec=~/scripts/latex-ocr
+MimeType=inode/directory;

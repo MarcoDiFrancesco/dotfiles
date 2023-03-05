@@ -6,4 +6,4 @@ spectacle --background --region --nonotify --output=$pic_name
 
 # Run pix2tex
 ~/Documents/latex-ocr/.venv/bin/pix2tex $pic_name
-notify-send -t 3000 "Latex - OCR" "Copied to clipboard"
+notify-send -t 3000 -a "Latex - OCR" "Copied to clipboard" "$(xclip -o -selection clipboard)"

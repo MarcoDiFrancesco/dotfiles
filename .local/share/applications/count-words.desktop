@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Count Words
+Icon=object-rotate-left
+Terminal=false
+Exec=~/scripts/count-words
+MimeType=inode/directory;
