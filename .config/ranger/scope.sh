@@ -65,7 +65,7 @@ handle_image() {
   ## Gimp
   image/x-xcf)
     # Do nothing
-    exit 6
+    exit 1
     ;;
 
   ## DjVu
