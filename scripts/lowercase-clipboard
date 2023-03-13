@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Get text from clipboard
+OLD=$(xclip -o -selection clipboard)
+# Lowercase text
+NEW=$(xclip -o -selection clipboard | tr '[:upper:]' '[:lower:]')
+# Copy to clipboard
+echo -n "$NEW" | xclip -selection clipboard
+
+# Get 20 characters from string
+NEW=$(echo $NEW | cut -c 1-50)
+OLD=$(echo $OLD | cut -c 1-50)
+
+# notify-send -t 3000 -a "Lowercase Clipboard" "Copied" "<i>$NEW...</i>\n\n(Old: <i>$OLD...</i>)"
+notify-send -t 3000 -a "Lowercase Clipboard" "⬇️ Low" "<i>$NEW...</i>"

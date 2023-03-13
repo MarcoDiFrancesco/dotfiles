@@ -17,5 +17,5 @@ done
 
 curl -s -X POST https://www.lipsum.com/feed/json -d "amount=$AMOUNT" -d "what=$WHAT" -d"start=$START" | jq -r '.feed.lipsum' | tr '\n' ' ' | xclip -selection clipboard
 
-notify-send -t 3000 "Lorem ipsum generator" "Copied $AMOUNT $WHAT to clipboard"
+notify-send -t 3000 -a "Lorem ipsum generator" "Copied $AMOUNT $WHAT to clipboard" "$(xclip -o -selection clipboard)"
 

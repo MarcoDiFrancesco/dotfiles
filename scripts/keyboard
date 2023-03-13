@@ -17,7 +17,7 @@ export XAUTHORITY=$HOME/.Xauthority
 if timeout 0.1 xset q &>/dev/null; then
   echo "Running xkbcomp"
   notify-send -t 3000 -a "Keyboard Setup" "⏩ Running"
-  # Sleep needed for xkbcomp, 0.5s for I3, 3s for KDE
+  # Sleep needed for xkbcomp: 0.5s for I3, 3s for KDE
   sleep 3
   xkbcomp -I$HOME/.config/xkb ~/.config/xkb/map $DISPLAY &> /dev/null
 
