@@ -114,10 +114,13 @@ class extract(Command):
 
         # atool package
         command = ["aunpack"]
-        f = files[0]
-        # /dir/file.txt
+        # e.g. /dir/file.txt
         f = Path(files[0].path)
-        # /dir/file
+        # Check file size
+        max_size = 100 * 1024 * 1024 # 100MB
+        if Path(f).stat().st_size > max_size:
+            raise SyntaxError("File too large for Ranger, use terminal or Dolphin instead")
+        # e.g. /dir/file
         dest_dir = f.parent / f.stem
         if dest_dir.exists():
             raise FileExistsError(f"Directory '{f.stem}' already exists")

@@ -8,8 +8,8 @@ NEW=$(xclip -o -selection clipboard | tr '[:upper:]' '[:lower:]')
 echo -n "$NEW" | xclip -selection clipboard
 
 # Get 20 characters from string
-NEW=$(echo $NEW | cut -c 1-50)
-OLD=$(echo $OLD | cut -c 1-50)
+# NEW=$(echo $NEW | cut -c 1-50)
+# OLD=$(echo $OLD | cut -c 1-50)
 
 # notify-send -t 3000 -a "Lowercase Clipboard" "Copied" "<i>$NEW...</i>\n\n(Old: <i>$OLD...</i>)"
-notify-send -t 3000 -a "Lowercase Clipboard" "⬇️ Low" "<i>$NEW...</i>"
+notify-send -t 3000 -a "Lowercase Clipboard" "⬇️ Low" "$NEW..."
