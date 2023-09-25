@@ -10,6 +10,8 @@ export RXVT_SOCKET="$XDG_CACHE_HOME/urxvtd-socket"
 export PATH="$HOME/scripts:$PATH"
 # Ruby gem path, for bundle command
 export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
+# Cargo packages - Rust
+export PATH="$HOME/.cache/cargo/bin:$PATH"
 
 # Path to your oh-my-zsh installation
 if [ -d "$HOME/.oh-my-zsh" ]; then

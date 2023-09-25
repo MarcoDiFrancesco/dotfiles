@@ -10,7 +10,7 @@ echo "=== Run: $(date '+%Y-%m-%d %H:%M:%S') ==="
 
 export HOME="/home/marco"
 export DISPLAY=":0.0"
-export XAUTHORITY=$HOME/.Xauthority
+#export XAUTHORITY=$HOME/.Xauthority
 
 # If display server is running, timeout set because the command takes time to fail
 # https://stackoverflow.com/a/11965765/7924557

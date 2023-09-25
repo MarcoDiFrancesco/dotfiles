@@ -1,4 +1,6 @@
 #!/bin/bash
 # Count words from clipboard
-NUMBER=$(xclip -o -selection clipboard | wc -w)
-notify-send -t 3000 -a "Count words" "Count" "$NUMBER words"
+WORDS=$(xclip -o -selection clipboard | wc -w)
+CHARS=$(xclip -o -selection clipboard | wc -c)
+
+notify-send -t 3000 -a "Count words" "Count" "$WORDS words\n$CHARS chars"

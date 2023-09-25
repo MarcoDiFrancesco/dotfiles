@@ -57,10 +57,15 @@ alias trash-rs='trash-restore | grep'
 alias dir_size='du --max-depth=1 --human-readable | sort --key=2'
 # Avoid using deprecated scp
 alias scp='echo "scp is deprecated! Use rsync instead"'
+# 
+alias transform='echo "use -> convert"'
 # Pip aliases to avoid using it
 alias pip='./.venv/bin/pip'
 # Source environment variables
 alias se='source source-env'
+# Rust repl
+alias rust-repl='evcxr'
+
 
 # fzf (ctrl+r)
 if command -v fzf &> /dev/null; then
