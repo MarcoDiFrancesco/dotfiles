@@ -55,6 +55,17 @@ fi
 read -s -p "Password:" psw
 echo
 
+# Test password on README
+destpath=$destdir/README.md.7z
+echo -en "[    Testing     ] README.md.7z "
+if ! 7z t -p"${psw}" "$destpath" >/dev/null; then
+  echo -en "\r[ Password Wrong ] README.md.7z \n"
+  exit 1
+else
+  echo -en "\r[   Password Ok  ] README.md.7z \n"
+  # TODO: re-encrypt readme, since it may change
+fi
+
 # Loop over files in path
 for filepath in $path/*; do
   # Skip if is not a regular file
@@ -64,23 +75,23 @@ for filepath in $path/*; do
   # To:   file.txt
   filename="${filepath##*/}"
 
-  # destpath=$destdir/$filename.gpg
   destpath=$destdir/$filename.7z
 
-  # If file is already encrypted skip
+  # If encrypted file already exists
   if [[ -e $destpath ]]; then
-    # echo "[ Already exists ] ${filename}"
-    echo -en "[    Testing     ] ${filename}"
     if [ ! "$SKIP_TEST" = "true" ]; then
+      echo -en "[    Testing     ] ${filename}"
       if ! 7z t -p"${psw}" "$destpath" >/dev/null; then
         echo "Error extracting '$filename'"
         exit 1
       fi
+      echo -en "\r[    File ok     ] ${filename}\n"
+    else
+      echo -en "[      Skip      ] ${filename}\n"
     fi
   else
-    echo -en "\r[   Generating   ] ${filename}"
-    # gpg --recipient marcodifran@gmail.com --output $destpath --encrypt $filepath
+    echo -en "\r[  Encrypting... ] ${filename}"
     7z a "$destpath" "$filepath" -p"${psw}" >/dev/null
+    echo -en "\r[   Encrypted    ] ${filename}\n"
   fi
-  echo -en "\r[      Done      ] ${filename}\n"
 done

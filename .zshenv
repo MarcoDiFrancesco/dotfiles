@@ -61,6 +61,7 @@ export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export ANDROID_SDK_HOME="$XDG_CACHE_HOME/android"
 # Npm
 export NPM_CONFIG_USERCONFIG="$XDG_CACHE_HOME/npm"
+export PATH=~/.cache/npm-global/bin:$PATH
 # Jarn (used by aur, so probably does not work)
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 # IPython
@@ -77,6 +78,7 @@ export CARGO_HOME="$XDG_CACHE_HOME/cargo"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 # Conda
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
+export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 # Ruby
 export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME/bundle"
 export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"

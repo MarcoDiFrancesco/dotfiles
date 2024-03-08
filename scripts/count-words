@@ -1,6 +1,13 @@
 #!/bin/bash
 # Count words from clipboard
-WORDS=$(xclip -o -selection clipboard | wc -w)
-CHARS=$(xclip -o -selection clipboard | wc -c)
+CLIP_TEXT=$(xclip -o -selection clipboard)
+WORDS=$(echo "$CLIP_TEXT" | wc -w)
+CHARS=$(echo "$CLIP_TEXT" | wc -c)
+LINES=$(echo "$CLIP_TEXT" | wc -l)
 
-notify-send -t 3000 -a "Count words" "Count" "$WORDS words\n$CHARS chars"
+# Replace new lines with spaces
+CLIP_TEXT_SAMPLE="$(echo "$CLIP_TEXT" | tr '\n' ' ')"
+# Select first n chars
+CLIP_TEXT_FIRST=${CLIP_TEXT_SAMPLE:0:20}
+CLIP_TEXT_LAST=${CLIP_TEXT_SAMPLE: -20}
+notify-send -t 5000 -a "Count words" "Count" "$WORDS words\n$CHARS chars\n$LINES lines<br><br><i>$CLIP_TEXT_FIRST</i> ➡️ <i>$CLIP_TEXT_LAST</i>"
